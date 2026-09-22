@@ -1,0 +1,65 @@
+NORYX.IO — DNS CUTOVER SHEET
+Prepared 14 Sep 2026. Target: the new site on Vercel (project "noryx").
+
+WHY THIS SHEET EXISTS
+The DNS zone for noryx.io currently lives in a Netlify account you cannot
+reach. Moving the domain to Namecheap's own DNS is what frees it. But that
+move wipes every record the old zone held, and two of those records are your
+email. Recreate all of them or info@noryx.io stops receiving mail.
+
+-------------------------------------------------------------------------------
+STEP 1  Namecheap -> Domain List -> noryx.io -> MANAGE -> NAMESERVERS
+        Change "Custom DNS" to "Namecheap BasicDNS" and save.
+        The old site goes down at this moment. That is expected.
+
+STEP 2  Go to the "Advanced DNS" tab.
+        DELETE any record Namecheap adds by itself, usually:
+          - CNAME  www  -> parkingpage.namecheap.com
+          - URL Redirect Record on @
+        Then add everything below, exactly.
+
+-------------------------------------------------------------------------------
+THE WEBSITE  (new records, these point noryx.io at Vercel)
+
+  Type            Host    Value                                        TTL
+  A Record        @       216.198.79.1                                 Automatic
+  A Record        @       64.29.17.1                                   Automatic
+  CNAME Record    www     8e0f7f8661fea9fa.vercel-dns-017.com.         Automatic
+
+-------------------------------------------------------------------------------
+YOUR EMAIL  (Google Workspace. Miss one of these and mail breaks.)
+
+  Type            Host    Value                          Priority   TTL
+  MX Record       @       smtp.google.com.               1          Automatic
+  MX Record       @       alt1.aspmx.l.google.com.       5          Automatic
+  MX Record       @       alt2.aspmx.l.google.com.       5          Automatic
+  MX Record       @       alt3.aspmx.l.google.com.       10         Automatic
+  MX Record       @       alt4.aspmx.l.google.com.       10         Automatic
+
+  TXT Record      google._domainkey
+  Value (one line, 410 characters, copy from dkim-value.txt, do not retype):
+v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsIji9XkTy3sintuCKAqbjoLU3cqCk2793EulVE1EUObFyuDDnNAecNCaMMIznulQv04hxrETOMO1oa0dsGqnW28Y4QhSEry+8GZb09rb8KKh5AicLcvNhmjA78hBJhb0nBoeY8t9mOWbMASg2TcGT51dLxMh/kYhuBa4QdTaib4zR/WjfC7TzBTw3Aq+7IFWOUc/snIIwQe1hEIqqhZc0eWPCLRzmJH6UrueNaoCOhLdysXaVA/8hi7hzpEF5PoaO7RNTdwSwdPlt4SaH3cZu3XB8d4yW6hzCH4Elq2gJDyLj6YrJ6fUqIGAnlmLxBpb/sKzdz80iHO3tReWWF6TnwIDAQAB
+
+-------------------------------------------------------------------------------
+WORTH ADDING WHILE YOU ARE IN THERE
+Your domain has no SPF and no DMARC record today. That is a pre-existing gap,
+not something the move caused. Without SPF, anyone can send mail that claims to
+come from noryx.io, and your own mail is more likely to land in spam. These two
+records fix it and are the standard Google Workspace values:
+
+  Type            Host    Value
+  TXT Record      @       v=spf1 include:_spf.google.com ~all
+  TXT Record      _dmarc  v=DMARC1; p=none; rua=mailto:info@noryx.io
+
+Add them only if you want to. Nothing else on this sheet depends on them.
+
+-------------------------------------------------------------------------------
+STEP 3  Tell me when the records are saved.
+        I verify noryx.io, www.noryx.io, both languages, and that mail still
+        routes to Google. DNS usually takes 5 to 30 minutes to take effect.
+
+ROLLBACK
+If anything goes wrong, set the nameservers back to Custom DNS with:
+  dns1.p07.nsone.net   dns2.p07.nsone.net
+  dns3.p07.nsone.net   dns4.p07.nsone.net
+That returns you to exactly today's state, old site and all.

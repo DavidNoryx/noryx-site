@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORYX | Engineering the 3D Future</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.4/dist/lottie-player.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M5C6X7NBS"></script>
+    <script>window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config', 'G-6M5C6X7NBS');</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="lang-switch"><a href='/en/'>ENGLISH</a></div>
+
+    <header class="hero">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline id="bg-video-hero">
+            <source src="https://res.cloudinary.com/dezhtijel/video/upload/v1769439329/NORYX_Intro_qswfmv.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>NORYX</h1>
+            <p>ADVANCED ENGINEERING SOLUTIONS</p>
+            <div class="btn-container">
+                <a href="#contact" class="btn-main">התחלת פרויקט</a>
+                <a href="https://gamma.app/docs/NORYX-t16d0gcqz0zsinw?mode=doc" target="_blank" class="btn-outline">מצגת חברה <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <center style="margin-top: 25px;">
+                <lottie-player src="https://lottie.host/825f3c55-22d7-463e-b873-1f1969e71b2d/7I762Z0lBv.json" background="transparent" speed="1" style="width: 160px; height: 160px;" loop autoplay></lottie-player>
+            </center>
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <h2>המוצרים שלנו</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-vr-cardboard"></i><h3>SCAN TO BIM</h3><p>סריקות תלת-ממד ומדידות LiDAR מתקדמות המומרות למודלים הנדסיים מדויקים.</p></div>
+            <div class="service-card"><i class="fas fa-brain"></i><h3>INTELLIGENCE</h3><p>שכבת המוח של הפרויקט - סוכני AI ואוטומציה לייעול תהליכי סיווג הנתונים.</p></div>
+            <div class="service-card"><i class="fas fa-drone"></i><h3>AERIAL INSIGHT</h3><p>תיעוד חזותי והנדסי ברזולוציה גבוהה (45MP) מהאוויר לניטור ורישום מקרקעין.</p></div>
+            <div class="service-card"><i class="fas fa-drafting-compass"></i><h3>STRUCTURAL</h3><p>מעטפת מלאה של תכנון ומדידות הנדסיות משלב התכנון ועד לביצוע הסופי.</p></div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>הפרויקטים שלנו בפעולה</h2>
+        <div class="projects-grid">
+            <div class="project-box">
+                <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dezhtijel/video/upload/v1778076198/Scan_Video_ojmpow.mp4" type="video/mp4"></video>
+                <h4>SCAN TO BIM: דיגיטציה של מבני תעשייה</h4>
+            </div>
+            <div class="project-box">
+                <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dezhtijel/video/upload/v1778076194/MEP_Video_biwoyu.mp4" type="video/mp4"></video>
+                <h4>MEP DETECTION: מיפוי תשתיות מורכב</h4>
+            </div>
+            <div class="project-box">
+                <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dezhtijel/video/upload/v1778076195/Video_Project_3_1_argjyj.mp4" type="video/mp4"></video>
+                <h4>AERIAL INSIGHT: ניטור אתרי בנייה</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <h2>התוצרים שלנו</h2>
+        <div class="portfolio-container">
+            <h3 style="margin-bottom:30px; color:var(--navy); font-size:1.5rem;">תוצרי תכנון הנדסיים (לחצו על התוכנית להגדלה)</h3>
+            <div class="slider">
+                <div class="slides">
+                    <img src="https://res.cloudinary.com/dezhtijel/image/upload/v1772358201/plan1_nkf9lr.png" alt="תוצר הנדסי 1" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dezhtijel/image/upload/v1772358202/plan2_msh3hy.png" alt="תוצר הנדסי 2" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2>שאלות ותשובות טכניות</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>מהי רמת הדיוק של הסריקה והמדידה?</h3>
+                <p>אנו משתמשים בטכנולוגיית LiDAR ופוטוגרמטריה המאפשרת דיוק מילימטרי העומד בתקנים הרגולטוריים הקשיחים ביותר.</p>
+            </div>
+            <div class="faq-item">
+                <h3>באילו פורמטים מתקבלים התוצרים הסופיים?</h3>
+                <p>התוצרים מונגשים בפורמטים DWG (AutoCAD), RVT (Revit), IFC ו-PDF, מוכנים לעבודה מיידית של המתכנן.</p>
+            </div>
+            <div class="faq-item">
+                <h3>מהו הערך המוסף של שכבת ה-AI?</h3>
+                <p>שכבת ה-AI שלנו מקצרת ומייעלת עד כ-85% מהמאמץ הידני של סיווג הנתונים, מה שמונע צווארי בקבוק ומקצר לוחות זמנים באופן דרמטי.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>הצטרפו למהפכת ה-3D</h2>
+        <p style="margin-bottom: 40px; color: #556677; font-size: 1.1rem;">054-6745331 | info@noryx.io</p>
+        <form action='/success' class='contact-form' method='POST' name='contact'>
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="email" name="email" placeholder="כתובת אימייל ארגונית" required>
+            <textarea name="message" placeholder="תארו את האתגר שלכם..." required style="height:150px;"></textarea>
+            <button type="submit">שלח הודעה</button>
+        </form>
+    </section>
+
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <div class="floating-icons">
+        <a href="https://wa.me/972546745331" class="icon-link whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:0546745331" class="icon-link phone"><i class="fas fa-phone"></i></a>
+        <a href="mailto:info@noryx.io" class="icon-link mail"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imgFull').src = src;
+            document.getElementById('imageModal').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

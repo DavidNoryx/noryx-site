@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Noryx | Underground Utility Mapping, 3D Laser Scanning and Scan-to-BIM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Noryx maps and documents your site above ground and below: underground utility detection with GPR, electromagnetic locating and ERT, 3D LiDAR scanning, drone photogrammetry, RTK-GNSS survey, Scan-to-BIM and As-Built documentation. Serving projects across Israel.">
+<meta name="keywords" content="Subsurface Mapping Israel, GPR Survey Israel, Spatial Data Fusion, Utility Detection Tel Aviv, Mobile LiDAR Scanning, underground utility mapping, utility detection, ground penetrating radar, electromagnetic locating, ERT, reality capture, 3D laser scanning, Scan-to-BIM, point cloud, As-Built documentation, drone mapping, photogrammetry, orthophoto, RTK-GNSS, DWG, RVT, BIM">
+<link rel="canonical" href="https://noryx.io/">
+<link rel="alternate" hreflang="en" href="https://noryx.io/">
+<link rel="alternate" hreflang="he" href="https://noryx.io/he/">
+<link rel="alternate" hreflang="x-default" href="https://noryx.io/">
+<meta name="theme-color" content="#EDF2F7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 9.5 16 3.5 28 9.5 16 15.5Z' fill='none' stroke='%2335C8DC' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M4 15.5 16 21.5 28 15.5' fill='none' stroke='%231FA2B7' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M4 21.5 16 27.5 28 21.5' fill='none' stroke='%2312618C' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- DEPLOY STEP: og tags carry the live absolute URL. Re-patch if the address changes. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Noryx Technologies">
+<meta property="og:description" content="Spatial Data Fusion. Capture reality above and below ground, fuse it into one model, and read it on any device in seconds.">
+<meta property="og:url" content="https://noryx.io/">
+<meta property="og:image" content="https://noryx.io/assets/hero-field.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Noryx Technologies">
+<meta name="twitter:description" content="Spatial Data Fusion. Capture reality above and below ground, fuse it into one model, and read it on any device in seconds.">
+<meta name="twitter:image" content="https://noryx.io/assets/hero-field.jpg">
+<meta property="og:site_name" content="Noryx Technologies">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:image:alt" content="A site engineer reading located underground services on a tablet.">
+<!-- Where the work happens. The company serves the whole country rather than
+     one address, so the area is declared and no street is invented. -->
+<meta name="geo.region" content="IL">
+<meta name="geo.placename" content="Israel">
+<meta name="ICBM" content="32.0853, 34.7818">
+<meta name="author" content="Noryx Technologies">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": "https://noryx.io/#org",
+      "name": "Noryx Technologies",
+      "alternateName": "נוריקס",
+      "telephone": "+972-54-393-6936",
+      "image": "https://noryx.io/assets/hero-field.jpg",
+      "priceRange": "$",
+      "address": { "@type": "PostalAddress", "addressCountry": "IL" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Subsurface and reality capture services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Subsurface Mapping Israel" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GPR Survey Israel" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Utility Detection Tel Aviv" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile LiDAR Scanning" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spatial Data Fusion" } }
+        ]
+      },
+      "description": "Underground utility detection and mapping, 3D laser scanning, drone photogrammetry and Scan-to-BIM, delivered as one coordinated survey of the site above ground and below.",
+      "url": "https://noryx.io/",
+      "email": "office@noryx.io",
+      "areaServed": { "@type": "Country", "name": "Israel" },
+      "knowsLanguage": ["he", "en"],
+      "serviceType": [
+        "Underground utility mapping",
+        "Ground penetrating radar survey",
+        "Electromagnetic utility locating",
+        "Electrical resistivity tomography",
+        "3D laser scanning and LiDAR",
+        "Scan-to-BIM",
+        "As-Built documentation",
+        "Drone mapping and photogrammetry",
+        "RTK-GNSS survey",
+        "Subsurface mapping",
+        "Spatial data fusion",
+        "Mobile LiDAR scanning"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://noryx.io/#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"Does ground penetrating radar actually work in clay or wet ground?","acceptedAnswer":{"@type":"Answer","text":"Not everywhere. Radar reaches roughly 18 metres in clean dry sand and about 6 metres in dense wet clay, and a saturated layer near the surface can block most of the signal. That is why several instruments are run instead of one. Where radar struggles we lean on electromagnetic locating and resistivity, calibrate depth on site, and report which readings are strong and which are not."}},
+        {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"Findings are reported to ASCE 38-22 quality levels, the industry's own scale. Geophysical mapping typically finds 10 to 50 percent more utilities than record based mapping. Where a line is critical, it is verified."}},
+        {"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"It depends on the size of the site, how dense it is and which deliverables are needed. Because scanning, processing and modelling run as one continuous process, work that normally takes weeks can often be shortened to a few working days. An exact schedule is set after reviewing the site and the scope."}},
+        {"@type":"Question","name":"Is this another platform my team has to learn?","acceptedAnswer":{"@type":"Answer","text":"No. The model is a link. If someone can open a web page, they can walk the site."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Heebo:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+
+<style>
+/* ============================================================
+   NORYX TECHNOLOGIES / SPATIAL DATA FUSION
+   Light slate canvas, #12618C brand accent, APWA-style utility colours.
+   ============================================================ */
+:root{
+  --canvas:#EDF2F7;   --canvas-2:#E2EAF3;  --panel:#F8FBFD;  --panel-2:#FFFFFF;
+  --line:#CFDCE8;     --line-strong:#A6BED2;
+  --accent:#12618C;   --accent-hover:#0D4A6C;  --accent-tint:#DDEBF4;
+  --cyan:#1FA2B7;     --cyan-bright:#35C8DC;   --deep:#0E2A3D;
+  --ink:#0C2131;      --ink-2:#4B6478;
+  /* utility colour code */
+  --u-water:#1F73C8;  --u-elec:#D92D20;  --u-gas:#E8A317;  --u-tel:#E2640F;
+  --tshadow:0 1px 2px rgba(255,255,255,.92),0 2px 10px rgba(237,242,247,.9),0 8px 32px rgba(237,242,247,.75);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --shell:clamp(20px,5vw,72px);
+}
+html[lang="he"]{--display:'Heebo',system-ui,sans-serif;--body:'Heebo',system-ui,sans-serif}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth}
+/* The bar is fixed, so an in page link would otherwise park the heading it
+   was aiming at underneath it. This reserves the bar height plus air. */
+html{scroll-padding-top:92px}
+@media (max-width:620px){html{scroll-padding-top:78px}}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.06;letter-spacing:-.022em;margin:0}
+html[lang="he"] h1,html[lang="he"] h2,html[lang="he"] h3{letter-spacing:0;line-height:1.16}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;inset-inline-start:-9999px;top:0;z-index:200;background:var(--accent);
+  color:#fff;padding:12px 20px;font-weight:600;border-radius:0 0 8px 0}
+.skip:focus{inset-inline-start:0}
+
+.env{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% -10%,rgba(53,200,220,.13) 0%,rgba(237,242,247,0) 58%),
+             radial-gradient(90% 60% at 6% 104%,rgba(18,97,140,.10) 0%,rgba(237,242,247,0) 60%),var(--canvas)}
+.env::after{content:"";position:absolute;inset:-20%;opacity:.55;
+  background:radial-gradient(1.4px 1.4px at 20% 30%,rgba(18,97,140,.16) 50%,transparent 51%),
+             radial-gradient(1.4px 1.4px at 70% 60%,rgba(31,162,183,.13) 50%,transparent 51%),
+             radial-gradient(1.4px 1.4px at 45% 85%,rgba(18,97,140,.12) 50%,transparent 51%);
+  background-size:340px 340px,470px 470px,610px 610px;animation:drift 96s linear infinite;animation-delay:-24s}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-340px,-170px,0)}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;inset-inline:0;z-index:60;display:flex;align-items:center;gap:26px;
+  padding:14px var(--shell);
+  background:linear-gradient(180deg,rgba(237,242,247,.95) 0%,rgba(237,242,247,.7) 58%,rgba(237,242,247,0) 100%);
+  backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+.brand svg{width:26px;height:26px;display:block}
+.brand span{font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--ink)}
+.nav-links{display:flex;gap:24px;margin-inline-start:auto;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;transition:color .3s var(--ease)}
+html[lang="he"] .nav-links a{font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:14px;padding:11px 22px;
+  border-radius:7px;text-decoration:none;border:1px solid transparent;
+  transition:background .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-primary{background:var(--accent);color:#fff;font-weight:600;box-shadow:0 1px 2px rgba(12,33,49,.12)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 6px 18px rgba(18,97,140,.28)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.72)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.nav-links a.btn{font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none}
+.nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:#fff;font-weight:600}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+@media (max-width:1040px){.nav-links a:not(.btn):not(.langlink){display:none}}
+
+.lang{display:inline-flex;border:1px solid var(--line-strong);border-radius:7px;overflow:hidden;
+  background:rgba(255,255,255,.75);flex:0 0 auto}
+.lang b{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.1em;padding:8px 12px;
+  cursor:pointer;color:var(--ink-2);background:none;border:0;transition:background .3s var(--ease),color .3s var(--ease)}
+.lang b[data-lang="he"]{font-family:'Heebo',var(--body);font-size:13.5px;letter-spacing:0;padding:7px 13px}
+.lang b + b{border-inline-start:1px solid var(--line)}
+.lang b:hover{color:var(--ink)}
+.lang b[aria-current="page"]{background:var(--accent);color:#fff}
+.lang .langlink{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.1em;
+  padding:8px 12px;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;
+  border-inline-start:1px solid var(--line);transition:color .3s var(--ease)}
+.lang .langlink[hreflang="he"]{font-family:'Heebo',var(--body);font-size:13.5px;letter-spacing:0;padding:7px 13px}
+.lang .langlink:hover{color:var(--ink)}
+@media (pointer:coarse){.lang .langlink{min-height:44px}}
+@media (pointer:coarse){.lang b{min-height:44px;display:inline-flex;align-items:center}}
+
+/* ============================================================
+   THE X-RAY HERO  (the one interactive moment)
+   ============================================================ */
+/* The hero is a sticky stage inside a taller track, so scrolling the track is
+   what pulls the buried services up. Same idiom as the capture film below. */
+.xray-track{position:relative;height:200svh;z-index:1}
+.xray{position:sticky;top:0;height:100svh;min-height:100svh;display:flex;align-items:flex-end;
+  padding:118px var(--shell) clamp(34px,6vh,64px);overflow:hidden;z-index:1}
+@media (prefers-reduced-motion:reduce){.xray-track{height:auto}.xray{position:relative}}
+.xr-media{position:absolute;inset:0;z-index:-2}
+/* The hero veil sits above the whole media layer, so raising its strength for
+   the phone also erased the services drawn on the tablet. This scrim lives
+   inside the media layer: above the photograph, below the AR overlay. The
+   picture can be dimmed as hard as the type needs and the located services
+   still read at full strength. */
+.xr-media::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
+/* the photo and the AR layer crop identically: object-fit cover + slice */
+.xr-photo{width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(calc(1 + .06*var(--xr,0))) saturate(calc(1 - .06*var(--xr,0)))}
+.xr-ar{position:absolute;inset:0;width:100%;height:100%}
+/* In RTL the copy column would land on the worker and the tablet. Earlier this
+   was solved by mirroring the photo and the AR layer, but a mirrored SVG breaks
+   its own text: the platform wordmark ended up reversed and clipped. So the
+   photo is never mirrored. The copy column moves to the free left side instead,
+   and the Hebrew inside it stays right aligned. */
+html[dir="rtl"] .xray{justify-content:flex-end}
+/* SVG text cannot be un-mirrored cleanly inside a flipped group, so the
+   on-glass callout is hidden in RTL. The coordinate bar below carries the same
+   X/Y/Z, so nothing is lost. */
+html[dir="rtl"] .xr-ar .coord{display:none}
+/* the veil earns the type its contrast on the copy side only, so the worker,
+   the tablet and the site stay crisp on the other side */
+.xr-veil{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(237,242,247,.7) 0%,rgba(237,242,247,.05) 20%,rgba(237,242,247,0) 56%,rgba(237,242,247,.3) 100%)}
+/* the copy column sits on the left in BOTH directions, so this gradient must
+   not follow --grad-dir: flipping it washed the worker out in Hebrew */
+.xr-veil::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(238,243,248,.95) 0%,rgba(238,243,248,.82) 26%,rgba(238,243,248,.34) 46%,rgba(238,243,248,0) 62%)}
+
+/* the AR network, revealed by the hold */
+/* The platform chrome is ALWAYS on: a blank grey slab at rest looks broken.
+   Only the buried services wait for the press. */
+.xr-ar .run{fill:none;stroke-linecap:round;stroke-linejoin:round;
+  opacity:var(--xr,0);
+  stroke-dasharray:var(--len,1400);
+  stroke-dashoffset:calc(var(--len,1400) * (1 - var(--xr,0)))}
+.xr-ar .halo{fill:none;stroke-linecap:round;opacity:calc(var(--xr,0)*.34);filter:blur(7px)}
+.xr-ar .cone{fill:#35C8DC;opacity:calc(var(--xr,0)*.16)}
+.xr-ar .w{stroke:var(--u-water)} .xr-ar .e{stroke:var(--u-elec)}
+.xr-ar .g{stroke:var(--u-gas)}   .xr-ar .t{stroke:var(--u-tel)}
+.xr-ar .nd{opacity:calc(var(--xr,0)*var(--nd,1))}
+.xr-ar .screen-fill{opacity:.94}
+/* the platform is showing a real capture, not an empty canvas, from the first frame */
+.xr-ar .uiscene{opacity:.92;filter:saturate(.95) brightness(.96)}
+.xr-ar .sweep{opacity:calc(var(--xr,0)*.85)}
+.xr-ar .grid{stroke:#35C8DC;stroke-width:1.5;opacity:calc(var(--xr,0)*.32)}
+/* the survey grid and the X/Y/Z readouts: the point is that this is anchored,
+   not floating, so they fade in with the reveal and stay legible */
+.xr-ar .gridfloor{stroke:#12618C;stroke-width:2;fill:none;opacity:calc(var(--xr,0)*.22)}
+.xr-ar .coord{opacity:calc(var(--xr,0)*var(--cd,1))}
+/* deliberately small: this is a UI label inside a screen, not a headline */
+.xr-ar .coord .cl{font-family:'IBM Plex Mono',monospace;font-size:17px;fill:#9FE3F0;font-weight:500}
+.xr-ar .ui{opacity:.96}
+.xr-ar .uilogo,.xr-ar .uichip,.xr-ar .uidot{opacity:1}
+/* SVG text sits in a fixed coordinate layout, so it must anchor predictably.
+   Inheriting direction:rtl made the wordmark grow LEFT from its anchor, out of
+   the screen's clip path and on top of the logo. Hebrew glyphs still render
+   correctly under direction:ltr; only the anchor growth changes. */
+.xr-ar text{direction:ltr}
+.xr-ar .uiword{font-family:'Archivo',sans-serif;font-weight:700;font-size:26px;fill:#EAF6FA;letter-spacing:.14em}
+.xr-ar .uiexport rect{fill:rgba(8,24,36,.82);stroke:rgba(130,200,224,.3);stroke-width:1.6}
+.xr-ar .uidwg{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;fill:#35C8DC;letter-spacing:.07em}
+.xr-ar .uiexp{font-family:'IBM Plex Mono',monospace;font-size:18px;fill:#CFF3FA}
+html[lang="he"] .xr-ar .uiexp{font-family:'Heebo',sans-serif;font-size:19px}
+.xr-ar .uistat{font-family:'IBM Plex Mono',monospace;font-size:16px;fill:#6E93AC}
+html[lang="he"] .xr-ar .uistat,html[lang="he"] .xr-ar .uihint{font-family:'Heebo',sans-serif;font-size:18px}
+.xr-ar .uihint{font-family:'IBM Plex Mono',monospace;font-size:17px;fill:#8FB6CC;
+  opacity:calc(1 - var(--xr,0))}
+
+/* 40vw keeps the copy clear of the tablet at every crop ratio. At 1280x800 the
+   cover-crop slides the tablet's dark bezel left into a wider column and the
+   headline runs straight into it. */
+.xr-copy{position:relative;z-index:2;max-width:min(560px,36vw)}
+@media (max-width:900px){.xr-copy{max-width:92vw}}
+/* On a phone the copy column spans the full width, so it lands straight on the
+   worker and his tablet. The side veil cannot help there because the problem is
+   vertical, not horizontal: a bottom-up field carries the type and leaves the
+   capture legible above it. */
+@media (max-width:720px){
+  /* THE PHONE HERO
+     At 390px the copy cannot share space with the photograph: it lands on the
+     worker and his tablet whatever a scrim does, and pushing the scrim hard
+     enough to carry the type also erased the services drawn on the glass. So
+     the hero stops being one layered stage and becomes two blocks, capture
+     above and words below. With no track to scroll, the reveal script sees a
+     span of zero and simply pins the services on, which is what a visitor
+     should see on a phone anyway. */
+  .xray-track{height:auto}
+  .xray{position:relative;display:block;height:auto;min-height:0;
+    padding:70px 0 32px;overflow:visible}
+  .xr-media{position:relative;inset:auto;z-index:0;height:50svh;min-height:290px}
+  .xr-media::before{background:linear-gradient(180deg,
+    rgba(237,242,247,.34) 0%,rgba(237,242,247,0) 30%,rgba(237,242,247,0) 70%,rgba(237,242,247,.3) 100%)}
+  .xr-veil{display:none}
+  .xr-copy{max-width:none;padding:22px var(--shell) 0}
+  .xr-copy::before{display:none}
+  .xray h1{font-size:clamp(30px,8.6vw,42px);max-width:12ch}
+  .xr-lead{margin-top:12px;font-size:17px;max-width:none}
+  .xr-sub{margin-top:10px;font-size:14.5px;max-width:none}
+  /* nothing is hidden behind a scroll here, so the prompt would be a lie */
+  html .scrollcue{display:none}
+  .ukey{margin-top:18px}
+  html .ukey{display:grid;grid-template-columns:1fr 1fr;justify-items:start}
+  html .ukey li{width:fit-content;padding:5px 10px}
+  html[lang="he"] .ukey li{font-size:12px}
+}
+/* A local scrim that travels WITH the copy. The fixed veil cannot: at some
+   viewport ratios the cover-crop slides a dark part of the photo under the
+   headline, and a fixed gradient has no idea. Measured 2.36:1 before this. */
+.xr-copy::before{
+  content:"";position:absolute;inset:-14% -4% -12% -26%;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 76% 74% at 32% 50%,
+    rgba(240,245,250,.95) 0%,rgba(240,245,250,.82) 44%,rgba(240,245,250,0) 78%);
+}
+/* squarer viewports crop the photo hard and drag the worker left, so the copy
+   needs a deeper local field there. Measured 2.86:1 at 1024x768 without this. */
+@media (max-width:1200px){
+  .xr-copy::before{inset:-18% -6% -16% -36%;
+    background:radial-gradient(ellipse 86% 84% at 34% 50%,
+      rgba(240,245,250,.99) 0%,rgba(240,245,250,.95) 48%,rgba(240,245,250,.6) 72%,rgba(240,245,250,0) 88%)}
+}
+.xr-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:16px;font-weight:500;text-shadow:var(--tshadow)}
+html[lang="he"] .xr-kicker{font-family:var(--body);letter-spacing:.06em;text-transform:none;font-size:13.5px}
+.xray h1{font-size:clamp(36px,5.6vw,68px);max-width:14ch;text-shadow:var(--tshadow)}
+.xr-lead{margin-top:16px;max-width:36ch;font-family:var(--display);font-weight:600;
+  font-size:clamp(17px,1.65vw,22px);color:var(--ink);line-height:1.32;text-shadow:var(--tshadow)}
+.xr-sub{margin-top:12px;max-width:46ch;font-size:clamp(15px,1.25vw,17px);color:var(--ink-2);
+  text-shadow:var(--tshadow)}
+
+/* The scroll itself is the interaction, so this is a read-out, not a control:
+   the rail fills as the buried services come up. */
+/* WhatsApp sits beside the primary action, never instead of it: the form is
+   still the route that reaches the engineering inbox with the site details. */
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:#FFFFFF;color:#128C4A;
+  border:1px solid rgba(18,140,74,.32);font-weight:600;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease),color .3s var(--ease)}
+.btn-wa svg{width:19px;height:19px;flex:0 0 19px;display:block}
+.btn-wa:hover{border-color:#128C4A;color:#0E7038;box-shadow:0 6px 18px -10px rgba(18,140,74,.55)}
+.btn-wa.icon{padding-inline:12px;gap:0}
+.nav-links a.btn-wa{color:#128C4A}
+.submitrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* COOKIE CONSENT
+   Above everything, because it is a decision the visitor is being asked to
+   make. It reads as part of the site rather than a bolted on legal strip:
+   same panel, same rules, same accent on the primary action. */
+.cc{position:fixed;inset-inline:0;bottom:0;z-index:80;padding:14px;
+  transform:translateY(110%);transition:transform .5s var(--ease)}
+.cc.show{transform:translateY(0)}
+.cc-in{max-width:1180px;margin-inline:auto;display:flex;align-items:center;gap:22px;
+  background:rgba(247,250,252,.97);border:1px solid var(--line-strong);border-radius:14px;
+  padding:16px 20px;box-shadow:0 18px 50px -22px rgba(12,33,49,.45);backdrop-filter:blur(10px)}
+.cc-txt{flex:1 1 auto;min-width:0}
+.cc-txt b{display:block;font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--ink)}
+.cc-txt span{display:block;margin-top:3px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.cc-act{flex:0 0 auto;display:flex;gap:10px}
+.cc-act .btn{font-size:14px;padding:11px 20px;white-space:nowrap;cursor:pointer}
+@media (max-width:760px){
+  .cc{padding:10px}
+  .cc-in{flex-direction:column;align-items:stretch;gap:14px;padding:16px}
+  .cc-act{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .cc-act .btn{width:100%;text-align:center;padding:12px 10px;font-size:13.5px}
+}
+@media (prefers-reduced-motion:reduce){.cc{transition:none}}
+
+/* THE LANGUAGE SWITCHER ON A TOUCH SCREEN
+   At roughly 28px tall this was below every touch target guideline, which is
+   why it felt unresponsive on a phone rather than broken. touch-action stops
+   the browser waiting to see whether a tap is the start of a double tap. */
+@media (pointer:coarse){
+  .lang b,.lang .langlink{min-height:42px;display:inline-flex;align-items:center;
+    justify-content:center;touch-action:manipulation}
+  .nav-links a.btn,.cc-act .btn{touch-action:manipulation}
+}
+.footnum{font-family:'IBM Plex Mono',monospace;direction:ltr;unicode-bidi:isolate;
+  margin-inline-start:16px}
+.directlist{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
+.directlist a{font-family:var(--display);font-weight:600;font-size:17px;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid rgba(18,97,140,.34);transition:border-color .3s var(--ease)}
+.directlist a:hover{border-bottom-color:var(--accent)}
+/* a phone number is a Latin run whatever the paragraph around it is doing */
+.directlist a.num{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.02em;
+  direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .directlist{justify-items:end}
+/* Nothing here is decorative: this panel is what stands between a failed
+   request and a lost enquiry. It keeps the visitor's own words on screen and
+   gives them one button to send again. */
+.formerr{margin-top:18px;padding:18px 20px;border-radius:12px;
+  background:rgba(217,45,32,.06);border:1px solid rgba(217,45,32,.28)}
+.formerr b{display:block;font-family:var(--display);font-weight:600;font-size:15.5px;color:#9B1C13}
+.formerr span{display:block;margin-top:5px;font-size:14px;color:var(--ink-2);line-height:1.5}
+.formwhy{display:block;margin-top:9px;font-size:13.5px;font-style:normal;color:#9B1C13;
+  background:rgba(217,45,32,.09);border-radius:7px;padding:8px 11px;direction:ltr;text-align:start}
+html[dir="rtl"] .formwhy{text-align:right}
+.formerr-act{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.formerr .btn{font-size:14px;padding:10px 18px}
+form.sending button[type="submit"]{opacity:.6;pointer-events:none}
+/* WhatsApp stays on the phone: that is where a contractor standing on a site
+   actually reaches for it. Only the padding tightens. */
+@media (max-width:900px){.nav-links a.btn-wa.icon{padding-inline:10px}}
+/* THE PHONE BAR
+   Three controls and a wordmark have to share 390px. Nothing here shrank them,
+   so the primary button broke onto two lines and the bar grew to roughly 170px,
+   which then sat on top of whatever section the visitor scrolled to. */
+@media (max-width:620px){
+  .nav{gap:9px;padding:9px 14px}
+  .nav-links{gap:7px}
+  .btn{padding:10px 14px;font-size:13.5px;white-space:nowrap}
+  .nav-links a.btn-wa.icon{padding-inline:10px}
+  .btn-wa svg{width:17px;height:17px;flex-basis:17px}
+  .brand svg{width:22px;height:22px}
+  .brand span{font-size:15px;letter-spacing:.1em}
+  .lang b,.lang .langlink{padding:7px 9px;font-size:11px}
+  .lang b[data-lang="he"]{padding:6px 9px;font-size:12.5px}
+}
+@media (max-width:380px){
+  .brand span{display:none}
+  .nav{gap:7px}
+}
+
+.scrollcue{margin-top:30px;display:flex;align-items:center;gap:14px;
+  font-size:14.5px;color:var(--ink-2);text-shadow:var(--tshadow);
+  opacity:calc(1 - .82*var(--xr,0))}
+.sc-rail{flex:0 0 3px;width:3px;height:42px;border-radius:3px;position:relative;
+  background:rgba(120,150,175,.35);overflow:hidden}
+.sc-rail i{position:absolute;inset:0;background:var(--accent);
+  transform:scaleY(var(--xr,0));transform-origin:top}
+
+.ukey{margin-top:24px;display:flex;flex-wrap:wrap;gap:9px 18px;padding:0;list-style:none}
+.ukey li{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+  background:rgba(255,255,255,.78);border:1px solid var(--line-strong);border-radius:20px;
+  padding:6px 13px;backdrop-filter:blur(6px);
+  opacity:calc(.42 + .58*var(--xr,0));transition:opacity .2s linear}
+html[lang="he"] .ukey li{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:13px}
+.ukey i{width:14px;height:4px;border-radius:2px;display:block}
+
+/* the X/Y/Z readout: an HTML element, not SVG, so it is always inside the
+   viewport, always legible, and always translatable */
+/* quiet by design: a small technical footnote, not a second headline */
+.coordbar{margin-top:18px;display:inline-block;position:relative;background:rgba(255,255,255,.72);
+  border:1px solid var(--line);border-radius:9px;padding:9px 13px;backdrop-filter:blur(6px)}
+.cbl{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:500}
+html[lang="he"] .cbl{font-family:var(--body);letter-spacing:.04em;text-transform:none;font-size:12.5px}
+/* coordinates are LTR numeric data: without this the bidi algorithm reorders
+   "219 480.24" into "480.24 219" in Hebrew */
+.cbrow{margin-top:9px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;direction:ltr}
+html[dir="rtl"] .cbrow{justify-content:flex-end}
+.cbrow b{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;
+  font-weight:600;color:var(--ink-2)}
+.cbrow b i{width:7px;height:7px;border-radius:2px;display:block}
+.cbrow span{font-family:var(--mono);font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums}
+.cbn{display:block;margin-top:7px;font-size:10.5px;color:var(--ink-2);opacity:.85}
+html[lang="he"] .cbn{font-size:11.5px}
+@media (max-width:520px){.coordbar{padding:12px 14px}.cbrow{gap:5px 12px}.cbrow span{font-size:13px}}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+main{position:relative;z-index:1}
+.sec{padding:clamp(84px,11vh,142px) var(--shell);position:relative}
+.sec--tint{background:linear-gradient(180deg,var(--canvas-2) 0%,rgba(226,234,243,.4) 100%)}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--accent);
+  display:flex;align-items:center;gap:14px;margin-bottom:20px;font-weight:500}
+html[lang="he"] .sec-num{font-family:var(--body);letter-spacing:.06em}
+.sec-num::after{content:"";height:1px;flex:1;max-width:120px;
+  background:linear-gradient(to var(--grad-dir,right),rgba(18,97,140,.5),transparent)}
+html[dir="rtl"]{--grad-dir:left}
+.sec h2{font-size:clamp(28px,3.6vw,50px);max-width:19ch}
+.lede{margin-top:20px;max-width:58ch;color:var(--ink-2);font-size:clamp(16px,1.3vw,18px)}
+.rule{width:100%;height:1px;border:0;margin:0;background:none;position:relative}
+.rule svg{display:block;width:100%;height:1px;overflow:visible}
+.rule line{stroke:var(--line-strong);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset 1.4s var(--ease-out)}
+.rule.in line{stroke-dashoffset:0}
+.rise{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.rise.in{opacity:1;transform:none}
+
+/* --- stats --- */
+.ssrc{margin-top:10px;font-family:var(--mono);font-size:10.5px;color:var(--ink-2);opacity:.8}
+html[lang="he"] .ssrc{font-family:var(--body);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:52px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stat{background:var(--panel);padding:30px 26px;position:relative;overflow:hidden}
+.stat .n{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,42px);
+  letter-spacing:-.02em;color:var(--accent);line-height:1}
+/* A figure like the shekel sign followed by digits is a Latin run inside an
+   RTL paragraph, so bidi was dragging the currency mark to the wrong end and
+   rendering it as a stray letter. Isolating the run fixes the order. The word
+   variant is excluded because its content really is Hebrew. */
+.stat .n:not(.word){direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .stat .n:not(.word){text-align:right}
+.stat .n.word{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.01em}
+.stat .l{margin-top:11px;font-size:14px;color:var(--ink-2);max-width:26ch}
+.stat::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;
+  background:linear-gradient(to var(--grad-dir,right),var(--accent),rgba(18,97,140,0));
+  transform:scaleX(0);transform-origin:var(--grad-dir,left);transition:transform 1s var(--ease-out)}
+html[dir="rtl"] .stat::after{transform-origin:right}
+.stats.in .stat::after{transform:scaleX(1)}
+.stats.in .stat:nth-child(2)::after{transition-delay:.12s}
+.stats.in .stat:nth-child(3)::after{transition-delay:.24s}
+.src{margin-top:18px;font-family:var(--mono);font-size:11.5px;color:var(--ink-2);opacity:.8}
+html[lang="he"] .src{font-family:var(--body);font-size:13px}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.stats{grid-template-columns:1fr}}
+
+/* ============================================================
+   THE 3-STEP FUSION PIPELINE
+   ============================================================ */
+.stepnum{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.stepnum b{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--accent);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:18px;display:grid;place-items:center}
+.stepnum span{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+html[lang="he"] .stepnum span{font-family:var(--body);letter-spacing:.05em;text-transform:none;font-size:14px}
+.stepclaim{margin-top:22px;font-family:var(--display);font-weight:600;font-size:clamp(18px,2vw,24px);
+  color:var(--ink);max-width:34ch;line-height:1.3}
+
+/* STEP 1 : the scrubbed capture film */
+.capture{position:relative;height:680vh;z-index:1;margin-top:44px}
+.cap-stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas-2)}
+.cap-stage video,.cap-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap-poster{background-size:cover;background-position:center;transition:opacity .8s var(--ease)}
+.cap-stage video{opacity:0;transition:opacity .9s var(--ease);will-change:transform;transform:translateZ(0)}
+.cap-stage.video-ready video{opacity:1}
+.cap-stage.video-ready .cap-poster{opacity:0}
+.cap-stage.video-failed .cap-poster{opacity:1}
+.cap-stage.video-failed video{display:none}
+.cap-scrim{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 120% 92% at 50% 45%,rgba(237,242,247,0) 34%,rgba(237,242,247,.5) 100%)}
+.cap-vig{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(237,242,247,.88) 0%,rgba(237,242,247,0) 22%,rgba(237,242,247,0) 72%,rgba(237,242,247,.74) 100%)}
+.band{position:absolute;top:50%;inset-inline-start:var(--shell);transform:translateY(-50%);
+  width:min(620px,48vw);opacity:0;pointer-events:none;text-shadow:var(--tshadow);z-index:3}
+.band::before{content:"";position:absolute;inset:-62% -44% -62% -74%;pointer-events:none;z-index:-1;
+  opacity:calc(.25 + .75*var(--k,1));
+  background:radial-gradient(ellipse var(--sw,88%) var(--sh,70%) at 42% 50%,
+    rgba(240,245,249,var(--sa,.9)) 0%,rgba(240,245,249,calc(var(--sa,.9)*.68)) 46%,rgba(240,245,249,0) 78%)}
+html[dir="rtl"] .band::before{background:radial-gradient(ellipse var(--sw,88%) var(--sh,70%) at 58% 50%,
+    rgba(240,245,249,var(--sa,.9)) 0%,rgba(240,245,249,calc(var(--sa,.9)*.68)) 46%,rgba(240,245,249,0) 78%)}
+.band .sensor{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:14px;font-weight:500}
+html[lang="he"] .band .sensor{font-family:var(--body);letter-spacing:.05em;text-transform:none;font-size:13.5px}
+.band h3{font-size:clamp(26px,3.9vw,50px);max-width:16ch;color:var(--ink)}
+.band p{margin-top:14px;max-width:38ch;color:var(--ink-2);font-size:clamp(15px,1.2vw,17px)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+.e-grid .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateX(calc((1 - var(--kc)) * var(--jx,0px)))}
+.e-scatter .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px)))
+            rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+.e-punch .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);
+  --ks:clamp(0,(var(--k,0) - var(--th,0) - var(--sd,.1))*var(--ss,3.2),1);opacity:var(--kc);
+  transform:scale(calc(.62 + (.38 + var(--ov,.12))*var(--kc) - var(--ov,.12)*var(--ks)))}
+.e-punch .w.em{--ov:.24;--sd:.16;--ss:2.6;color:var(--accent)}
+.e-blur .stack{position:relative;display:block}
+.e-blur .soft{filter:blur(11px);opacity:calc(1 - var(--k,0))}
+.e-blur .sharp{position:absolute;inset:0;opacity:var(--k,0)}
+.e-drift .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc)) * -26px))}
+.ladder{position:absolute;inset-inline-end:var(--shell);top:50%;transform:translateY(-50%);
+  z-index:3;pointer-events:none;display:flex;gap:16px;align-items:stretch}
+html[dir="rtl"] .ladder{flex-direction:row-reverse}
+.ladder-rail{position:relative;width:1px;height:min(44vh,360px);
+  background:linear-gradient(180deg,rgba(18,97,140,.12),rgba(18,97,140,.5),rgba(18,97,140,.3))}
+.ladder-head{position:absolute;inset-inline-start:-4px;width:9px;height:9px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px rgba(18,97,140,.16);top:0;will-change:transform}
+.ladder-tick{position:absolute;inset-inline-start:-6px;width:13px;height:1px;background:rgba(18,97,140,.3)}
+.ladder-body{display:flex;flex-direction:column;justify-content:space-between;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+html[lang="he"] .ladder-body{font-family:var(--body);letter-spacing:0;font-size:12px}
+.ladder-layer{color:var(--ink-2);text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;
+  font-weight:500;align-self:flex-end;background:rgba(255,255,255,.76);
+  border:1px solid rgba(166,190,210,.6);border-radius:7px;padding:5px 10px;backdrop-filter:blur(8px);
+  transition:color .5s var(--ease),background .5s var(--ease),border-color .5s var(--ease)}
+html[lang="he"] .ladder-layer{text-transform:none}
+.ladder-layer::before{content:"";width:5px;height:5px;border-radius:1px;background:currentColor;
+  opacity:.55;transform:rotate(45deg)}
+.ladder-layer.on{color:var(--accent);background:rgba(255,255,255,.92);border-color:rgba(18,97,140,.45)}
+.readout{position:absolute;inset-inline-end:0;bottom:-40px;font-family:var(--mono);font-size:12px;
+  color:var(--ink-2);white-space:nowrap;background:rgba(255,255,255,.75);
+  border:1px solid var(--line-strong);border-radius:8px;padding:5px 11px;backdrop-filter:blur(10px)}
+.readout b{color:var(--accent);font-weight:600}
+@media (max-height:620px){.ladder{display:none}}
+@media (max-width:1080px){.ladder{display:none}}
+/* the static capture panel, for phones and reduced motion */
+.cap-static{display:none;position:relative;border-radius:16px;overflow:hidden;margin-top:34px;
+  border:1px solid var(--line)}
+/* A phone cannot scrub a video against the scroll wheel, so the film plays
+   itself there instead of disappearing. Muted, inline and looping is the
+   combination every mobile browser allows to start without a tap, and the
+   source is only fetched once the panel is actually near the viewport. */
+.cap-static .capfilm{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#0E2A3D}
+.capbeats{list-style:none;margin:0;padding:18px 20px;display:grid;gap:9px;
+  background:var(--panel);border-top:1px solid var(--line);counter-reset:cb}
+.capbeats li{counter-increment:cb;position:relative;padding-inline-start:30px;
+  font-size:14px;line-height:1.45;color:var(--ink)}
+.capbeats li::before{content:"0" counter(cb);position:absolute;inset-inline-start:0;top:1px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent);font-weight:600}
+.cap-static .list{padding:24px;background:var(--panel);display:grid;gap:12px}
+
+
+.techp{margin-top:12px;max-width:62ch;color:var(--ink-2);font-size:16px}
+.twocol{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+@media (max-width:820px){.twocol{grid-template-columns:1fr;gap:32px}}
+.colh{font-size:clamp(18px,1.9vw,22px);margin-bottom:16px}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{position:relative;padding-inline-start:30px;padding-block:9px;font-size:15.5px;
+  color:var(--ink);border-top:1px solid var(--line)}
+.ticks li:first-child{border-top:0}
+.ticks li::before{content:"";position:absolute;inset-inline-start:2px;top:17px;width:9px;height:9px;
+  border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+.svcgrid{margin-top:40px;list-style:none;padding:0;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:12px}
+.svcgrid li{background:var(--panel);border:1px solid var(--line);border-radius:11px;
+  padding:16px 18px;font-size:15px;color:var(--ink);position:relative;padding-inline-start:40px}
+.svcgrid li::before{content:"";position:absolute;inset-inline-start:16px;top:22px;width:8px;height:8px;
+  border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+@media (max-width:900px){.svcgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.svcgrid{grid-template-columns:1fr}}
+.prjgrid{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.prjgrid{grid-template-columns:1fr}}
+.prj{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.prj.placeholder{border-style:dashed;border-color:var(--line-strong);background:transparent}
+.prjimg{aspect-ratio:16/10;background:var(--canvas-2);display:grid;place-items:center;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+html[lang="he"] .prjimg{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:13px}
+.prjtag{display:inline-block;margin:16px 18px 0;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  border:1px solid rgba(18,97,140,.3);border-radius:20px;padding:4px 10px}
+html[lang="he"] .prjtag{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:12px}
+.prj h3{margin:12px 18px 0;font-size:19px}
+.prj ul{margin:12px 18px 20px;padding-inline-start:18px;color:var(--ink-2);font-size:14px;line-height:1.7}
+.bimline{margin-top:24px;max-width:62ch;background:var(--accent-tint);border:1px solid rgba(18,97,140,.2);
+  border-radius:11px;padding:16px 20px}
+.bimline b{display:block;font-family:var(--display);font-weight:700;font-size:15px;color:var(--accent);margin-bottom:6px}
+.bimline span{display:block;font-size:15px;color:var(--ink-2);line-height:1.6}
+.rowlabel{margin-top:44px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);font-weight:500}
+html[lang="he"] .rowlabel{font-family:var(--body);letter-spacing:.04em;text-transform:none;font-size:14px}
+.sensors{margin-top:16px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.sensor-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 18px;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .7s var(--ease-out),transform .7s var(--ease-out),border-color .4s var(--ease)}
+.sensors.in .sensor-card{opacity:1;transform:none}
+.sensors.in .sensor-card:nth-child(2){transition-delay:.07s}
+.sensors.in .sensor-card:nth-child(3){transition-delay:.14s}
+.sensors.in .sensor-card:nth-child(4){transition-delay:.21s}
+.sensors.in .sensor-card:nth-child(5){transition-delay:.28s}
+.sensors.done .sensor-card{transition-delay:0s !important}
+.sensor-card:hover{border-color:var(--line-strong)}
+.sensor-card svg{height:32px;width:auto;display:block;margin-bottom:13px}
+.sensor-card .abbr{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);font-weight:500}
+.sensor-card b{display:block;font-family:var(--display);font-weight:600;font-size:15px;margin-top:6px;
+  color:var(--ink);line-height:1.25}
+.sensor-card span{display:block;margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.5}
+@media (max-width:1080px){.sensors{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:680px){.sensors{grid-template-columns:1fr}}
+
+/* STEP 2 : the fusion engine diagram */
+.fusion{margin-top:44px;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(24px,3.4vw,44px);overflow:hidden}
+/* Built in HTML, not SVG text. SVG <text> cannot be laid out for RTL without
+   hand-mirroring every anchor, and in Hebrew the labels landed on the icons. */
+.fx{display:grid;grid-template-columns:minmax(0,.92fr) auto minmax(0,.95fr) auto minmax(0,1.3fr);
+  gap:clamp(12px,2vw,26px);align-items:center}
+.fx-ins{display:grid;gap:12px}
+.fx-card{display:flex;align-items:center;gap:14px;background:var(--panel-2);
+  border:1px solid var(--line-strong);border-radius:11px;padding:14px 16px}
+.fx-card svg{width:30px;height:auto;flex:0 0 30px}
+.fx-card b{display:block;font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);line-height:1.25}
+.fx-card span{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-2)}
+.fx-arrow{display:flex;flex-direction:column;gap:16px;align-items:center}
+.fx-arrow span{width:34px;height:2px;background:var(--accent);position:relative;opacity:.75}
+.fx-arrow span::after{content:"";position:absolute;inset-inline-end:-1px;top:-4px;
+  border:5px solid transparent;border-inline-start-color:var(--accent)}
+.fx-arrow.one span{width:44px}
+.fx-mid{text-align:center}
+.fx-procs{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:5px}
+.fx-procs li{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+html[lang="he"] .fx-procs li{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:12.5px}
+.fx-engine{width:clamp(140px,13vw,180px);aspect-ratio:1;margin-inline:auto;border-radius:50%;
+  background:var(--deep);display:grid;place-content:center;text-align:center;
+  box-shadow:0 0 0 8px rgba(53,200,220,.16)}
+.fx-engine b{display:block;font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);
+  color:#fff;letter-spacing:.08em}
+.fx-engine span{display:block;margin-top:4px;font-size:clamp(11px,1.05vw,13px);color:#35C8DC;font-weight:600}
+.fx-out{text-align:center}
+.fx-outl{display:block;margin-bottom:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent)}
+html[lang="he"] .fx-outl{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:13px}
+.fx-out svg{width:100%;height:auto;display:block}
+@media (max-width:1000px){
+  .fx{grid-template-columns:1fr;gap:22px}
+  .fx-arrow{flex-direction:row;justify-content:center}
+  .fx-arrow span{transform:rotate(90deg)}
+}
+/* deliberately NOT a blanket ".fusion svg" rule: it sits after the card rules
+   and blew the little icons up to full width */
+.fusion .fx-lab{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;fill:var(--ink);letter-spacing:0}
+.fusion .fx-sub{font-family:var(--mono);font-size:11.5px;fill:var(--ink-2);letter-spacing:.02em}
+.fusion .fx-cap{font-family:var(--mono);font-size:12px;fill:var(--accent);letter-spacing:.1em;font-weight:500}
+.fusion .fx-eng{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;fill:#fff;letter-spacing:.06em}
+.fusion .fx-stage{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;fill:var(--ink)}
+.fusion .fx-box{fill:var(--panel-2);stroke:var(--line-strong);stroke-width:1.4}
+.fusion .fx-flow{fill:none;stroke:var(--accent);stroke-width:1.8;marker-end:url(#fxArrow)}
+.fusion .fx-dash{fill:none;stroke:var(--line-strong);stroke-width:1.2;stroke-dasharray:4 5}
+.fusion .fx-engine{fill:var(--deep)}
+.fusion .fx-ring{fill:none;stroke:var(--cyan-bright);stroke-width:2;opacity:.5;
+  animation:fxpulse 4.5s var(--ease) infinite}
+@keyframes fxpulse{0%,100%{opacity:.22;transform:scale(1)}50%{opacity:.6;transform:scale(1.06)}}
+.fusion .flowline{stroke-dasharray:6 8;animation:fxflow 2.4s linear infinite}
+@keyframes fxflow{to{stroke-dashoffset:-28}}
+.stages{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.stages span{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);
+  background:var(--accent-tint);border:1px solid rgba(18,97,140,.2);border-radius:8px;padding:9px 18px}
+.stages i{color:var(--accent);font-style:normal;font-weight:700}
+html[dir="rtl"] .stages i{transform:scaleX(-1);display:inline-block}
+
+/* STEP 3 : devices */
+.devices{margin-top:44px;position:relative;display:grid;grid-template-columns:1.18fr .82fr;
+  gap:clamp(22px,4vw,58px);align-items:center}
+.screen{position:relative;border-radius:14px;background:var(--deep);border:1px solid var(--line-strong);
+  box-shadow:0 22px 60px -24px rgba(12,33,49,.45);overflow:hidden}
+.screen .bar{display:flex;align-items:center;gap:7px;padding:9px 13px;background:#132F44;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.screen .bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);display:block}
+.barlogo{width:19px;height:19px;flex:0 0 19px;display:block}
+.barword{font-family:'Archivo',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.13em;color:#EAF6FA}
+.screen .bar span{margin-inline-start:auto;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+.screen .view{position:relative;aspect-ratio:16/10;background-size:cover;background-position:center}
+.phone{border-radius:26px;padding:9px;background:#0A1F2E;border:1px solid var(--line-strong);
+  box-shadow:0 22px 60px -24px rgba(12,33,49,.45);width:100%;max-width:248px;margin-inline:auto;position:relative}
+.phone .view{aspect-ratio:9/17;border-radius:18px;overflow:hidden;position:relative;
+  background-size:cover;background-position:center}
+.phone::before{content:"";position:absolute;top:17px;inset-inline-start:50%;transform:translateX(-50%);
+  width:56px;height:5px;border-radius:3px;background:rgba(255,255,255,.22);z-index:3}
+/* both screens show the same real model, which is the whole claim of this section */
+.view.scene{background-image:url(assets/platform-model.jpg);background-color:#08151F}
+.view.scene::after{content:"";position:absolute;inset:0;background:rgba(9,28,42,.34);pointer-events:none}
+/* THE PLATFORM SCREEN
+   The runs are geometry and stay in SVG. Everything carrying words is HTML,
+   because SVG text cannot be laid out for Hebrew without hand mirroring every
+   anchor. Sizes are in cqw, so one rule set dresses a 740px desktop screen and
+   a 230px phone with no second breakpoint. The phone draws the centre slice of
+   the same 960x600 world, which is why a line meets the kerb identically on
+   both, and non-scaling-stroke keeps the pipe weight equal despite the zoom. */
+.view{container-type:inline-size}
+.ovl{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.ovl .casing,.ovl .run{fill:none;stroke-linecap:round;stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+  stroke-dasharray:var(--len,900);stroke-dashoffset:var(--len,900);
+  transition:stroke-dashoffset 1.9s var(--ease-out)}
+.devices.in .ovl .casing,.devices.in .ovl .run{stroke-dashoffset:0}
+/* a dark casing under every service, so a pale pipe still reads on pale concrete */
+.ovl .casing{stroke:rgba(3,14,23,.55);stroke-width:10}
+.ovl .run{stroke-width:5}
+.ovl .w{stroke:var(--u-water)} .ovl .e{stroke:var(--u-elec)}
+.ovl .g{stroke:var(--u-gas)}   .ovl .t{stroke:var(--u-tel)}
+.ovl .chambers circle{fill:#0B2334;stroke:#8FE0F0;stroke-width:2;vector-effect:non-scaling-stroke;
+  opacity:0;transition:opacity .6s var(--ease)}
+.devices.in .ovl .chambers circle{opacity:.95;transition-delay:1.3s}
+.ovl .pick circle{fill:none;stroke:#FFFFFF;stroke-width:2;vector-effect:non-scaling-stroke;
+  opacity:0;transition:opacity .6s var(--ease)}
+.ovl .pick circle:last-child{fill:#FFFFFF}
+.devices.in .ovl .pick circle{opacity:1;transition-delay:1.6s}
+.ovl .sweep{fill:url(#sweepg);opacity:.4;animation:sweep 6s var(--ease) infinite;animation-delay:-1.4s}
+
+.plat{position:absolute;inset:0;z-index:2;pointer-events:none;
+  font-family:var(--mono);color:#DCEEF6;opacity:0;transition:opacity .7s var(--ease)}
+.devices.in .plat{opacity:1;transition-delay:.9s}
+.plat .num{font-family:'IBM Plex Mono',monospace;font-style:normal;direction:ltr;unicode-bidi:isolate}
+.plat b,.plat span{letter-spacing:.06em}
+html[lang="he"] .plat{font-family:var(--body)}
+html[lang="he"] .plat b,html[lang="he"] .plat span{letter-spacing:0}
+
+.plat-rail{position:absolute;inset-inline-start:2.4cqw;top:50%;transform:translateY(-50%);
+  display:grid;gap:1.5cqw;padding:1.7cqw 1.2cqw;border-radius:1.6cqw;
+  background:rgba(8,24,36,.68);border:1px solid rgba(130,200,224,.2);backdrop-filter:blur(7px)}
+.plat-rail span{display:block}
+.plat-rail svg{width:3.2cqw;height:3.2cqw;display:block;fill:none;
+  stroke:#8FB6CC;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.plat-rail .on svg{stroke:#35C8DC}
+
+.plat-layers{position:absolute;inset-inline-end:2.4cqw;top:2.6cqw;
+  padding:1.5cqw 1.9cqw;border-radius:1.4cqw;text-align:start;
+  background:rgba(8,24,36,.68);border:1px solid rgba(130,200,224,.2);backdrop-filter:blur(7px)}
+.plat-layers b{display:block;font-size:clamp(7px,1.35cqw,11px);text-transform:uppercase;
+  color:#7FA9C2;margin-bottom:1.1cqw;font-weight:600}
+html[lang="he"] .plat-layers b{text-transform:none}
+.plat-layers ul{list-style:none;margin:0;padding:0;display:grid;gap:.9cqw}
+.plat-layers li{display:flex;align-items:center;gap:1cqw;font-size:clamp(7px,1.45cqw,12px)}
+.plat-layers i{width:2.2cqw;height:.7cqw;min-height:2px;border-radius:2px;display:block;flex:0 0 auto}
+
+/* anchored to the selected service at 470,424 in the shared world */
+.plat-tip{position:absolute;left:44.8%;top:75.3%;margin-top:1.6cqw;
+  transform:translateX(-50%);padding:1.2cqw 1.6cqw;border-radius:1.2cqw;white-space:nowrap;
+  background:rgba(8,24,36,.82);border:1px solid rgba(130,200,224,.28);backdrop-filter:blur(7px);
+  font-size:clamp(7px,1.45cqw,12px)}
+.plat-tip b{display:flex;align-items:center;gap:.9cqw;font-weight:600;margin-bottom:.5cqw}
+.plat-tip i{width:2cqw;height:.7cqw;min-height:2px;border-radius:2px;display:block}
+
+/* Export is the thing an engineer looks for first, so the platform says so.
+   It is a still of a product, not a working control, and it is marked
+   aria-hidden along with the rest of the chrome. */
+.plat-export{position:absolute;inset-inline-end:2.4cqw;bottom:6.6cqw;
+  display:inline-flex;align-items:center;gap:1.1cqw;padding:1.2cqw 1.8cqw;border-radius:1.1cqw;
+  background:rgba(8,24,36,.74);border:1px solid rgba(130,200,224,.26);
+  font-size:clamp(6.5px,1.3cqw,11px);color:#CFF3FA;backdrop-filter:blur(7px)}
+.plat-export .dwg{font-family:'IBM Plex Mono',monospace;font-weight:600;
+  color:#35C8DC;letter-spacing:.07em}
+.plat-status{position:absolute;inset-inline:0;bottom:0;display:flex;align-items:center;
+  justify-content:space-between;gap:1.6cqw;padding:1.3cqw 2.2cqw;
+  background:linear-gradient(to top,rgba(6,20,31,.86),rgba(6,20,31,0));
+  font-size:clamp(6.5px,1.3cqw,11px)}
+.plat-status .sc{display:flex;align-items:center;gap:.9cqw}
+.plat-status .sc i{width:7cqw;height:0;border-top:1px solid #9FD4E4;border-inline:1px solid #9FD4E4;
+  height:.9cqw;display:block}
+.plat-status .fix{display:flex;align-items:center;gap:.7cqw;color:#7FE3F2}
+.plat-status .fix i{width:1cqw;height:1cqw;min-width:3px;min-height:3px;border-radius:50%;
+  background:#35C8DC;display:block;animation:blip 2.2s var(--ease) infinite}
+
+/* THE PHONE SCREEN
+   The map is a band carrying the same framing as the desktop, and the app sits
+   underneath it. Cropping a 16:10 capture into a 9:17 box magnified it roughly
+   three times, which is why the two screens stopped looking like one site and
+   the runs appeared to take different paths. */
+.phone .view.scene{background-image:none;background:#081722;display:flex;flex-direction:column}
+.phone .view.scene::after{display:none}
+.phone .scene-map{position:relative;flex:0 0 auto;width:100%;aspect-ratio:16/10;overflow:hidden;
+  background-image:url(assets/platform-model.jpg);background-size:cover;background-position:center}
+.phone .scene-map::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:rgba(9,28,42,.3)}
+.phone .plat-rail{display:none}
+.phone .plat{position:relative;inset:auto;flex:1 1 auto;display:flex;flex-direction:column;
+  gap:3cqw;padding:4cqw 4cqw 0}
+.phone .plat-layers{position:static;inset:auto;padding:0;border:0;background:none;
+  backdrop-filter:none;top:auto}
+.phone .plat-layers b{font-size:clamp(7px,2.7cqw,11px);margin-bottom:2.2cqw}
+.phone .plat-layers ul{gap:2cqw}
+.phone .plat-layers li{font-size:clamp(8px,3.1cqw,12px);gap:2.6cqw}
+.phone .plat-layers i{width:5.2cqw;height:1.7cqw}
+.phone .plat-tip{position:static;transform:none;left:auto;top:auto;margin-top:0;white-space:normal;
+  padding:2.8cqw 3.2cqw;border-radius:2.4cqw;font-size:clamp(8px,3.1cqw,12px);
+  background:rgba(255,255,255,.07)}
+.phone .plat-tip b{gap:2.4cqw;margin-bottom:1.4cqw}
+.phone .plat-tip i{width:5cqw;height:1.7cqw}
+.phone .plat-export{position:static;inset:auto;justify-content:center;
+  padding:2.6cqw;border-radius:2.4cqw;font-size:clamp(8px,3cqw,12px);gap:2.4cqw}
+.phone .plat-status{position:static;inset:auto;margin-top:auto;background:none;
+  padding:3.4cqw 0;font-size:clamp(7px,2.9cqw,11px)}
+.phone .plat-status .sc i{width:14cqw;height:2cqw}
+.phone .plat-status .fix i{width:2.4cqw;height:2.4cqw}
+@keyframes sweep{0%{transform:translateY(-100%)}100%{transform:translateY(200%)}}
+.livechip{position:absolute;top:10px;inset-inline-start:10px;z-index:2;display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:#CFF3FA;
+  background:rgba(10,31,46,.74);border:1px solid rgba(53,200,220,.35);border-radius:20px;
+  padding:4px 9px;backdrop-filter:blur(6px)}
+.livechip i{width:5px;height:5px;border-radius:50%;background:#35C8DC;display:block;animation:blip 2.2s var(--ease) infinite}
+@keyframes blip{0%,100%{opacity:.35}50%{opacity:1}}
+.devlabel{margin-top:13px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-2);text-align:center}
+html[lang="he"] .devlabel{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:13px}
+@media (max-width:900px){.devices{grid-template-columns:1fr;gap:30px}.phone{max-width:210px}}
+
+/* --- platform --- */
+.platform{background:linear-gradient(150deg,var(--panel-2) 0%,var(--canvas-2) 74%);
+  border:1px solid var(--line);border-radius:18px;padding:clamp(32px,5vw,60px);position:relative;overflow:hidden}
+.platform::before{content:"";position:absolute;top:-40%;inset-inline-end:-10%;width:60%;height:180%;
+  background:radial-gradient(closest-side,rgba(31,162,183,.16),transparent 70%);
+  animation:breathe 11s var(--ease) infinite;animation-delay:-3s}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+.platform-in{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+.platform .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);font-weight:500}
+html[lang="he"] .platform .kicker{font-family:var(--body);letter-spacing:.05em;text-transform:none;font-size:13.5px}
+.platform h2{margin-top:16px;font-size:clamp(28px,3.8vw,48px);max-width:16ch}
+.platform p{margin-top:20px;max-width:52ch;color:var(--ink-2);font-size:clamp(16px,1.3vw,18px)}
+.platform .out{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.platform .out span{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-2);
+  border:1px solid var(--line-strong);border-radius:5px;padding:7px 12px;background:rgba(255,255,255,.6)}
+.stackwrap{display:grid;gap:14px}
+.stackkey{list-style:none;margin:0;padding:0;display:grid;gap:9px;counter-reset:sk}
+.stackkey li{display:grid;grid-template-columns:auto 1fr;gap:4px 11px;align-items:center}
+.stackkey i{grid-row:span 2;width:13px;height:13px;border-radius:3px;display:block;transform:rotate(45deg)}
+.stackkey .k1{background:#8FB2CB}
+.stackkey .k2{background:#C0AA88}
+.stackkey .k3{background:#153B54}
+.stackkey b{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
+.stackkey span{font-size:12.5px;color:var(--ink-2);grid-column:2}
+
+@media (max-width:980px){.platform-in{grid-template-columns:1fr;gap:32px}.stackwrap{max-width:420px;margin-inline:auto}}
+
+
+/* carried for screen readers: the diagram is a picture, its description is text */
+.vhide{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* THE EXPLODED LAYER DIAGRAM
+   One isometric projection, three slabs: what stands, the ground in section,
+   and the services running under it. Drawn rather than photographed so it stays
+   crisp at any size and carries the service colours exactly. No ids anywhere,
+   so the same markup can appear twice on the page without colliding. */
+.isostack{width:100%;height:auto;display:block;overflow:visible}
+.iso-mul{stroke:rgba(255,255,255,.55);stroke-width:.9;fill:none}
+.iso-bay{stroke:#FFFFFF;stroke-width:1;fill:none;opacity:.6}
+.iso-raft{fill:rgba(18,97,140,.16);stroke:var(--accent);stroke-width:1.4;stroke-dasharray:7 4}
+.iso-raft.two{fill:rgba(18,97,140,.1)}
+.iso-contour{stroke:#93AABC;stroke-width:1.1;fill:none}
+.iso-surv{stroke:#B7C8D5;stroke-width:.8;fill:none;opacity:.8}
+.iso-datum{stroke:#12618C;stroke-width:1.3;stroke-dasharray:7 4;fill:none;opacity:.85}
+.iso-grid{stroke:#2E5B78;stroke-width:.9;fill:none;opacity:.6}
+.iso-ghost{stroke:#7FE3F2;stroke-width:1.2;stroke-dasharray:5 4;fill:none;opacity:.5}
+.iso-tie{stroke:rgba(18,97,140,.42);stroke-width:1;stroke-dasharray:4 6;fill:none}
+.isostack .run path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.isostack .glow{stroke-width:13;opacity:.2}
+.isostack .core{stroke-width:6}
+.isostack .hi{stroke-width:1.6;stroke:rgba(255,255,255,.45)}
+.run.w .glow,.run.w .core{stroke:var(--u-water)}
+.run.e .glow,.run.e .core{stroke:var(--u-elec)}
+.run.g .glow,.run.g .core{stroke:var(--u-gas)}
+.run.t .glow,.run.t .core{stroke:var(--u-tel)}
+.iso-ch .wall{fill:#0E3145;stroke:#35C8DC;stroke-width:1}
+.iso-ch .cap{fill:#17485F;stroke:#35C8DC;stroke-width:1.3}
+/* the slabs breathe, then separate further once the section is reached */
+@keyframes isofloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.iso-float{animation:isofloat 9s var(--ease) infinite}
+.iso-float.f2{animation-delay:-3s}
+.iso-float.f3{animation-delay:-6s}
+.iso-l1,.iso-l3{transition:transform 1s var(--ease)}
+.isostack.in .iso-l1,.isostack:hover .iso-l1{transform:translateY(-16px)}
+.isostack.in .iso-l3,.isostack:hover .iso-l3{transform:translateY(16px)}
+@media (prefers-reduced-motion:reduce){
+  .iso-float{animation:none}
+  .iso-l1,.iso-l3{transition:none}
+}
+.isowrap{position:relative}
+.ls-key{margin-top:14px;list-style:none;padding:0;display:grid;gap:6px}
+.ls-key li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-2);text-align:start}
+.ls-key i{width:11px;height:11px;flex:0 0 11px;border-radius:2px;transform:rotate(45deg)}
+.ls-key .k1{background:#8FB2CB} .ls-key .k2{background:#C0AA88} .ls-key .k3{background:#153B54}
+
+/* --- faq --- */
+.faq{margin-top:48px;max-width:900px}
+.q{border-top:1px solid var(--line)}
+.q:last-child{border-bottom:1px solid var(--line)}
+.q button{width:100%;background:none;border:0;color:inherit;font-family:var(--display);font-weight:600;
+  font-size:clamp(17px,1.7vw,21px);text-align:start;padding:25px 46px 25px 0;cursor:pointer;
+  position:relative;line-height:1.35;transition:color .35s var(--ease)}
+html[dir="rtl"] .q button{padding:25px 0 25px 46px}
+.q button:hover{color:var(--accent)}
+.q button::after{content:"";position:absolute;inset-inline-end:6px;top:50%;width:11px;height:11px;
+  border-inline-end:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  transform:translateY(-70%) rotate(45deg);transition:transform .45s var(--ease)}
+html[dir="rtl"] .q button::after{transform:translateY(-70%) rotate(135deg)}
+.q.open button::after{transform:translateY(-30%) rotate(225deg)}
+html[dir="rtl"] .q.open button::after{transform:translateY(-30%) rotate(315deg)}
+.q .a{overflow:hidden;height:0;transition:height .5s var(--ease)}
+.q .a p{padding:0 4ch 26px 0;color:var(--ink-2);font-size:16px;max-width:68ch}
+html[dir="rtl"] .q .a p{padding:0 0 26px 4ch}
+
+/* --- contact --- */
+.contact{background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(32px,5vw,60px);display:grid;grid-template-columns:1fr 1.1fr;gap:50px;
+  box-shadow:0 26px 70px -40px rgba(12,33,49,.4)}
+.contact h2{font-size:clamp(30px,3.8vw,48px)}
+.contact .sub{margin-top:18px;color:var(--ink-2);max-width:40ch;font-size:16.5px}
+.contact .direct{margin-top:28px;font-size:14px;color:var(--ink-2)}
+.contact .direct a{color:var(--accent);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(18,97,140,.3)}
+form{display:grid;gap:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-2);margin-bottom:7px}
+html[lang="he"] label{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:13px}
+input,textarea{width:100%;background:var(--panel-2);border:1px solid var(--line-strong);border-radius:8px;
+  color:var(--ink);font-family:var(--body);font-size:15.5px;padding:12px 14px;
+  transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(18,97,140,.13)}
+textarea{resize:vertical;min-height:110px}
+form .btn-primary{border:0;cursor:pointer;font-size:15px;padding:14px 26px;justify-self:start}
+.form-note{font-size:13px;color:var(--ink-2);line-height:1.6}
+.ok{display:none;border:1px solid var(--accent);background:var(--accent-tint);border-radius:10px;padding:22px 24px}
+.ok.show{display:block}
+.ok b{font-family:var(--display);font-size:18px;display:block;margin-bottom:6px;color:var(--ink)}
+.ok span{color:var(--ink-2);font-size:15px}
+form.sent{display:none}
+@media (max-width:940px){.contact{grid-template-columns:1fr;gap:32px}.row{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:52px var(--shell) 42px;position:relative;z-index:1;background:var(--canvas-2)}
+.foot-top{display:flex;gap:36px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap}
+.foot-links a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;transition:color .3s var(--ease)}
+html[lang="he"] .foot-links a{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:14px}
+.foot-links a:hover{color:var(--accent)}
+.foot-bot{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);display:flex;
+  justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+
+/* ============================================================
+   THE FIVE SCRUB GATES (must match the JS GATES array EXACTLY)
+   ============================================================ */
+@media (max-width:720px),
+       (orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .capture{display:none}
+  .cap-static{display:block}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;transition-delay:0s !important}
+  .rise,.sensor-card{opacity:1;transform:none}
+  .rule line{stroke-dashoffset:0}
+  .stats .stat::after{transform:scaleX(1)}
+  .ovl .run{stroke-dashoffset:0}
+  .ovl .nd{opacity:.9}
+  .env::after,.ovl .sweep,.fusion .fx-ring,.fusion .flowline{animation:none}
+  .band{transform:translateY(-50%)}
+  .ladder{transform:translateY(-50%)}
+  .phone::before{transform:translateX(-50%)}
+}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused !important}
+</style>
+
+<!-- Measurement, loaded only after consent -->
+<script>
+(function(){
+  var KEY = 'noryx_cookie_consent', done = false;
+  window.__noryxLoadTrackers = function(){
+    if (done) return; done = true;
+    var g = document.createElement("script"); g.async = 1;
+    g.src = "https://www.googletagmanager.com/gtag/js?id=G-PBG4D6XEKX";
+    document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-PBG4D6XEKX");
+    (function(w,d,s,u){
+      if (w.oaiq) return;
+      var q = function(){ q.q.push(arguments); }; q.q = []; w.oaiq = q;
+      var j = d.createElement(s); j.async = 1; j.src = u;
+      var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy", debug: true });
+  };
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+  if (choice === 'all') window.__noryxLoadTrackers();
+})();
+</script>
+</head>
+<body>
+
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="env" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a class="brand" href="#main" aria-label="Noryx Technologies">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 9.5 16 3.5 28 9.5 16 15.5Z" fill="none" stroke="#35C8DC" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M4 15.5 16 21.5 28 15.5" fill="none" stroke="#1FA2B7" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M4 21.5 16 27.5 28 21.5" fill="none" stroke="#12618C" stroke-width="2.4" stroke-linejoin="round"/>
+    </svg>
+    <span>NORYX</span>
+  </a>
+  <div class="nav-links">
+    <a href="#tech" data-i18n="nav.tech">Technology</a>
+    <a href="#step2" data-i18n="nav.fusion">Fusion engine</a>
+    <a href="#step3" data-i18n="nav.field">In the field</a>
+    <a href="#faq" data-i18n="nav.faq">Questions</a>
+    <span class="lang" role="group" aria-label="Language"><b aria-current="page">EN</b><a class="langlink" href="he/" hreflang="he">עב</a></span>
+    <a class="btn btn-wa icon" href="https://wa.me/972543936936" target="_blank" rel="noopener"
+       data-i18n-title="cta.wa" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+    <a class="btn btn-primary" href="#contact" data-i18n="cta.primary">Contact us</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ THE X-RAY HERO ============ -->
+<div class="xray-track" id="xrayTrack">
+<header class="xray" id="xray">
+  <div class="xr-media" aria-hidden="true">
+    <img class="xr-photo" id="xrPhoto" src="assets/hero-field.jpg" alt="" decoding="async">
+    <!-- viewBox matches the photo's native pixels and slices exactly like object-fit:cover,
+         so the AR layer stays registered to the tablet at every viewport size -->
+    <svg class="xr-ar" id="xrAr" viewBox="0 0 2752 1536" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <clipPath id="scrClip"><rect x="1288" y="500" width="674" height="489" rx="10"/></clipPath>
+        <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#35C8DC" stop-opacity="0"/>
+          <stop offset="55%" stop-color="#35C8DC" stop-opacity=".75"/>
+          <stop offset="100%" stop-color="#35C8DC" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Everything lives INSIDE the glass: the tablet shows the Noryx platform,
+           branded, with the utility visualisation in its canvas. Nothing spills
+           onto the ground behind. -->
+      <g clip-path="url(#scrClip)">
+        <rect class="screen-fill" x="1288" y="500" width="674" height="489" fill="#0A1F2E"/>
+
+        <!-- platform top bar -->
+        <rect class="ui" x="1288" y="500" width="674" height="58" fill="#0E2A3D"/>
+        <g class="uilogo" transform="translate(1302,510) scale(1.15)">
+          <path d="M4 9.5 16 3.5 28 9.5 16 15.5Z" fill="none" stroke="#35C8DC" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M4 15.5 16 21.5 28 15.5" fill="none" stroke="#1FA2B7" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M4 21.5 16 27.5 28 21.5" fill="none" stroke="#12618C" stroke-width="2.4" stroke-linejoin="round"/>
+        </g>
+        <text class="uiword flip" x="1348" y="537">NORYX</text>
+        <g class="uidot" fill="#7FA3BC"><circle cx="1884" cy="529" r="5"/><circle cx="1906" cy="529" r="5"/><circle cx="1928" cy="529" r="5"/></g>
+
+        <!-- layer rail: one chip per utility, matching the key below the copy -->
+        <rect class="ui" x="1288" y="558" width="56" height="391" fill="#0B2334"/>
+        <g class="uichip">
+          <rect x="1302" y="578" width="28" height="18" rx="4" fill="#1F73C8"/>
+          <rect x="1302" y="608" width="28" height="18" rx="4" fill="#D92D20"/>
+          <rect x="1302" y="638" width="28" height="18" rx="4" fill="#E8A317"/>
+          <rect x="1302" y="668" width="28" height="18" rx="4" fill="#E2640F"/>
+          <rect x="1302" y="712" width="28" height="18" rx="4" fill="none" stroke="#5C7E96" stroke-width="2"/>
+        </g>
+
+        <!-- the real capture, loaded in the platform -->
+        <image class="uiscene" x="1344" y="558" width="618" height="391" href="assets/platform-model.jpg"
+               preserveAspectRatio="xMidYMid slice"/>
+
+        <!-- canvas grid -->
+        <g class="grid" fill="none">
+          <path d="M1344 620 H1962 M1344 700 H1962 M1344 780 H1962 M1344 860 H1962"/>
+          <path d="M1440 558 V949 M1540 558 V949 M1640 558 V949 M1740 558 V949 M1840 558 V949"/>
+        </g>
+
+        <!-- the visualisation -->
+        <g>
+          <path class="run w" style="--len:700" stroke-width="12" d="M1360 660 H1620 V740 H1946"/>
+          <path class="run e" style="--len:640" stroke-width="11" d="M1360 776 H1704 V938"/>
+          <path class="run g" style="--len:540" stroke-width="11" d="M1946 690 H1790 V938"/>
+          <path class="run t" style="--len:600" stroke-width="10" d="M1620 574 V846 H1946"/>
+        </g>
+        <g class="nd" style="--nd:1" fill="#FFFFFF" stroke="#0A1F2E" stroke-width="3">
+          <rect x="1611" y="731" width="19" height="19" rx="5"/>
+          <rect x="1695" y="837" width="19" height="19" rx="5"/>
+        </g>
+
+
+        <!-- prompt shown until the visitor presses -->
+        <text class="uihint flip" x="1625" y="762" text-anchor="middle" data-i18n="ui.hint">Scroll to load the located services</text>
+
+        <!-- platform status bar -->
+        <!-- the same export control the two screens below carry, so the platform
+             a visitor meets in the hero is the platform they see later -->
+        <g class="uiexport">
+          <rect x="1770" y="872" width="176" height="50" rx="12"/>
+          <text class="uidwg" x="1792" y="904">DWG</text>
+          <text class="uiexp flip" x="1862" y="904" data-i18n="ui.export">Export</text>
+        </g>
+
+        <rect class="ui" x="1288" y="949" width="674" height="40" fill="#0E2A3D"/>
+        <text class="uistat flip" x="1304" y="975" data-i18n="ui.stat">Site model</text>
+        <circle cx="1930" cy="969" r="6" fill="#35C8DC"/>
+        <text class="uistat flip" x="1860" y="975" fill="#7FE3F2" text-anchor="end" data-i18n="ui.live">Loaded</text>
+
+        <rect class="sweep" x="1344" y="558" width="618" height="110" fill="url(#scanG)" id="xrSweep"/>
+      </g>
+    </svg>
+  </div>
+  <div class="xr-veil" aria-hidden="true"></div>
+
+  <div class="xr-copy">
+    <span class="xr-kicker" data-i18n="hero.kicker">Underground utility mapping and reality capture</span>
+    <h1 data-i18n="hero.h1">See through the ground.</h1>
+    <p class="xr-lead" data-i18n="hero.lead">Digital mapping and documentation of your site, above ground and below.</p>
+    <p class="xr-sub" data-i18n="hero.sub">Noryx combines underground utility detection, LiDAR scanning, aerial mapping and survey into one coordinated picture of the site, ready for planning and for execution.</p>
+
+    <p class="scrollcue">
+      <span class="sc-rail" aria-hidden="true"><i></i></span>
+      <span data-i18n="hero.scroll">Keep scrolling to reveal what is buried</span>
+    </p>
+
+    <ul class="ukey" id="ukey">
+      <li><i style="background:var(--u-water)"></i><span data-i18n="u.water">Water</span></li>
+      <li><i style="background:var(--u-elec)"></i><span data-i18n="u.elec">Electric</span></li>
+      <li><i style="background:var(--u-gas)"></i><span data-i18n="u.gas">Gas</span></li>
+      <li><i style="background:var(--u-tel)"></i><span data-i18n="u.tel">Telecom</span></li>
+    </ul>
+
+  </div>
+</header>
+</div>
+
+<!-- ============ THE STAKES ============ -->
+<section class="sec" id="stakes">
+  <div class="sec-num rise"><span data-i18n="sec.stakes.n">The stakes</span></div>
+  <h2 class="rise" data-i18n="sec.stakes.h">The ground is the last part of a project nobody can see.</h2>
+  <p class="lede rise" data-i18n="sec.stakes.l">It is also the part that stops the job. These are not our numbers. They are the industry's own.</p>
+  <div class="stats" id="stats">
+    <div class="stat">
+      <div class="n" data-count="300" data-int="1" data-prefix="₪" data-suffix="M">₪300M</div>
+      <div class="l" data-i18n="stat.1">a year in direct damage from striking infrastructure during underground construction work in Israel</div>
+      <div class="ssrc" data-i18n="stat.1s">Source: Israel Tort Forum report</div>
+    </div>
+    <div class="stat">
+      <div class="n" data-count="1544" data-int="1">1,544</div>
+      <div class="l" data-i18n="stat.2">faults reported in Israeli water and sewage systems in 2022, some of which caused sewage overflows and environmental damage</div>
+      <div class="ssrc" data-i18n="stat.2s">Source: 2022 national reporting</div>
+    </div>
+    <div class="stat">
+      <div class="n word" data-i18n="stat.3n">₪ Billions</div>
+      <div class="l" data-i18n="stat.3">invested every year in national infrastructure, where what lies under the ground is still the blind spot</div>
+    </div>
+  </div>
+  <p class="src" data-i18n="stat.src">Sources are named beside the figures they belong to.</p>
+</section>
+
+<!-- ============ THE TECHNOLOGY ============ -->
+<section class="sec sec--tint" id="tech">
+  <div class="sec-num rise"><span data-i18n="sec.tech.n">Technology</span></div>
+  <h2 class="rise" data-i18n="tech.h">The technology is matched to the site conditions.</h2>
+  <p class="techp rise" data-i18n="tech.p">There is no single detection method that suits every soil and every service. We combine GPR, electromagnetic locating, ERT, LiDAR scanning, photogrammetry and RTK-GNSS according to the conditions on site and the purpose of the project.</p>
+  <div class="sensors" id="sensors">
+    <div class="sensor-card">
+      <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+        <path d="M8 9h24M12 9l-3-4M28 9l3-4" stroke="#12618C" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="20" cy="12" r="3" stroke="#12618C" stroke-width="1.6"/>
+        <path d="M20 15v4M20 19 8 28M20 19l12 9" stroke="#1FA2B7" stroke-width="1.3"/>
+      </svg>
+      <span class="abbr">PHOTO</span><b data-i18n="s1.a.b">Drone photogrammetry</b>
+      <span data-i18n="s1.a.s">Overlapping aerial imagery solved into measurable 3D geometry.</span>
+    </div>
+    <div class="sensor-card">
+      <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+        <path d="M20 4v7" stroke="#12618C" stroke-width="1.6"/><circle cx="20" cy="13" r="3" stroke="#12618C" stroke-width="1.6"/>
+        <path d="M20 16 7 27M20 16l13 11M20 16v11" stroke="#1FA2B7" stroke-width="1.2"/>
+        <g fill="#35C8DC"><circle cx="11" cy="25" r="1.1"/><circle cx="17" cy="27" r="1.1"/><circle cx="23" cy="27" r="1.1"/><circle cx="29" cy="25" r="1.1"/></g>
+      </svg>
+      <span class="abbr">LiDAR</span><b data-i18n="s1.b.b">Surface LiDAR</b>
+      <span data-i18n="s1.b.s">Millions of measured points a second, turning what stands into an as-built.</span>
+    </div>
+    <div class="sensor-card">
+      <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+        <path d="M4 8h32" stroke="#12618C" stroke-width="1.6"/>
+        <path d="M7 14q4-3 8 0t8 0 8 0 2 0" stroke="#1FA2B7" stroke-width="1.4"/>
+        <path d="M7 21q4-3 8 0t8 0 8 0 2 0" stroke="#35C8DC" stroke-width="1.4" opacity=".75"/>
+        <circle cx="20" cy="27" r="2.4" fill="#12618C"/>
+      </svg>
+      <span class="abbr">GPR</span><b data-i18n="s1.c.b">Ground penetrating radar</b>
+      <span data-i18n="s1.c.s">Reads reflections off buried services and voids without touching the ground.</span>
+    </div>
+    <div class="sensor-card">
+      <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+        <path d="M4 7h32" stroke="#12618C" stroke-width="1.5"/>
+        <path d="M20 9v6" stroke="#12618C" stroke-width="1.5"/>
+        <path d="M13 18a7 7 0 0 1 14 0" stroke="#1FA2B7" stroke-width="1.4"/>
+        <path d="M8 22a12 12 0 0 1 24 0" stroke="#35C8DC" stroke-width="1.2" opacity=".7"/>
+        <circle cx="20" cy="27" r="2.2" fill="#12618C"/>
+      </svg>
+      <span class="abbr">RADAR</span><b data-i18n="s1.d.b">Subsurface radar</b>
+      <span data-i18n="s1.d.s">Deeper profiling that resolves what shallow passes cannot reach.</span>
+    </div>
+    <div class="sensor-card">
+      <svg viewBox="0 0 40 32" fill="none" aria-hidden="true">
+        <path d="M4 8h32" stroke="#12618C" stroke-width="1.5"/>
+        <path d="M11 8v5M20 8v5M29 8v5" stroke="#12618C" stroke-width="1.5"/>
+        <path d="M11 13q4.5 9 9 0M20 13q4.5 9 9 0" stroke="#1FA2B7" stroke-width="1.3"/>
+        <path d="M11 13q9 17 18 0" stroke="#35C8DC" stroke-width="1.2" opacity=".7"/>
+      </svg>
+      <span class="abbr">ERT</span><b data-i18n="s1.e.b">Electrical resistivity tomography</b>
+      <span data-i18n="s1.e.s">Builds a section of the subsurface by measuring changes in electrical resistivity. Findings can help identify layer changes, damp zones, voids and subsurface anomalies, depending on site conditions.</span>
+    </div>
+  </div>
+</section>
+
+<!-- the capture film, scrubbed by scroll -->
+<section class="capture" id="cap-sec" aria-label="Aerial capture">
+  <div class="cap-stage" id="capStage">
+    <div class="cap-poster" aria-hidden="true"></div>
+    <video id="capVideo" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="cap-scrim" aria-hidden="true"></div>
+    <div class="cap-vig" aria-hidden="true"></div>
+    <div class="ladder" aria-hidden="true">
+      <div class="ladder-body">
+        <div class="ladder-layer" data-i18n="ladder.0">Aerial</div>
+        <div class="ladder-layer" data-i18n="ladder.1">Surface</div>
+        <div class="ladder-layer" data-i18n="ladder.2">Subsurface</div>
+      </div>
+      <div class="ladder-rail">
+        <span class="ladder-tick" style="top:0"></span><span class="ladder-tick" style="top:25%"></span>
+        <span class="ladder-tick" style="top:50%"></span><span class="ladder-tick" style="top:75%"></span>
+        <span class="ladder-tick" style="top:100%"></span>
+        <span class="ladder-head" id="lhead"></span>
+        <span class="readout" id="readout">ELEV <b>+120.0</b> m</span>
+      </div>
+    </div>
+    <div class="band e-grid" data-a="0" data-b="0.21" data-split="char" data-spread="0.55">
+      <span class="sensor" data-i18n="b1.k">01 / Site scanning</span>
+      <h3 data-i18n="b1.h">We scan and document the site.</h3>
+    </div>
+    <div class="band e-scatter" data-a="0.19" data-b="0.41" data-split="char">
+      <span class="sensor" data-i18n="b2.k">02 / Coordinate anchoring</span>
+      <h3 data-i18n="b2.h">We tie every reading to real X, Y and Z.</h3>
+    </div>
+    <div class="band e-blur" data-a="0.39" data-b="0.61" data-split="blur" data-ramp="0.034">
+      <span class="sensor" data-i18n="b3.k">03 / Aerial and ground scan</span>
+      <h3 data-i18n="b3.h">We map the whole site from the air and the ground.</h3>
+    </div>
+    <div class="band e-punch" data-a="0.59" data-b="0.81" data-split="word" data-em="deeper">
+      <span class="sensor" data-i18n="b4.k">04 / 3D tour in the cloud</span>
+      <h3 data-i18n="b4.h">We build the unified model.</h3>
+    </div>
+    <div class="band e-drift" data-a="0.79" data-b="1" data-split="word">
+      <span class="sensor" data-i18n="b5.k">05 / Statutory delivery</span>
+      <h3 data-i18n="b5.h">We hand over plans the authority accepts.</h3>
+    </div>
+  </div>
+</section>
+
+<!-- the static capture panel for phones and reduced motion -->
+<div class="sec sec--tint" style="padding-top:0">
+  <div class="cap-static">
+    <video class="capfilm" id="capFilm" muted loop playsinline preload="none"
+           poster="assets/hero-poster.jpg" aria-label="Aerial capture of a site"></video>
+    <ol class="capbeats">
+      <li data-i18n="b1.h">We scan and document the site.</li>
+      <li data-i18n="b2.h">We tie every reading to real X, Y and Z.</li>
+      <li data-i18n="b3.h">We map the whole site from the air and the ground.</li>
+      <li data-i18n="b4.h">We build the unified model.</li>
+      <li data-i18n="b5.h">We hand over plans the authority accepts.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<section class="sec" id="step2">
+  <div class="stepnum rise"><b>1</b><span data-i18n="s2.n">Fusion pipeline and algorithmic integration</span></div>
+  <h2 class="rise" data-i18n="s2.h">Generate a consistent single source of truth model.</h2>
+  <p class="lede rise" data-i18n="s2.l">Three raw feeds go in. One unified model comes out, with every layer agreeing with every other layer.</p>
+
+  <div class="fusion rise">
+    <div class="fx">
+      <div class="fx-ins">
+        <div class="fx-card">
+          <svg viewBox="0 0 34 26" fill="none" aria-hidden="true"><path d="M6 20a7 7 0 0 1 3-13 9 9 0 0 1 17 2 6 6 0 0 1-1 11z" stroke="#1FA2B7" stroke-width="1.6"/></svg>
+          <div><b data-i18n="s2.in1">Point clouds</b><span data-i18n="s2.in1s">LiDAR and photogrammetry</span></div>
+        </div>
+        <div class="fx-card">
+          <svg viewBox="0 0 34 26" fill="none" aria-hidden="true"><path d="M4 7h26M2 14h26M6 21h26" stroke="#12618C" stroke-width="1.7"/></svg>
+          <div><b data-i18n="s2.in2">GPR slices</b><span data-i18n="s2.in2s">Radar and resistivity</span></div>
+        </div>
+        <div class="fx-card">
+          <svg viewBox="0 0 34 26" fill="none" aria-hidden="true"><path d="M3 22 13 6l12 8 7-6M3 22h29" stroke="#35C8DC" stroke-width="1.6"/></svg>
+          <div><b data-i18n="s2.in3">Mesh geometry</b><span data-i18n="s2.in3s">Survey control, RTK-GNSS</span></div>
+        </div>
+      </div>
+
+      <div class="fx-arrow" aria-hidden="true"><span></span><span></span><span></span></div>
+
+      <div class="fx-mid">
+        <ul class="fx-procs">
+          <li data-i18n="s2.p1">Scan-to-BIM</li>
+          <li data-i18n="s2.p2">Data alignment</li>
+          <li data-i18n="s2.p3">Noise reduction</li>
+        </ul>
+        <div class="fx-engine"><b>NORYX</b><span data-i18n="s2.engine">Fusion engine</span></div>
+      </div>
+
+      <div class="fx-arrow one" aria-hidden="true"><span></span></div>
+
+      <div class="fx-out">
+        <span class="fx-outl" data-i18n="s2.out">Single unified model</span>
+        <p class="vhide" id="fxTitle" data-i18n="s2.alt">One site drawn in three separated layers: the buildings and roads that stand on it, the ground beneath them shown in section, and the located services running under that, colour coded by type.</p>
+        <div class="isowrap" role="img" aria-labelledby="fxTitle">
+          <svg class="isostack" viewBox="-291 -196.8 582 737.9" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g class="iso-tie"><path d="M0,186.1L0,469.2"/><path d="M265,33.2L265,316.2"/><path d="M-265,33.2L-265,316.2"/></g>
+            <g class="iso-float f3"><g class="iso-l3"><polygon points="265,316.2 0,469.2 0,515.1 265,362.1" fill="#081F2E" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,316.2 0,469.2 0,515.1 -265,362.1" fill="#0E2C40" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,163.2 265,316.2 0,469.2 -265,316.2" fill="#153B54" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-grid"><path d="M44.2,188.7L-220.8,341.7"/><path d="M-44.2,188.7L220.8,341.7"/><path d="M88.3,214.2L-176.7,367.2"/><path d="M-88.3,214.2L176.7,367.2"/><path d="M132.5,239.7L-132.5,392.7"/><path d="M-132.5,239.7L132.5,392.7"/><path d="M176.7,265.2L-88.3,418.2"/><path d="M-176.7,265.2L88.3,418.2"/><path d="M220.8,290.7L-44.2,443.7"/><path d="M-220.8,290.7L44.2,443.7"/></g><g class="iso-ghost"><path d="M13.3,196.4L106,249.9L26.5,295.8L-66.3,242.2L13.3,196.4"/><path d="M123.7,270.3L185.5,306L132.5,336.6L70.7,300.9L123.7,270.3"/></g><g class="run t"><path class="glow" d="M-167.8,260.1L97.2,413.1"/><path class="core" d="M-167.8,260.1L97.2,413.1"/><path class="hi" d="M-167.8,260.1L97.2,413.1" transform="translate(0,-1.5)"/></g><g class="run w"><path class="glow" d="M-75.1,206.6L97.2,306L-92.8,415.7"/><path class="core" d="M-75.1,206.6L97.2,306L-92.8,415.7"/><path class="hi" d="M-75.1,206.6L97.2,306L-92.8,415.7" transform="translate(0,-1.5)"/></g><g class="run e"><path class="glow" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5"/><path class="core" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5"/><path class="hi" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5" transform="translate(0,-1.5)"/></g><g class="run g"><path class="glow" d="M-220.8,290.7L-101.6,359.5L97.2,244.8"/><path class="core" d="M-220.8,290.7L-101.6,359.5L97.2,244.8"/><path class="hi" d="M-220.8,290.7L-101.6,359.5L97.2,244.8" transform="translate(0,-1.5)"/></g><g class="iso-ch"><path class="wall" d="M83.1,306L83.1,321.3A14.1,8.1 0 0 0 111.2,321.3L111.2,306Z"/><ellipse class="cap" cx="97.2" cy="306" rx="14.1" ry="8.1"/></g><g class="iso-ch"><path class="wall" d="M-75.9,275.4L-75.9,290.7A14.1,8.1 0 0 0 -47.8,290.7L-47.8,275.4Z"/><ellipse class="cap" cx="-61.8" cy="275.4" rx="14.1" ry="8.1"/></g><g class="iso-ch"><path class="wall" d="M-115.6,359.5L-115.6,374.8A14.1,8.1 0 0 0 -87.5,374.8L-87.5,359.5Z"/><ellipse class="cap" cx="-101.6" cy="359.5" rx="14.1" ry="8.1"/></g></g></g>
+            <g class="iso-float f2"><g class="iso-l2"><polygon points="265,153 0,306 0,326.4 265,173.4" fill="#AE9575" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,153 0,306 0,326.4 -265,173.4" fill="#C6B091" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="265,173.4 0,326.4 0,346.8 265,193.8" fill="#96A7B5" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,173.4 0,326.4 0,346.8 -265,193.8" fill="#AEBDC9" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="265,193.8 0,346.8 0,372.3 265,219.3" fill="#7D92A2" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,193.8 0,346.8 0,372.3 -265,219.3" fill="#94A7B7" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,0 265,153 0,306 -265,153" fill="#D4E0E9" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-150.2,86.7 114.8,239.7 79.5,260.1 -185.5,107.1" fill="#AFC2D0"/><g class="iso-surv"><path d="M44.2,25.5L-220.8,178.5"/><path d="M-44.2,25.5L220.8,178.5"/><path d="M88.3,51L-176.7,204"/><path d="M-88.3,51L176.7,204"/><path d="M132.5,76.5L-132.5,229.5"/><path d="M-132.5,76.5L132.5,229.5"/><path d="M176.7,102L-88.3,255"/><path d="M-176.7,102L88.3,255"/><path d="M220.8,127.5L-44.2,280.5"/><path d="M-220.8,127.5L44.2,280.5"/></g><polygon class="iso-raft" points="13.3,28.1 114.8,86.7 26.5,137.7 -75.1,79.1"/><polygon class="iso-raft two" points="123.7,102 194.3,142.8 132.5,178.5 61.8,137.7"/><g class="iso-contour"><path d="M-57.4,33.2L8.8,81.6L101.6,119.9L198.8,191.3"/><path d="M-114.8,66.3L-39.8,125L61.8,163.2L141.3,224.4"/><path d="M-229.7,132.6L-145.8,196.4L-39.8,237.2L26.5,290.7"/></g><g class="iso-datum"><path d="M-265,173.4L0,326.4"/><path d="M265,173.4L0,326.4"/></g></g></g>
+            <g class="iso-float f1"><g class="iso-l1"><polygon points="265,20.4 0,173.4 0,186.1 265,33.2" fill="#A3BBCE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,20.4 0,173.4 0,186.1 -265,33.2" fill="#BDD0DE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,-132.6 265,20.4 0,173.4 -265,20.4" fill="#E3ECF3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-150.2,-45.9 114.8,107.1 79.5,127.5 -185.5,-25.5" fill="#8CA8BD" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-148,-26.8 -128.1,-15.3 -132.5,-12.7 -152.4,-24.2" fill="#EDF3F7"/><polygon points="-112.6,-6.4 -92.8,5.1 -97.2,7.7 -117,-3.8" fill="#EDF3F7"/><polygon points="-77.3,14 -57.4,25.5 -61.8,28.1 -81.7,16.6" fill="#EDF3F7"/><polygon points="-42,34.4 -22.1,45.9 -26.5,48.4 -46.4,37" fill="#EDF3F7"/><polygon points="-6.6,54.8 13.3,66.3 8.8,68.9 -11,57.4" fill="#EDF3F7"/><polygon points="28.7,75.2 48.6,86.7 44.2,89.3 24.3,77.8" fill="#EDF3F7"/><polygon points="64,95.6 83.9,107.1 79.5,109.7 59.6,98.2" fill="#EDF3F7"/><g class="iso-bay"><path d="M-181.1,-2.5L-220.8,20.4"/><path d="M-159,10.2L-198.8,33.2"/><path d="M-136.9,23L-176.7,45.9"/><path d="M-114.8,35.7L-154.6,58.7"/><path d="M-92.8,48.4L-132.5,71.4"/><path d="M-70.7,61.2L-110.4,84.1"/><path d="M-48.6,73.9L-88.3,96.9"/><path d="M-26.5,86.7L-66.3,109.7"/><path d="M-4.4,99.4L-44.2,122.4"/><path d="M17.7,112.2L-22.1,135.1"/><path d="M39.8,125L0,147.9"/><path d="M-181.1,-2.5L39.8,125"/><path d="M-220.8,20.4L0,147.9"/></g><polygon points="-148,19.1 -172.3,33.2 -172.3,40.8 -148,26.8" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-187.7,24.2 -172.3,33.2 -172.3,40.8 -187.7,31.9" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-163.4,10.2 -148,19.1 -172.3,33.2 -187.7,24.2" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-103.8,44.6 -128.1,58.7 -128.1,66.3 -103.8,52.3" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-143.5,49.7 -128.1,58.7 -128.1,66.3 -143.5,57.4" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-119.3,35.7 -103.8,44.6 -128.1,58.7 -143.5,49.7" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-37.5,82.9 -61.8,96.9 -61.8,104.6 -37.5,90.5" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-77.3,88 -61.8,96.9 -61.8,104.6 -77.3,95.6" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-53,73.9 -37.5,82.9 -61.8,96.9 -77.3,88" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="106,-117.3 26.5,-71.4 26.5,0 106,-45.9" fill="#6390B0" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-66.3,-124.9 26.5,-71.4 26.5,0 -66.3,-53.5" fill="#87ADC8" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="13.3,-170.8 106,-117.3 26.5,-71.4 -66.3,-124.9" fill="#DFEAF3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-mul"><path d="M-50.8,-116L-50.8,-44.6"/><path d="M-35.3,-107.1L-35.3,-35.7"/><path d="M-19.9,-98.2L-19.9,-26.8"/><path d="M-4.4,-89.2L-4.4,-17.8"/><path d="M11,-80.3L11,-8.9"/><path d="M90.5,-108.4L90.5,-37"/><path d="M75.1,-99.4L75.1,-28"/><path d="M59.6,-90.5L59.6,-19.1"/><path d="M44.2,-81.6L44.2,-10.2"/><path d="M28.7,-72.7L28.7,-1.3"/><path d="M-66.3,-71.4L26.5,-17.8"/><path d="M106,-63.7L26.5,-17.8"/><path d="M-66.3,-89.2L26.5,-35.7"/><path d="M106,-81.6L26.5,-35.7"/><path d="M-66.3,-107.1L26.5,-53.5"/><path d="M106,-99.4L26.5,-53.5"/></g><polygon points="185.5,-35.7 132.5,-5.1 132.5,40.8 185.5,10.2" fill="#7BA1BD" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="70.7,-40.8 132.5,-5.1 132.5,40.8 70.7,5.1" fill="#98B8CE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="123.7,-71.4 185.5,-35.7 132.5,-5.1 70.7,-40.8" fill="#D9E6F0" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-mul"><path d="M86.1,-31.9L86.1,14"/><path d="M101.6,-22.9L101.6,23"/><path d="M117,-14L117,31.9"/><path d="M170,-26.8L170,19.1"/><path d="M154.6,-17.8L154.6,28.1"/><path d="M139.1,-8.9L139.1,37"/><path d="M70.7,-10.2L132.5,25.5"/><path d="M185.5,-5.1L132.5,25.5"/><path d="M70.7,-25.5L132.5,10.2"/><path d="M185.5,-20.4L132.5,10.2"/></g></g></g>
+          </svg>
+        </div>
+        <ul class="ls-key">
+          <li><i class="k1"></i><span data-i18n="sk.1">Above ground</span></li>
+          <li><i class="k2"></i><span data-i18n="sk.2">The ground surface</span></li>
+          <li><i class="k3"></i><span data-i18n="sk.3">Below ground</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stages">
+      <span data-i18n="s2.st1">Align</span><i>&#8594;</i>
+      <span data-i18n="s2.st2">Clean</span><i>&#8594;</i>
+      <span data-i18n="s2.st3">Register</span><i>&#8594;</i>
+      <span data-i18n="s2.st4">Merge</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEP 3 ============ -->
+<section class="sec sec--tint" id="step3">
+  <div class="stepnum rise"><b>2</b><span data-i18n="s3.n">Engineering visualisation, in the office and in the field</span></div>
+  <h2 class="rise" data-i18n="s3.h">The same picture, from the office to the field.</h2>
+  <p class="lede rise" data-i18n="s3.l">Partial drawings, scattered files and competing versions produce mistakes and delays. Noryx holds the site and utility data in one environment, reachable from a desktop and from a phone, so the whole team decides on the same information.</p>
+  <p class="lede rise" data-i18n="s3.l2">Every layer is presented over the site documentation in one visual environment. You can stand on the site, see the route of a service against what is actually there, and decide on the spot.</p>
+  <p class="bimline rise"><b data-i18n="s3.bim">BIM integration</b><span data-i18n="s3.bims">BIM and RVT models can be brought into the same environment, showing existing conditions, the located services and the future design together.</span></p>
+
+  <div class="devices" id="devices">
+    <div>
+      <div class="screen">
+        <div class="bar">
+          <svg class="barlogo" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M4 9.5 16 3.5 28 9.5 16 15.5Z" fill="none" stroke="#35C8DC" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M4 15.5 16 21.5 28 15.5" fill="none" stroke="#1FA2B7" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M4 21.5 16 27.5 28 21.5" fill="none" stroke="#12618C" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+          <b class="barword">NORYX</b>
+          <span data-i18n="ui.stat">Site model</span>
+        </div>
+        <div class="view scene" id="scr-desk">
+          <span class="livechip"><i></i><span data-i18n="live">SITE MODEL</span></span>
+          <svg class="ovl" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#35C8DC" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#35C8DC" stop-opacity=".45"/>
+              <stop offset="100%" stop-color="#35C8DC" stop-opacity="0"/></linearGradient></defs>
+            <rect class="sweep" x="0" y="0" width="960" height="92"/>
+            <g class="runs">
+              <path class="casing" d="M40 452 L250 486 L430 496 L430 452"/>
+              <path class="casing" d="M800 438 L665 468 L545 482 L545 448"/>
+              <path class="casing" d="M250 514 L560 520 L782 476"/>
+              <path class="casing" d="M792 332 L798 402 L672 434 L610 440"/>
+              <path class="run w" style="--len:540" d="M40 452 L250 486 L430 496 L430 452"/>
+              <path class="run e" style="--len:380" d="M800 438 L665 468 L545 482 L545 448"/>
+              <path class="run g" style="--len:540" d="M250 514 L560 520 L782 476"/>
+              <path class="run t" style="--len:420" d="M792 332 L798 402 L672 434 L610 440"/>
+            </g>
+            <g class="chambers">
+              <circle cx="250" cy="486" r="9"/><circle cx="665" cy="468" r="9"/><circle cx="798" cy="402" r="9"/>
+            </g>
+            <g class="pick"><circle cx="430" cy="452" r="13"/><circle cx="430" cy="452" r="5.5"/></g>
+          </svg>
+          <div class="plat" aria-hidden="true">
+            <div class="plat-rail">
+              <span class="on"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.6L10.6 19z"/></svg></span>
+              <span><svg viewBox="0 0 24 24"><path d="M3 9h18v6H3z"/><path d="M7 9v3M11 9v4M15 9v3M19 9v4"/></svg></span>
+              <span><svg viewBox="0 0 24 24"><path d="M12 4l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4"/></svg></span>
+              <span><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><path d="M9 4v16"/></svg></span>
+              <span><svg viewBox="0 0 24 24"><path d="M12 21s6-5.4 6-10a6 6 0 1 0-12 0c0 4.6 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
+            </div>
+            <div class="plat-layers">
+              <b data-i18n="ui.layers">Layers</b>
+              <ul>
+                <li><i style="background:var(--u-water)"></i><span data-i18n="u.water">Water</span></li>
+                <li><i style="background:var(--u-elec)"></i><span data-i18n="u.elec">Electric</span></li>
+                <li><i style="background:var(--u-gas)"></i><span data-i18n="u.gas">Gas</span></li>
+                <li><i style="background:var(--u-tel)"></i><span data-i18n="u.tel">Telecom</span></li>
+              </ul>
+            </div>
+            <div class="plat-tip">
+              <b><i style="background:var(--u-water)"></i><span data-i18n="u.water">Water</span></b>
+              <span data-i18n="ui.depth">Depth</span> <em class="num">1.85 m</em>
+            </div>
+            <div class="plat-export"><span class="dwg">DWG</span><span data-i18n="ui.export">Export</span></div>
+            <div class="plat-status">
+              <span class="sc"><i></i>10 m</span>
+              <span class="xy num">219 480.24 &middot; 631 205.81</span>
+              <span class="fix"><i></i><span data-i18n="ui.fix">RTK FIX</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="devlabel" data-i18n="dev.desk">Lead engineer, desktop</p>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="view scene" id="scr-phone">
+          <!-- The map band carries the SAME 960x600 world the desktop draws, so a
+               run meets the kerb at the identical point on both. The phone used to
+               slice a narrow strip out of it, which magnified the capture about
+               three times and made the two screens look like different sites. -->
+          <div class="scene-map">
+            <span class="livechip"><i></i><span data-i18n="live">SITE MODEL</span></span>
+            <svg class="ovl" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect class="sweep" x="0" y="0" width="960" height="92"/><g class="runs">
+                <path class="casing" d="M40 452 L250 486 L430 496 L430 452"/>
+                <path class="casing" d="M800 438 L665 468 L545 482 L545 448"/>
+                <path class="casing" d="M250 514 L560 520 L782 476"/>
+                <path class="casing" d="M792 332 L798 402 L672 434 L610 440"/>
+                <path class="run w" style="--len:540" d="M40 452 L250 486 L430 496 L430 452"/>
+                <path class="run e" style="--len:380" d="M800 438 L665 468 L545 482 L545 448"/>
+                <path class="run g" style="--len:540" d="M250 514 L560 520 L782 476"/>
+                <path class="run t" style="--len:420" d="M792 332 L798 402 L672 434 L610 440"/>
+              </g>
+              <g class="chambers">
+                <circle cx="250" cy="486" r="9"/><circle cx="665" cy="468" r="9"/><circle cx="798" cy="402" r="9"/>
+              </g>
+              <g class="pick"><circle cx="430" cy="452" r="13"/><circle cx="430" cy="452" r="5.5"/></g>
+            </svg>
+          </div>
+          <div class="plat" aria-hidden="true">
+            <div class="plat-layers">
+              <b data-i18n="ui.layers">Layers</b>
+              <ul>
+                <li><i style="background:var(--u-water)"></i><span data-i18n="u.water">Water</span></li>
+                <li><i style="background:var(--u-elec)"></i><span data-i18n="u.elec">Electric</span></li>
+                <li><i style="background:var(--u-gas)"></i><span data-i18n="u.gas">Gas</span></li>
+                <li><i style="background:var(--u-tel)"></i><span data-i18n="u.tel">Telecom</span></li>
+              </ul>
+            </div>
+            <div class="plat-tip">
+              <b><i style="background:var(--u-water)"></i><span data-i18n="u.water">Water</span></b>
+              <span data-i18n="ui.depth">Depth</span> <em class="num">1.85 m</em>
+            </div>
+            <div class="plat-export"><span class="dwg">DWG</span><span data-i18n="ui.export">Export</span></div>
+            <div class="plat-status">
+              <span class="sc"><i></i>10 m</span>
+              <span class="fix"><i></i><span data-i18n="ui.fix">RTK FIX</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="devlabel" data-i18n="dev.phone">Field contractor, tablet</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PLATFORM ============ -->
+<section class="sec" id="platform">
+  <div class="platform">
+    <div class="platform-in">
+      <div>
+        <span class="kicker" data-i18n="plat.k">The objection we hear first</span>
+        <h2 data-i18n="plat.h">You already run six platforms.</h2>
+        <p data-i18n="plat.p">The average contractor runs 6.3 of them, and 81% say the stack itself is the problem. So the model is not another login for the field. It is a link. It opens in a browser, on a phone, in a trailer, and the person opening it needs no account and no training session. Your data stays yours and exports to the formats your team already uses.</p>
+        <div class="out"><span>IFC</span><span>RVT</span><span>DWG</span><span>LAS / LAZ</span><span>E57</span><span>GeoTIFF</span><span>PDF</span></div>
+      </div>
+      <div class="stackwrap">
+        <p class="vhide" id="stackTitle" data-i18n="sk.alt">One site drawn in three separated layers: what stands on it, the ground beneath in section with its strata and foundation level, and the located services running under that, colour coded by type.</p>
+        <div class="isowrap" role="img" aria-labelledby="stackTitle">
+          <svg class="isostack" viewBox="-291 -196.8 582 737.9" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g class="iso-tie"><path d="M0,186.1L0,469.2"/><path d="M265,33.2L265,316.2"/><path d="M-265,33.2L-265,316.2"/></g>
+            <g class="iso-float f3"><g class="iso-l3"><polygon points="265,316.2 0,469.2 0,515.1 265,362.1" fill="#081F2E" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,316.2 0,469.2 0,515.1 -265,362.1" fill="#0E2C40" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,163.2 265,316.2 0,469.2 -265,316.2" fill="#153B54" stroke="rgba(70,124,156,.55)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-grid"><path d="M44.2,188.7L-220.8,341.7"/><path d="M-44.2,188.7L220.8,341.7"/><path d="M88.3,214.2L-176.7,367.2"/><path d="M-88.3,214.2L176.7,367.2"/><path d="M132.5,239.7L-132.5,392.7"/><path d="M-132.5,239.7L132.5,392.7"/><path d="M176.7,265.2L-88.3,418.2"/><path d="M-176.7,265.2L88.3,418.2"/><path d="M220.8,290.7L-44.2,443.7"/><path d="M-220.8,290.7L44.2,443.7"/></g><g class="iso-ghost"><path d="M13.3,196.4L106,249.9L26.5,295.8L-66.3,242.2L13.3,196.4"/><path d="M123.7,270.3L185.5,306L132.5,336.6L70.7,300.9L123.7,270.3"/></g><g class="run t"><path class="glow" d="M-167.8,260.1L97.2,413.1"/><path class="core" d="M-167.8,260.1L97.2,413.1"/><path class="hi" d="M-167.8,260.1L97.2,413.1" transform="translate(0,-1.5)"/></g><g class="run w"><path class="glow" d="M-75.1,206.6L97.2,306L-92.8,415.7"/><path class="core" d="M-75.1,206.6L97.2,306L-92.8,415.7"/><path class="hi" d="M-75.1,206.6L97.2,306L-92.8,415.7" transform="translate(0,-1.5)"/></g><g class="run e"><path class="glow" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5"/><path class="core" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5"/><path class="hi" d="M220.8,290.7L92.8,364.7L-61.8,275.4L-198.8,354.5" transform="translate(0,-1.5)"/></g><g class="run g"><path class="glow" d="M-220.8,290.7L-101.6,359.5L97.2,244.8"/><path class="core" d="M-220.8,290.7L-101.6,359.5L97.2,244.8"/><path class="hi" d="M-220.8,290.7L-101.6,359.5L97.2,244.8" transform="translate(0,-1.5)"/></g><g class="iso-ch"><path class="wall" d="M83.1,306L83.1,321.3A14.1,8.1 0 0 0 111.2,321.3L111.2,306Z"/><ellipse class="cap" cx="97.2" cy="306" rx="14.1" ry="8.1"/></g><g class="iso-ch"><path class="wall" d="M-75.9,275.4L-75.9,290.7A14.1,8.1 0 0 0 -47.8,290.7L-47.8,275.4Z"/><ellipse class="cap" cx="-61.8" cy="275.4" rx="14.1" ry="8.1"/></g><g class="iso-ch"><path class="wall" d="M-115.6,359.5L-115.6,374.8A14.1,8.1 0 0 0 -87.5,374.8L-87.5,359.5Z"/><ellipse class="cap" cx="-101.6" cy="359.5" rx="14.1" ry="8.1"/></g></g></g>
+            <g class="iso-float f2"><g class="iso-l2"><polygon points="265,153 0,306 0,326.4 265,173.4" fill="#AE9575" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,153 0,306 0,326.4 -265,173.4" fill="#C6B091" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="265,173.4 0,326.4 0,346.8 265,193.8" fill="#96A7B5" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,173.4 0,326.4 0,346.8 -265,193.8" fill="#AEBDC9" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="265,193.8 0,346.8 0,372.3 265,219.3" fill="#7D92A2" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,193.8 0,346.8 0,372.3 -265,219.3" fill="#94A7B7" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,0 265,153 0,306 -265,153" fill="#D4E0E9" stroke="rgba(96,128,152,.45)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-150.2,86.7 114.8,239.7 79.5,260.1 -185.5,107.1" fill="#AFC2D0"/><g class="iso-surv"><path d="M44.2,25.5L-220.8,178.5"/><path d="M-44.2,25.5L220.8,178.5"/><path d="M88.3,51L-176.7,204"/><path d="M-88.3,51L176.7,204"/><path d="M132.5,76.5L-132.5,229.5"/><path d="M-132.5,76.5L132.5,229.5"/><path d="M176.7,102L-88.3,255"/><path d="M-176.7,102L88.3,255"/><path d="M220.8,127.5L-44.2,280.5"/><path d="M-220.8,127.5L44.2,280.5"/></g><polygon class="iso-raft" points="13.3,28.1 114.8,86.7 26.5,137.7 -75.1,79.1"/><polygon class="iso-raft two" points="123.7,102 194.3,142.8 132.5,178.5 61.8,137.7"/><g class="iso-contour"><path d="M-57.4,33.2L8.8,81.6L101.6,119.9L198.8,191.3"/><path d="M-114.8,66.3L-39.8,125L61.8,163.2L141.3,224.4"/><path d="M-229.7,132.6L-145.8,196.4L-39.8,237.2L26.5,290.7"/></g><g class="iso-datum"><path d="M-265,173.4L0,326.4"/><path d="M265,173.4L0,326.4"/></g></g></g>
+            <g class="iso-float f1"><g class="iso-l1"><polygon points="265,20.4 0,173.4 0,186.1 265,33.2" fill="#A3BBCE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-265,20.4 0,173.4 0,186.1 -265,33.2" fill="#BDD0DE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="0,-132.6 265,20.4 0,173.4 -265,20.4" fill="#E3ECF3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-150.2,-45.9 114.8,107.1 79.5,127.5 -185.5,-25.5" fill="#8CA8BD" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-148,-26.8 -128.1,-15.3 -132.5,-12.7 -152.4,-24.2" fill="#EDF3F7"/><polygon points="-112.6,-6.4 -92.8,5.1 -97.2,7.7 -117,-3.8" fill="#EDF3F7"/><polygon points="-77.3,14 -57.4,25.5 -61.8,28.1 -81.7,16.6" fill="#EDF3F7"/><polygon points="-42,34.4 -22.1,45.9 -26.5,48.4 -46.4,37" fill="#EDF3F7"/><polygon points="-6.6,54.8 13.3,66.3 8.8,68.9 -11,57.4" fill="#EDF3F7"/><polygon points="28.7,75.2 48.6,86.7 44.2,89.3 24.3,77.8" fill="#EDF3F7"/><polygon points="64,95.6 83.9,107.1 79.5,109.7 59.6,98.2" fill="#EDF3F7"/><g class="iso-bay"><path d="M-181.1,-2.5L-220.8,20.4"/><path d="M-159,10.2L-198.8,33.2"/><path d="M-136.9,23L-176.7,45.9"/><path d="M-114.8,35.7L-154.6,58.7"/><path d="M-92.8,48.4L-132.5,71.4"/><path d="M-70.7,61.2L-110.4,84.1"/><path d="M-48.6,73.9L-88.3,96.9"/><path d="M-26.5,86.7L-66.3,109.7"/><path d="M-4.4,99.4L-44.2,122.4"/><path d="M17.7,112.2L-22.1,135.1"/><path d="M39.8,125L0,147.9"/><path d="M-181.1,-2.5L39.8,125"/><path d="M-220.8,20.4L0,147.9"/></g><polygon points="-148,19.1 -172.3,33.2 -172.3,40.8 -148,26.8" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-187.7,24.2 -172.3,33.2 -172.3,40.8 -187.7,31.9" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-163.4,10.2 -148,19.1 -172.3,33.2 -187.7,24.2" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-103.8,44.6 -128.1,58.7 -128.1,66.3 -103.8,52.3" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-143.5,49.7 -128.1,58.7 -128.1,66.3 -143.5,57.4" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-119.3,35.7 -103.8,44.6 -128.1,58.7 -143.5,49.7" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-37.5,82.9 -61.8,96.9 -61.8,104.6 -37.5,90.5" fill="#95AEC3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-77.3,88 -61.8,96.9 -61.8,104.6 -77.3,95.6" fill="#ABC2D3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-53,73.9 -37.5,82.9 -61.8,96.9 -77.3,88" fill="#D6E4EE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="106,-117.3 26.5,-71.4 26.5,0 106,-45.9" fill="#6390B0" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="-66.3,-124.9 26.5,-71.4 26.5,0 -66.3,-53.5" fill="#87ADC8" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="13.3,-170.8 106,-117.3 26.5,-71.4 -66.3,-124.9" fill="#DFEAF3" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-mul"><path d="M-50.8,-116L-50.8,-44.6"/><path d="M-35.3,-107.1L-35.3,-35.7"/><path d="M-19.9,-98.2L-19.9,-26.8"/><path d="M-4.4,-89.2L-4.4,-17.8"/><path d="M11,-80.3L11,-8.9"/><path d="M90.5,-108.4L90.5,-37"/><path d="M75.1,-99.4L75.1,-28"/><path d="M59.6,-90.5L59.6,-19.1"/><path d="M44.2,-81.6L44.2,-10.2"/><path d="M28.7,-72.7L28.7,-1.3"/><path d="M-66.3,-71.4L26.5,-17.8"/><path d="M106,-63.7L26.5,-17.8"/><path d="M-66.3,-89.2L26.5,-35.7"/><path d="M106,-81.6L26.5,-35.7"/><path d="M-66.3,-107.1L26.5,-53.5"/><path d="M106,-99.4L26.5,-53.5"/></g><polygon points="185.5,-35.7 132.5,-5.1 132.5,40.8 185.5,10.2" fill="#7BA1BD" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="70.7,-40.8 132.5,-5.1 132.5,40.8 70.7,5.1" fill="#98B8CE" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><polygon points="123.7,-71.4 185.5,-35.7 132.5,-5.1 70.7,-40.8" fill="#D9E6F0" stroke="rgba(96,128,152,.5)" stroke-width=".8" stroke-linejoin="round"/><g class="iso-mul"><path d="M86.1,-31.9L86.1,14"/><path d="M101.6,-22.9L101.6,23"/><path d="M117,-14L117,31.9"/><path d="M170,-26.8L170,19.1"/><path d="M154.6,-17.8L154.6,28.1"/><path d="M139.1,-8.9L139.1,37"/><path d="M70.7,-10.2L132.5,25.5"/><path d="M185.5,-5.1L132.5,25.5"/><path d="M70.7,-25.5L132.5,10.2"/><path d="M185.5,-20.4L132.5,10.2"/></g></g></g>
+          </svg>
+        </div>
+        <ol class="stackkey">
+          <li><i class="k1"></i><b data-i18n="sk.1">Above ground</b><span data-i18n="sk.1s">Buildings, roads and everything standing</span></li>
+          <li><i class="k2"></i><b data-i18n="sk.2">The ground surface</b><span data-i18n="sk.2s">Terrain, levels and existing conditions</span></li>
+          <li><i class="k3"></i><b data-i18n="sk.3">Below ground</b><span data-i18n="sk.3s">Located services, colour coded by type</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT IS FOR / WHEN TO CALL ============ -->
+<section class="sec" id="who">
+  <div class="sec-num rise"><span data-i18n="sec.who.n">Who it is for</span></div>
+  <h2 class="rise" data-i18n="sec.who.h">Who works with us, and when.</h2>
+  <div class="twocol">
+    <div class="rise">
+      <h3 class="colh" data-i18n="who.h">Who is it for</h3>
+      <ul class="ticks">
+        <li data-i18n="who.1">Planners and consultants</li>
+        <li data-i18n="who.2">Project managers and supervisors</li>
+        <li data-i18n="who.3">Infrastructure and execution contractors</li>
+        <li data-i18n="who.4">Planning and engineering firms</li>
+        <li data-i18n="who.5">Engineering, infrastructure and facilities managers at operating sites</li>
+      </ul>
+    </div>
+    <div class="rise">
+      <h3 class="colh" data-i18n="when.h">When to call us</h3>
+      <ul class="ticks">
+        <li data-i18n="when.1">Before planning begins</li>
+        <li data-i18n="when.2">Ahead of rehabilitating or extending an existing site</li>
+        <li data-i18n="when.3">Before excavation, drilling or relocating services</li>
+        <li data-i18n="when.4">Before working on an operating site</li>
+        <li data-i18n="when.5">When the As-Built drawings are old, partial or unreliable</li>
+        <li data-i18n="when.6">When existing conditions, services and a new design have to be reconciled</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec sec--tint" id="services">
+  <div class="sec-num rise"><span data-i18n="sec.svc.n">Services</span></div>
+  <h2 class="rise" data-i18n="sec.svc.h">What we deliver.</h2>
+  <ul class="svcgrid rise">
+    <li data-i18n="svc.1">Detection and mapping of underground and hidden utilities</li>
+    <li data-i18n="svc.2">Survey and mapping of existing conditions</li>
+    <li data-i18n="svc.3">Survey deliverables and submission per Mavat requirements</li>
+    <li data-i18n="svc.4">3D scanning and LiDAR</li>
+    <li data-i18n="svc.5">Point clouds and Scan-to-BIM</li>
+    <li data-i18n="svc.6">As-Built documentation</li>
+    <li data-i18n="svc.7">Drone mapping, photogrammetry and orthophoto</li>
+    <li data-i18n="svc.8">DWG, CAD, RVT and BIM deliverables</li>
+    <li data-i18n="svc.9">Engineering visualisation and BIM integration</li>
+  </ul>
+</section>
+
+<!-- ============ RELIABILITY AND LIMITS ============ -->
+<section class="sec" id="limits">
+  <div class="sec-num rise"><span data-i18n="sec.lim.n">Reliability and limits</span></div>
+  <h2 class="rise" data-i18n="sec.lim.h">What we will and will not promise.</h2>
+  <p class="lede rise" data-i18n="sec.lim.l">Every finding is delivered with a documented confidence level, and in line with the limits of the technology, the ground conditions and how accessible the site is. The aim is not to promise that there are no surprises. It is to reduce the uncertainty substantially and give planning and execution a better basis to work from.</p>
+</section>
+
+<!-- PROJECTS section lifted out to the project root, _hidden_projects_section.html,
+     until the project gallery is ready. Paste that file back here to restore it. -->
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--tint" id="faq">
+  <div class="sec-num rise"><span data-i18n="sec.faq.n">Straight answers</span></div>
+  <h2 class="rise" data-i18n="sec.faq.h">The questions engineers actually ask.</h2>
+  <div class="faq" id="faqlist">
+    <div class="q"><button type="button" data-i18n="faq1.q">Does ground penetrating radar actually work in clay or wet ground?</button>
+      <div class="a"><p data-i18n="faq1.a">Honestly, not everywhere. Radar reaches roughly 18 metres in clean dry sand and about 6 metres in dense wet clay, and a saturated layer near the surface can block most of the signal. That is exactly why the pipeline runs five instruments instead of one. Where radar struggles we lean on electromagnetic locating and resistivity, we calibrate depth on site, and we tell you plainly which readings are strong and which are not.</p></div></div>
+    <div class="q"><button type="button" data-i18n="faq2.q">How accurate is it, really?</button>
+      <div class="a"><p data-i18n="faq2.a">We report to ASCE 38-22 quality levels, which is the industry's own scale, so you know exactly what you are holding. Geophysical mapping typically finds 10 to 50% more utilities than record based mapping. Where a line is critical, we verify it.</p></div></div>
+    <div class="q"><button type="button" data-i18n="faq6.q">How long does it take?</button>
+      <div class="a"><p data-i18n="faq6.a">It depends on the size of the site, how dense it is and which deliverables you need. Because scanning, processing and modelling are run as one continuous process, work that normally takes weeks can often be shortened to a few working days. An exact schedule is set after we look at the site and the scope of the project.</p></div></div>
+    <div class="q"><button type="button" data-i18n="faq3.q">What does the fusion engine actually do?</button>
+      <div class="a"><p data-i18n="faq3.a">It takes three feeds that do not naturally agree, point clouds, radar slices and mesh geometry, and forces them into one coordinate truth. Align puts them in the same space, clean strips the noise and the ghosts, register locks them to survey control, and merge produces a single model where the pipe under the slab is in the same place in every view of it.</p></div></div>
+    <div class="q"><button type="button" data-i18n="faq4.q">Is this another platform my team has to learn?</button>
+      <div class="a"><p data-i18n="faq4.a">No. The model is a link. If someone can open a web page, they can walk your site.</p></div></div>
+    <div class="q"><button type="button" data-i18n="faq5.q">What if you find nothing unexpected?</button>
+      <div class="a"><p data-i18n="faq5.a">Then you hold a documented, dated survey of what was found and what was not, with the confidence level for each reading. That record is what you want in your hand if anyone disputes the site later. We do not claim a site is clear, we report what the instruments could and could not establish.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="contact">
+    <div>
+      <h2 data-i18n="con.h">Tell us about the site.</h2>
+      <p class="sub" data-i18n="con.sub">An engineer answers, not a sales team. Send the location and what you are planning and we will tell you what we would capture and what it would take.</p>
+      <p class="direct"><span data-i18n="con.direct">Or reach us directly</span></p>
+      <ul class="directlist">
+        <li><a href="mailto:office@noryx.io">office@noryx.io</a></li>
+        <li><a class="num" href="tel:+972543936936" dir="ltr">054-393-6936</a></li>
+      </ul>
+    </div>
+    <div>
+      <form id="leadform" novalidate>
+        <div class="row">
+          <div><label for="f-name" data-i18n="f.name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="f-co" data-i18n="f.co">Company</label><input id="f-co" name="company" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="row">
+          <div><label for="f-mail" data-i18n="f.mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="f-site" data-i18n="f.site">Site location</label><input id="f-site" name="site" type="text"></div>
+        </div>
+        <div><label for="f-msg" data-i18n="f.msg">What are you planning?</label><textarea id="f-msg" name="message"></textarea></div>
+        <div class="submitrow">
+          <button class="btn btn-primary" type="submit" data-i18n="cta.primary">Contact us</button>
+          <a class="btn btn-wa" href="https://wa.me/972543936936" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span data-i18n="cta.wa">WhatsApp</span></a>
+        </div>
+        <p class="form-note" id="formnote" data-i18n="f.note">Your details go straight to the Noryx engineering inbox. Nothing is shared with anyone else.</p>
+      </form>
+      <div class="formerr" id="formerr" role="alert" hidden>
+        <b data-i18n="f.errh">The message did not go through.</b>
+        <span data-i18n="f.errs">Your details are saved, nothing is lost. Try again, or reach us directly.</span>
+        <em class="formwhy" id="formwhy" hidden></em>
+        <div class="formerr-act">
+          <button class="btn btn-primary" type="button" id="formretry" data-i18n="f.retry">Try again</button>
+          <a class="btn btn-ghost" href="mailto:office@noryx.io">office@noryx.io</a>
+        </div>
+      </div>
+      <div class="ok" id="formok" role="status" aria-live="polite">
+        <b data-i18n="f.okh">Sent. An engineer will come back to you.</b>
+        <span data-i18n="f.oks">Usually within one working day. If it is urgent, write to office@noryx.io.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-top">
+    <a class="brand" href="#main" aria-label="Noryx Technologies">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 9.5 16 3.5 28 9.5 16 15.5Z" fill="none" stroke="#35C8DC" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M4 15.5 16 21.5 28 15.5" fill="none" stroke="#1FA2B7" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M4 21.5 16 27.5 28 21.5" fill="none" stroke="#12618C" stroke-width="2.4" stroke-linejoin="round"/>
+      </svg>
+      <span>NORYX</span>
+    </a>
+    <div class="foot-links">
+      <a href="#tech" data-i18n="nav.tech">Technology</a>
+      <a href="#step2" data-i18n="nav.fusion">Fusion engine</a>
+      <a href="#step3" data-i18n="nav.field">In the field</a>
+      <a href="#faq" data-i18n="nav.faq">Questions</a>
+      <a href="mailto:office@noryx.io">office@noryx.io</a>
+      <a class="footnum" href="tel:+972543936936" dir="ltr">054-393-6936</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span data-i18n="foot.1">Noryx Technologies. Spatial Data Fusion, end to end.</span>
+    <span>noryx.io</span>
+  </div>
+</footer>
+
+
+<!-- Cookie consent. The wording is translated by the build like every other
+     string, so the Hebrew page asks in Hebrew and lays out right to left. -->
+<div class="cc" id="cookiebar" role="dialog" aria-label="Cookies" hidden>
+  <div class="cc-in">
+    <div class="cc-txt">
+      <b data-i18n="cc.h">We use cookies</b>
+      <span data-i18n="cc.p">Essential cookies keep the site working. With your agreement we also measure how it is used, so we can make it better.</span>
+    </div>
+    <div class="cc-act">
+      <button class="btn btn-primary" type="button" id="ccAll" data-i18n="cc.all">Accept all</button>
+      <button class="btn btn-ghost" type="button" id="ccEss" data-i18n="cc.ess">Essential only</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   i18n
+   ============================================================ */
+var DICT = { en:{}, he:{
+  'skip':'דילוג לתוכן',
+  'nav.tech':'טכנולוגיה','nav.fusion':'מנוע האיחוד','nav.field':'בשטח','nav.faq':'שאלות',
+  'cta.primary':'צרו קשר',
+  'cta.wa':'וואטסאפ',
+  'hero.kicker':'איתור ומיפוי תשתיות תת־קרקעיות',
+  'hero.h1':'לראות מבעד לקרקע.',
+  'hero.lead':'מיפוי ותיעוד דיגיטלי של האתר, מעל הקרקע ומתחתיה.',
+  'hero.sub':'נוריקס משלבת איתור תשתיות תת־קרקעיות, סריקות LiDAR, מיפוי אווירי ומדידות ליצירת תמונת מצב אחת, מתואמת ונגישה לתכנון ולביצוע.',
+  'stat.1':'בשנה, נזק ישיר מפגיעה בתשתיות במהלך עבודות בינוי תת־קרקעיות בישראל',
+  'stat.1s':'מקור: דוח פורום הנזיקין',
+  'stat.2':'תקלות שדווחו במערכות מים ושפכים בישראל בשנת 2022, שחלקן הובילו לגלישות ביוב ולנזקים סביבתיים',
+  'stat.2s':'מקור: דיווחי 2022',
+  'stat.3n':'מיליארדי ₪',
+  'stat.3':'מושקעים מידי שנה בפיתוח תשתיות לאומיות, כשמה שמתחת לקרקע נותר הנקודה העיוורת',
+  'stat.src':'המקורות מצוינים לצד הנתונים שאליהם הם שייכים.',
+  's1.h':'שכבות שונות. תמונת מצב אחת.',
+  's1.l':'במקום לתאם בין כמה ספקים ולקבל קבצים שאינם מתחברים זה לזה, נוריקס מרכזת מיפוי אווירי, סריקות תלת־ממד ואיתור תשתיות תת־קרקעיות בתהליך מתואם אחד. כל שכבות המידע מחוברות לאותה מערכת קואורדינטות ונמסרות בפורמטים שבהם צוותי התכנון והביצוע כבר עובדים.',
+  'sec.tech.n':'טכנולוגיה',
+  'tech.h':'הטכנולוגיה מותאמת לתנאי האתר.',
+  'tech.p':'אין שיטת איתור אחת שמתאימה לכל קרקע ולכל תשתית. אנחנו משלבים בין GPR, איתור אלקטרומגנטי, ERT, סריקות LiDAR, פוטוגרמטריה ו־RTK-GNSS בהתאם לתנאי האתר ולמטרת הפרויקט.',
+  's3.n':'ויזואליזציה הנדסית, במשרד ובשטח',
+  's3.h':'אותה תמונת מצב, מהמשרד ועד השטח.',
+  's3.l':'תוכניות חלקיות, קבצים מפוזרים וגרסאות שונות מייצרים טעויות ועיכובים. נוריקס מרכזת את נתוני האתר והתשתיות בסביבה אחת, הנגישה מהמחשב ומהטלפון, כדי שכל הצוות יקבל החלטות על בסיס אותו מידע.',
+  's3.l2':'כל שכבות המידע מוצגות על גבי תיעוד האתר בסביבה חזותית אחת. כך ניתן לעמוד בשטח, לראות את תוואי התשתיות ביחס למצב הקיים ולקבל החלטות על בסיס מידע ברור ונגיש.',
+  's3.bim':'אינטגרציה עם BIM',
+  's3.bims':'ניתן לשלב מודלי BIM ו־RVT ולהציג באותה סביבה את המצב הקיים, התשתיות שאותרו והתכנון העתידי.',
+  'live':'מודל האתר',
+  'sec.who.n':'למי זה מתאים','sec.who.h':'מי עובד איתנו, ומתי.',
+  'who.h':'למי זה מתאים',
+  'who.1':'מתכננים ויועצים','who.2':'מנהלי פרויקטים ומפקחים','who.3':'קבלני תשתיות וביצוע',
+  'who.4':'חברות תכנון והנדסה','who.5':'מנהלי הנדסה, תשתיות ונכסים במתקנים פעילים',
+  'when.h':'מתי פונים אלינו',
+  'when.1':'לפני תחילת תכנון','when.2':'לקראת שיקום או הרחבת אתר קיים',
+  'when.3':'לפני חפירה, קידוח או העתקת תשתיות','when.4':'לפני עבודה באתר פעיל',
+  'when.5':'כאשר תוכניות ה־As-Built ישנות, חלקיות או אינן אמינות',
+  'when.6':'כאשר נדרש לתאם בין המצב הקיים, התשתיות והתכנון החדש',
+  'sec.svc.n':'שירותים','sec.svc.h':'מה אנחנו מספקים.',
+  'svc.1':'איתור ומיפוי תשתיות תת־קרקעיות וסמויות','svc.2':'מדידות ומיפוי של המצב הקיים',
+  'svc.3':'תוצרי מדידה והגשה בהתאם למבא״ת','svc.4':'סריקות תלת־ממד ו־LiDAR',
+  'svc.5':'ענני נקודות ו־Scan-to-BIM','svc.6':'תיעוד As-Built',
+  'svc.7':'מיפוי רחפן, פוטוגרמטריה ואורתופוטו','svc.8':'תוצרי DWG, CAD, RVT ו־BIM',
+  'svc.9':'ויזואליזציה הנדסית ואינטגרציה עם BIM',
+  'sec.lim.n':'אמינות ומגבלות','sec.lim.h':'מה נבטיח ומה לא.',
+  'sec.lim.l':'כל ממצא נמסר עם רמת אמינות מתועדת ובהתאם למגבלות הטכנולוגיה, תנאי הקרקע ונגישות האתר. המטרה אינה להבטיח שאין הפתעות, אלא לצמצם משמעותית את אי־הוודאות ולספק בסיס טוב יותר לתכנון ולביצוע.',
+  'sec.prj.n':'פרויקטים נבחרים','sec.prj.h':'עבודות שביצענו.',
+  'sec.prj.l':'כל מקרה מציג את האתר, הבעיה שהובילה להזמנת העבודה, הטכנולוגיות שבהן השתמשנו, התוצרים שנמסרו ומשך העבודה.',
+  'prj.img':'צילום מהשטח','prj.tag':'ממתין לתוכן','prj.h':'שם הפרויקט',
+  'prj.1':'סוג האתר והלקוח, או תיאור אנונימי','prj.2':'הבעיה שהובילה להזמנת העבודה',
+  'prj.3':'היקף העבודה והטכנולוגיות','prj.4':'התוצרים שנמסרו','prj.5':'משך העבודה והתוצאה',
+  'prj.note':'האזור בנוי וממתין לחומר אמיתי מהפרויקטים. שום דבר כאן אינו מומצא.',
+  'faq6.q':'כמה זמן זה לוקח?',
+  'faq6.a':'משך העבודה תלוי בגודל האתר, בצפיפות ובתוצרים הנדרשים. מאחר שהסריקה, העיבוד והמידול מנוהלים כתהליך רציף, ניתן במקרים רבים לקצר עבודה שבדרך כלל נמשכת שבועות לכמה ימי עבודה. לוח זמנים מדויק נקבע לאחר בחינת האתר והיקף הפרויקט.',
+  'faq5.a':'אז יש בידיכם מדידה מתועדת ומתוארכת של מה שנמצא ומה שלא, עם רמת האמינות לכל קריאה. זה התיעוד שאתם רוצים להחזיק אם מישהו יתווכח על האתר בהמשך. אנחנו לא מצהירים שאתר נקי, אנחנו מדווחים מה המכשירים הצליחו ומה לא הצליחו לקבוע.',
+  's1.e.b':'טומוגרפיית התנגדות חשמלית',
+  's1.e.s':'יוצרת חתך של תת־הקרקע באמצעות מדידת שינויים בהתנגדות החשמלית. הממצאים יכולים לסייע בזיהוי שינויי שכבות, אזורי רטיבות, חללים וחריגות תת־קרקעיות, בהתאם לתנאי האתר.',
+  'b1.k':'01 / סריקת שטח','b1.h':'אנחנו סורקים ומתעדים את האתר.',
+  'b2.k':'02 / עיגון קואורדינטות','b2.h':'אנחנו מקשרים כל קריאה ל-X, ל-Y ול-Z אמיתיים.',
+  'b3.k':'03 / סריקה אווירית וקרקעית','b3.h':'אנחנו ממפים את כל האתר מהאוויר ומהקרקע.',
+  'b4.k':'04 / סיור תלת-ממדי בענן','b4.h':'אנחנו בונים את המודל המאוחד.',
+  'b5.k':'05 / מסירה סטטוטורית','b5.h':'אנחנו מוסרים תוכניות שהרשות מקבלת.',
+  'sk.alt':'אתר אחד בשלוש שכבות מופרדות: מה שעומד עליו, הקרקע שמתחתיו בחתך על שכבותיה ומפלס היסודות, והתשתיות שאותרו מתחת לה, בצבע לפי סוג.',
+  'sk.1':'מעל הקרקע','sk.1s':'מבנים, כבישים וכל מה שעומד',
+  'sk.2':'פני הקרקע','sk.2s':'טופוגרפיה, מפלסים והמצב הקיים',
+  'sk.3':'מתחת לקרקע','sk.3s':'תשתיות מאותרות, בצבע לפי סוג',
+  'hero.scroll':'המשיכו לגלול כדי לחשוף את מה שמתחת לקרקע',
+  'u.water':'מים','u.elec':'חשמל','u.gas':'גז','u.tel':'תקשורת',
+  'ui.layers':'שכבות','ui.export':'ייצוא','ui.depth':'עומק','ui.fix':'קיבוע RTK',
+  'ui.hint':'גללו לטעינת התשתיות שאותרו','ui.stat':'מודל האתר','ui.live':'נטען',
+  's1.kit':'המכשירים שיוצאים לשטח',
+  'br.acc':'תשתית נגישה','br.nac':'תשתית לא נגישה',
+  'br.note':'שלבים 03 עד 05 זהים בשני המסלולים. מה שמשתנה הוא רק הדרך שבה מגיעים לקו.',
+  'fa1.b':'סריקת שטח','fa1.s':'סריקת לייזר קרקעית וניידת של כל מה שעומד באתר.',
+  'fa2.b':'עיגון קואורדינטות','fa2.s':'בקרת RTK-GNSS שמקשרת כל קריאה ל-X, ל-Y ול-Z אמיתיים.',
+  'fn1.b':'איתור פיזי','fn1.s':'מכ"ם חודר קרקע ואיתור אלקטרומגנטי, במקום שאי אפשר להגיע אליו ישירות.',
+  'fn2.b':'סימון','fn2.s':'הקו המאותר מסומן על פני השטח, ואז נמדד.',
+  'f3.b':'סריקה אווירית','f3.s':'פוטוגרמטריה מרחפן על כל שטח האתר.',
+  'f4.b':'סיור תלת-ממדי בענן','f4.s':'המודל המאוחד, מטויל בדפדפן.',
+  'f5.b':'מסירה סטטוטורית (2D)','f5.s':'תוכניות חתומות בפורמטים שהרשות מקבלת.',
+  'sec.stakes.n':'מה מונח על הכף',
+  'sec.stakes.h':'הקרקע היא החלק האחרון בפרויקט שאף אחד לא רואה.',
+  'sec.stakes.l':'היא גם החלק שעוצר את העבודה. אלה לא המספרים שלנו. אלה המספרים של הענף עצמו.',
+  's1.n':'איסוף נתוני שטח רב-חיישני',
+  's1.a.b':'פוטוגרמטריה מרחפן','s1.a.s':'צילום אווירי חופף שנפתר לגאומטריה תלת ממדית מדידה.',
+  's1.b.b':'לידאר פני שטח','s1.b.s':'מיליוני נקודות נמדדות בשנייה, שהופכות את מה שעומד לתוכנית עדות.',
+  's1.c.b':'מכ"ם חודר קרקע','s1.c.s':'קורא החזרים מתשתיות קבורות ומחללים, בלי לגעת בקרקע.',
+  's1.d.b':'מכ"ם תת-קרקעי','s1.d.s':'פרופיל עמוק יותר שמגיע למה שמעברים רדודים לא מגיעים אליו.',
+  'ladder.0':'אווירי','ladder.1':'פני השטח','ladder.2':'תת-הקרקע',
+  's2.n':'צינור האיחוד ואינטגרציה אלגוריתמית',
+  's2.h':'ליצור מודל אחד ועקבי שהוא מקור האמת היחיד.',
+  's2.l':'שלושה מקורות גולמיים נכנסים. מודל אחד מאוחד יוצא, כשכל שכבה מסכימה עם כל שכבה אחרת.',
+  's2.alt':'אתר אחד בשלוש שכבות מופרדות: המבנים והכבישים שעומדים עליו, הקרקע שמתחתיהם בחתך, והתשתיות שאותרו מתחתיה, בצבע לפי סוג.',
+  's2.altOLD':'ענני נקודות, פרוסות מכ"ם וגאומטריית רשת מוזנים למנוע האיחוד של נוריקס, שמיישר, מנקה, רושם וממזג אותם למודל מאוחד אחד.',
+  's2.in1':'ענני נקודות','s2.in1s':'לידאר ופוטוגרמטריה',
+  's2.in2':'פרוסות מכ"ם','s2.in2s':'רדאר והתנגדות',
+  's2.in3':'גאומטריית רשת','s2.in3s':'בקרת מדידה, RTK-GNSS',
+  's2.engine':'מנוע האיחוד','s2.p1':'סריקה ל-BIM','s2.p2':'יישור נתונים','s2.p3':'הפחתת רעש',
+  's2.out':'מודל מאוחד אחד',
+  's2.st1':'יישור','s2.st2':'ניקוי','s2.st3':'רישום','s2.st4':'מיזוג',
+  'dev.desk':'מהנדס מוביל, מחשב','dev.phone':'קבלן בשטח, טאבלט',
+  'plat.k':'ההתנגדות הראשונה שאנחנו שומעים','plat.h':'אתם כבר מריצים שש מערכות.',
+  'plat.p':'הקבלן הממוצע מריץ 6.3 מהן, ו-81% אומרים שהערימה עצמה היא הבעיה. לכן המודל הוא לא עוד התחברות בשביל השטח. הוא קישור. הוא נפתח בדפדפן, בטלפון, בקרוואן, והאדם שפותח אותו לא צריך חשבון ולא צריך הדרכה. הנתונים שלכם נשארים שלכם ומיוצאים לפורמטים שהצוות שלכם כבר עובד איתם.',
+  'sec.faq.n':'תשובות ישירות','sec.faq.h':'השאלות שמהנדסים באמת שואלים.',
+  'faq1.q':'האם מכ"ם חודר קרקע באמת עובד בחרסית או בקרקע רטובה?',
+  'faq1.a':'בכנות, לא בכל מקום. מכ"ם מגיע לכ-18 מטר בחול יבש ונקי ולכ-6 מטר בחרסית רטובה וצפופה, ושכבה רוויה סמוך לפני השטח יכולה לחסום את רוב האות. בדיוק בגלל זה הצינור מפעיל חמישה מכשירים ולא אחד. במקום שבו המכ"ם מתקשה אנחנו נשענים על איתור אלקטרומגנטי ועל התנגדות, מכיילים עומק באתר, ואומרים לכם בפירוש אילו קריאות חזקות ואילו לא.',
+  'faq2.q':'כמה זה מדויק, באמת?',
+  'faq2.a':'אנחנו מדווחים לפי רמות הדיוק של תקן ASCE 38-22, שהוא הסולם של הענף עצמו, כך שאתם יודעים בדיוק מה יש בידיים שלכם. מיפוי גאופיזי מוצא בדרך כלל בין 10 ל-50 אחוז יותר תשתיות ממיפוי שמבוסס על תיעוד. במקום שבו קו הוא קריטי, אנחנו מאמתים אותו.',
+  'faq3.q':'מה מנוע האיחוד באמת עושה?',
+  'faq3.a':'הוא לוקח שלושה מקורות שלא מסכימים זה עם זה באופן טבעי, ענני נקודות, פרוסות מכ"ם וגאומטריית רשת, ומכריח אותם לאמת קואורדינטות אחת. יישור מכניס אותם לאותו מרחב, ניקוי מסלק רעש ורפאים, רישום נועל אותם לבקרת המדידה, ומיזוג מייצר מודל אחד שבו הצינור שמתחת לרצפה נמצא באותו מקום בכל תצוגה שלו.',
+  'faq4.q':'זו עוד מערכת שהצוות שלי צריך ללמוד?',
+  'faq4.a':'לא. המודל הוא קישור. מי שיודע לפתוח דף אינטרנט, יודע לטייל באתר שלכם.',
+  'faq5.q':'ומה אם לא תמצאו שום דבר לא צפוי?',
+  'con.h':'ספרו לנו על האתר.',
+  'con.sub':'עונה מהנדס, לא צוות מכירות. שלחו את המיקום ואת מה שאתם מתכננים ונגיד לכם מה היינו קולטים ומה זה דורש.',
+  'con.direct':'או פנו אלינו ישירות',
+  'f.name':'שם','f.co':'חברה','f.mail':'אימייל','f.site':'מיקום האתר','f.msg':'מה אתם מתכננים?',
+  'cc.h':'אנחנו משתמשים בעוגיות',
+  'cc.p':'עוגיות חיוניות מאפשרות לאתר לעבוד. בהסכמתכם נמדוד גם כיצד משתמשים בו, כדי לשפר אותו.',
+  'cc.all':'אישור',
+  'cc.ess':'חיוניים בלבד',
+  'f.errh':'ההודעה לא נשלחה.',
+  'f.errs':'הפרטים שלכם שמורים, שום דבר לא אבד. אפשר לנסות שוב או לפנות אלינו ישירות.',
+  'f.retry':'לנסות שוב',
+  'f.note':'הפרטים שלכם מגיעים ישירות לתיבת ההנדסה של נוריקס. שום דבר לא משותף עם אף אחד אחר.',
+  'f.okh':'נשלח. מהנדס יחזור אליכם.',
+  'f.oks':'בדרך כלל תוך יום עבודה אחד. אם זה דחוף, כתבו ל-office@noryx.io.',
+  'foot.1':'נוריקס טכנולוגיות. איחוד נתונים מרחביים, מקצה לקצה.'
+}};
+
+var EN = {};
+[].slice.call(document.querySelectorAll('[data-i18n]')).forEach(function(el){
+  var k = el.dataset.i18n; if (!(k in EN)) EN[k] = el.textContent;
+});
+DICT.en = EN;
+
+var lang = 'en';
+function applyLang(next){
+  lang = (next === 'he') ? 'he' : 'en';
+  var d = DICT[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
+  [].slice.call(document.querySelectorAll('[data-i18n]')).forEach(function(el){
+    var k = el.dataset.i18n; if (d[k] != null) el.textContent = d[k];
+  });
+  [].slice.call(document.querySelectorAll('.lang b')).forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+  });
+  resplitBands();
+}
+[].slice.call(document.querySelectorAll('.lang b')).forEach(function(b){
+  b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  b.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); applyLang(b.dataset.lang); }
+  });
+});
+
+var clamp = function(v,lo,hi){ return Math.min(hi, Math.max(lo, v)); };
+var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+/* ONE PLACE REPORTS A LEAD
+   The advertising pixel counts conversions and the analytics property records
+   which channel produced them. Keeping both behind a single call is what stops
+   the two from drifting apart over time. Every call is wrapped: a blocked,
+   slow or missing third party script must never be able to break a form the
+   business depends on. */
+function track(pixelEvent, gaEvent, params){
+  try { if (window.oaiq) window.oaiq('measure', pixelEvent, { type:'customer_action' }); }
+  catch (e) {}
+  try { if (window.gtag) window.gtag('event', gaEvent, params || {}); }
+  catch (e) {}
+}
+/* A confirmed submission is the only thing that counts as a lead. A tap on
+   WhatsApp is intent, and worth measuring, but counting it as a conversion
+   would inflate the number the advertising budget is judged on. */
+function reportLead(){ track('lead_created','generate_lead',{ method:'form' }); }
+function reportWhatsApp(){ track('click_whatsapp','click_whatsapp',{ method:'whatsapp' }); }
+
+/* WhatsApp is a lead in its own right: a contractor who taps it means to make
+   contact just as much as one who fills the form. The link opens in a new tab,
+   so this page stays alive long enough for both beacons to leave. */
+[].slice.call(document.querySelectorAll('a[href*="wa.me/"]')).forEach(function(a){
+  a.addEventListener('click', reportWhatsApp);
+});
+
+/* ============================================================
+   THE X-RAY HERO: the scroll position drives the reveal
+   ============================================================ */
+(function(){
+  var hero  = document.getElementById('xray');
+  var track = document.getElementById('xrayTrack');
+  var sweep = document.getElementById('xrSweep');
+  if (!hero || !track) return;
+  var last = -1, queued = false;
+
+  function paint(v){
+    if (Math.abs(v - last) < 0.004) return;
+    last = v;
+    hero.style.setProperty('--xr', v.toFixed(3));
+    if (sweep) sweep.setAttribute('y', (500 + v * 420).toFixed(0));
+  }
+  function read(){
+    queued = false;
+    var span = track.offsetHeight - window.innerHeight;
+    if (span <= 0) { paint(1); return; }
+    var p = clamp(-track.getBoundingClientRect().top / span, 0, 1);
+    /* the reveal finishes before the stage releases, so the completed picture
+       is held on screen instead of flashing past at the handover */
+    paint(clamp(p / 0.68, 0, 1));
+  }
+  function onScroll(){ if (!queued) { queued = true; requestAnimationFrame(read); } }
+  window.__xrPin = function(on){ last = -1; paint(on ? 1 : 0); };
+
+  /* Below 720px the hero is two stacked blocks, not a sticky stage, so there
+     is no track to scrub and nothing for a visitor to discover by scrolling.
+     The located services are simply on, which is what the phone should show.
+     Watching the query means a rotation or a resize lands in the right mode. */
+  var stacked = matchMedia('(max-width:720px)');
+  function mode(){
+    if (reduce.matches || stacked.matches) {
+      removeEventListener('scroll', onScroll);
+      window.__xrPin(true);
+    } else {
+      addEventListener('scroll', onScroll, { passive: true });
+      read();
+    }
+  }
+  addEventListener('resize', mode);
+  if (stacked.addEventListener) stacked.addEventListener('change', mode);
+  mode();
+})();
+
+/* ============================================================
+   STEP 1: the scroll-scrubbed capture film
+   ============================================================ */
+var GATES = [
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+var VIDEO_URL='assets/hero-scrub.mp4', POSTER_URL='assets/hero-poster.jpg', ENDING_URL='assets/hero-ending.jpg';
+var VIDEO_BYTES = 3992322;
+
+var video   = document.getElementById('capVideo');
+var stage   = document.getElementById('capStage');
+var capSec  = document.getElementById('cap-sec');
+var poster  = stage ? stage.querySelector('.cap-poster') : null;
+var lhead   = document.getElementById('lhead');
+var readout = document.getElementById('readout');
+var layerEls= [].slice.call(document.querySelectorAll('.ladder-layer'));
+
+['capStatic'].forEach(function(id){
+  var el = document.getElementById(id);
+  if (el) el.style.backgroundImage = "url('" + ENDING_URL + "')";
+});
+
+var smoothstep=function(p,e0,e1){var t=clamp((p-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+var bands = [].slice.call(document.querySelectorAll('.band')).map(function(el,i){
+  return { el:el, a:parseFloat(el.dataset.a), b:parseFloat(el.dataset.b),
+           ramp: el.dataset.ramp?parseFloat(el.dataset.ramp):0,
+           first:i===0, last:i===document.querySelectorAll('.band').length-1, op:-1, k:-1 };
+});
+
+function splitInto(h, mode, spread, seed, em, text){
+  h.textContent='';
+  var sr=document.createElement('span'); sr.className='vh'; sr.textContent=text; h.appendChild(sr);
+  var vis=document.createElement('span'); vis.setAttribute('aria-hidden','true');
+  if (mode==='blur'){
+    var wrap=document.createElement('span'); wrap.className='stack';
+    var s1=document.createElement('span'); s1.className='soft'; s1.textContent=text;
+    var s2=document.createElement('span'); s2.className='sharp'; s2.textContent=text;
+    wrap.appendChild(s1); wrap.appendChild(s2); vis.appendChild(wrap); h.appendChild(vis); return;
+  }
+  var r=rng(seed), words=text.split(' '), total=text.replace(/ /g,'').length||1, ci=0;
+  words.forEach(function(word,wi){
+    var w=document.createElement('span'); w.className='w';
+    if (mode==='word'){
+      w.style.setProperty('--th',(wi/Math.max(1,words.length)*0.55).toFixed(3));
+      if (em && word.replace(/[^A-Za-z֐-׿]/g,'').toLowerCase()===em) w.classList.add('em');
+      w.textContent=word;
+    } else {
+      for (var i=0;i<word.length;i++){
+        var c=document.createElement('span'); c.className='c'; c.textContent=word[i];
+        if (mode==='grid'){
+          c.style.setProperty('--th',(ci/total*spread+r()*0.06).toFixed(3));
+          c.style.setProperty('--jx',((r()*2-1)*30).toFixed(1)+'px');
+        } else {
+          c.style.setProperty('--th',(r()*0.55).toFixed(3));
+          c.style.setProperty('--jx',((r()*2-1)*26).toFixed(1)+'px');
+          c.style.setProperty('--jy',((r()*2-1)*30).toFixed(1)+'px');
+          c.style.setProperty('--jr',((r()*2-1)*16).toFixed(1)+'deg');
+        }
+        w.appendChild(c); ci++;
+      }
+    }
+    vis.appendChild(w);
+    if (wi<words.length-1) vis.appendChild(document.createTextNode(' '));
+  });
+  h.appendChild(vis);
+}
+function resplitBands(){
+  bands.forEach(function(b,i){
+    var h=b.el.querySelector('h3'); if(!h) return;
+    var key=h.dataset.i18n;
+    var text=(DICT[lang]&&DICT[lang][key])||DICT.en[key]||h.textContent;
+    var mode=b.el.dataset.split, spread=b.el.dataset.spread?parseFloat(b.el.dataset.spread):0.5;
+    var m = mode==='char' ? (b.el.classList.contains('e-grid')?'grid':'scatter') : mode;
+    splitInto(h,m,spread,1337+i*977,(b.el.dataset.em||'').toLowerCase(),text);
+    b.k=-1;
+  });
+  if (scrubOn) updateCaptions(shown);
+}
+
+var target=0, shown=0, rafId=null, lastTick=0, onScreen=true, scrubOn=false;
+function capProgress(){
+  if(!capSec) return 0;
+  var r=capSec.getBoundingClientRect(), range=capSec.offsetHeight-window.innerHeight;
+  if(range<=0) return 0;
+  return clamp(-r.top/range,0,1);
+}
+/* the drone descends at a constant rate, so ease the video against linear scroll
+   to slow the footage into its arrival */
+function videoTime(p){ return (1-Math.pow(1-p,1.45))*video.duration; }
+
+var seekBusy=false, pendingTime=null;
+function requestSeek(t){
+  if(!video.duration) return;
+  if(seekBusy){ pendingTime=t; return; }
+  seekBusy=true; try{ video.currentTime=t; }catch(e){ seekBusy=false; }
+}
+video.addEventListener('seeked',function(){
+  seekBusy=false;
+  if(pendingTime!==null){var t=pendingTime;pendingTime=null;requestSeek(t);}
+});
+video.addEventListener('error',function(){ seekBusy=false; pendingTime=null; failVideo(); });
+
+var loadK=0, loadStart=0;
+function stepLoadK(now){
+  if(!loadStart) loadStart=now;
+  loadK=clamp((now-loadStart)/1100,0,1);
+  if(loadK<1) requestAnimationFrame(stepLoadK);
+  else if(rafId===null&&scrubOn) rafId=requestAnimationFrame(tick);
+  if(rafId===null&&scrubOn) updateCaptions(shown);
+}
+function updateCaptions(p){
+  for(var i=0;i<bands.length;i++){
+    var b=bands[i];
+    var f=Math.min(0.02,(b.b-b.a)/3);
+    var inR=b.first?1:smoothstep(p,b.a,b.a+f);
+    var outR=b.last?1:(1-smoothstep(p,b.b-f,b.b));
+    var op=inR*outR;
+    var ramp=b.ramp||Math.min(0.025,(b.b-b.a)*0.35);
+    var k=clamp((p-b.a)/ramp,0,1);
+    if(b.first) k=Math.max(k,loadK);
+    if(Math.abs(op-b.op)>0.004){ b.op=op; b.el.style.opacity=op.toFixed(3); }
+    if(Math.abs(k-b.k)>0.008){ b.k=k; b.el.style.setProperty('--k',k.toFixed(3)); }
+  }
+  updateLadder(p);
+}
+var lastReadout='', lastReadoutAt=0, lastHead=-1, lastLayer=-1;
+function updateLadder(p){
+  if(!lhead) return;
+  var pct=p*100;
+  if(Math.abs(pct-lastHead)>0.35){
+    lastHead=pct;
+    lhead.style.transform='translateY('+(p*lhead.parentNode.offsetHeight).toFixed(1)+'px)';
+  }
+  var now=performance.now();
+  if(now-lastReadoutAt>=100){
+    lastReadoutAt=now;
+    var elev=120-p*124.2, label=elev>=0?'ELEV':'DEPTH';
+    var str=label+' '+elev.toFixed(1);
+    if(str!==lastReadout){
+      lastReadout=str;
+      readout.innerHTML=label+' <b>'+(elev>=0?'+':'')+elev.toFixed(1)+'</b> m';
+    }
+  }
+  var li = p<0.16?0:(p<0.56?1:2);
+  if(li!==lastLayer){
+    lastLayer=li;
+    for(var i=0;i<layerEls.length;i++) layerEls[i].classList.toggle('on',i===li);
+  }
+}
+function tick(now){
+  var dt=Math.min(100,now-(lastTick||now)); lastTick=now;
+  shown += (target-shown)*(1-Math.pow(1-0.16,dt/16.667));
+  if(Math.abs(target-shown)<0.0005){ shown=target; rafId=null; lastTick=0; }
+  else rafId=requestAnimationFrame(tick);
+  if(video.duration) requestSeek(videoTime(shown));
+  updateCaptions(shown);
+}
+function onScroll(){
+  target=capProgress();
+  if(rafId===null&&onScreen) rafId=requestAnimationFrame(tick);
+}
+if(capSec&&'IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    onScreen=es[0].isIntersecting;
+    if(onScreen&&rafId===null&&scrubOn) rafId=requestAnimationFrame(tick);
+  },{rootMargin:'10px'}).observe(capSec);
+}
+
+var heroInit=false;
+function initCaptureOnce(){
+  if(heroInit) return;
+  heroInit=true;
+  poster.style.backgroundImage="url('"+POSTER_URL+"')";
+  requestAnimationFrame(stepLoadK);
+  var started=false;
+  function go(){ if(started) return; started=true; loadBlob().catch(failVideo); }
+  var img=new Image(); img.onload=go; img.onerror=go; img.src=POSTER_URL;
+  setTimeout(go,4000);
+}
+function loadBlob(){
+  var ctrl=new AbortController();
+  var watchdog=setTimeout(function(){ctrl.abort();},20000);
+  return fetch(VIDEO_URL,{signal:ctrl.signal}).then(function(res){
+    if(!res.ok||!res.body) throw new Error('no body');
+    var total=Number(res.headers.get('Content-Length'))||VIDEO_BYTES;
+    var reader=res.body.getReader(), chunks=[], got=0;
+    function pump(){
+      return reader.read().then(function(r){
+        if(r.done) return;
+        clearTimeout(watchdog);
+        watchdog=setTimeout(function(){ctrl.abort();},20000);
+        chunks.push(r.value); got+=r.value.length;
+        return pump();
+      });
+    }
+    return pump().then(function(){
+      clearTimeout(watchdog);
+      video.src=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+      video.load();
+      video.addEventListener('canplay',function(){
+        requestSeek(videoTime(capProgress()));
+        stage.classList.add('video-ready');
+        onScroll();
+      },{once:true});
+    });
+  });
+}
+var failed=false;
+function failVideo(){ if(failed) return; failed=true; stage.classList.add('video-failed'); }
+
+function enableScrub(){
+  if(scrubOn) return;
+  scrubOn=true;
+  initCaptureOnce();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  bands.forEach(function(b){b.op=-1;b.k=-1;});
+  lastHead=-1; lastLayer=-1; lastReadout='';
+  unpinFinalStates();
+  updateCaptions(capProgress());
+  onScroll();
+}
+function disableScrub(){
+  if(!scrubOn) return;
+  scrubOn=false;
+  window.removeEventListener('scroll',onScroll);
+  if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}
+}
+function applyHeroMode(){
+  if(GATES.some(function(q){return matchMedia(q).matches;})) disableScrub();
+  else enableScrub();
+}
+GATES.map(function(q){return matchMedia(q);}).forEach(function(m){
+  if(m.addEventListener) m.addEventListener('change',applyHeroMode);
+  else m.addListener(applyHeroMode);
+});
+
+/* ============================================================
+   PAGE MOTION
+   ============================================================ */
+[].slice.call(document.querySelectorAll('.sec')).forEach(function(sec){
+  var anchor=sec.querySelector('.sec-num')||sec.querySelector('.stepnum');
+  if(!anchor) return;
+  var hr=document.createElement('div');
+  hr.className='rule rise'; hr.setAttribute('aria-hidden','true');
+  hr.innerHTML='<svg preserveAspectRatio="none" viewBox="0 0 100 1"><line x1="0" y1="0.5" x2="100" y2="0.5" pathLength="1"/></svg>';
+  sec.insertBefore(hr,anchor.nextSibling);
+});
+
+var watched='.rise,.stats,.sensors,.devices';
+var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting) return;
+    var el=e.target; el.classList.add('in');
+    if(el.id==='stats') runCounters(el);
+    if(el.id==='sensors') setTimeout(function(){el.classList.add('done');},1600);
+    io.unobserve(el);
+  });
+},{threshold:0.14,rootMargin:'0px 0px -6% 0px'}) : null;
+if(io) [].slice.call(document.querySelectorAll(watched)).forEach(function(el){io.observe(el);});
+else [].slice.call(document.querySelectorAll(watched)).forEach(function(el){el.classList.add('in','done');});
+
+function fmt(v,el){
+  var pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+  var out=el.dataset.int?Math.round(v).toLocaleString('en-US'):v.toFixed(1);
+  return pre+out+suf;
+}
+function runCounters(root){
+  [].slice.call(root.querySelectorAll('[data-count]')).forEach(function(el){
+    var to=parseFloat(el.dataset.count);
+    if(reduce.matches){ el.textContent=fmt(to,el); return; }
+    var t0=0,dur=1500,last='';
+    function step(now){
+      if(!t0) t0=now;
+      var p=clamp((now-t0)/dur,0,1), e=1-Math.pow(1-p,3), s=fmt(to*e,el);
+      if(s!==last){last=s;el.textContent=s;}
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('paused',document.hidden);
+});
+
+
+/* the exploded layers open up once the diagram is on screen */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.isostack'));
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{threshold:.3});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* The phone film: the source is only fetched when the panel is close, so a
+   visitor who never scrolls that far never pays for four megabytes. */
+(function(){
+  var v = document.getElementById('capFilm');
+  if (!v) return;
+  var SRC = 'assets/hero-scrub.mp4';
+  function start(){
+    if (!v.getAttribute('src')) { v.setAttribute('src', SRC); v.load(); }
+    var p = v.play(); if (p && p.catch) p.catch(function(){});
+  }
+  if (!('IntersectionObserver' in window)) { start(); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting) start();
+      else if (v.pause) v.pause();
+    });
+  }, { rootMargin: '250px 0px' });
+  io.observe(v);
+})();
+
+/* COOKIE CONSENT
+   The trackers are not in the page until this says so: the loader in the head
+   exposes __noryxLoadTrackers and calls it on its own only when a previous
+   visit already chose "all". So "essential only" genuinely means nothing is
+   loaded, rather than a banner that dismisses itself and changes nothing. */
+(function(){
+  var KEY='noryx_cookie_consent';
+  var bar=document.getElementById('cookiebar');
+  if(!bar) return;
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved) return;
+  bar.hidden=false;
+  requestAnimationFrame(function(){ bar.classList.add('show'); });
+  function decide(value){
+    try{ localStorage.setItem(KEY,value); }catch(e){}
+    bar.classList.remove('show');
+    setTimeout(function(){ bar.hidden=true; }, reduce.matches?0:520);
+    if(value==='all' && typeof window.__noryxLoadTrackers==='function'){
+      window.__noryxLoadTrackers();
+    }
+  }
+  document.getElementById('ccAll').addEventListener('click',function(){ decide('all'); });
+  document.getElementById('ccEss').addEventListener('click',function(){ decide('essential'); });
+})();
+
+/* FAQ */
+[].slice.call(document.querySelectorAll('.q')).forEach(function(q){
+  var btn=q.querySelector('button'), panel=q.querySelector('.a'), inner=panel.firstElementChild;
+  btn.setAttribute('aria-expanded','false');
+  btn.addEventListener('click',function(){
+    var open=q.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    panel.style.height=open?inner.offsetHeight+'px':'0px';
+  });
+});
+
+/* THE FORM -> office@noryx.io */
+(function(){
+  /* Paste the Formspree endpoint here once the account exists. Until then the
+     form opens the visitor's own mail app addressed to Noryx, so a lead is
+     never silently swallowed. Either path reaches office@noryx.io. */
+  var FORMSPREE='https://formspree.io/f/xppwzrnk';
+  var MAILTO='office@noryx.io';
+  var STORE='noryx_pending_lead';
+  var form=document.getElementById('leadform'), ok=document.getElementById('formok');
+  var errBox=document.getElementById('formerr'), retry=document.getElementById('formretry');
+  if(!form) return;
+  var live=FORMSPREE.indexOf('YOUR_FORM_ID')===-1;
+  var pending=null;
+
+  function field(id){ var el=document.getElementById(id); return el?el.value.trim():''; }
+  function setField(id,v){ var el=document.getElementById(id); if(el&&v) el.value=v; }
+
+  /* A lead that reached the browser must not be able to vanish because a
+     request failed or a tab closed. It is written down before the request
+     leaves and only erased once the endpoint has actually accepted it. */
+  function remember(p){ try{ localStorage.setItem(STORE, JSON.stringify(p)); }catch(e){} }
+  function forget(){ try{ localStorage.removeItem(STORE); }catch(e){} }
+  (function restore(){
+    var raw; try{ raw=localStorage.getItem(STORE); }catch(e){ return; }
+    if(!raw) return;
+    try{
+      var p=JSON.parse(raw);
+      setField('f-name',p.name); setField('f-co',p.company); setField('f-mail',p.email);
+      setField('f-site',p.site); setField('f-msg',p.message);
+    }catch(e){ forget(); }
+  })();
+
+  function done(){
+    if(errBox) errBox.hidden=true;
+    form.classList.remove('sending');
+    form.classList.add('sent'); ok.classList.add('show');
+    ok.scrollIntoView({block:'center',behavior:reduce.matches?'auto':'smooth'});
+  }
+  /* The inputs are deliberately left untouched here. Clearing a form the
+     visitor may have to send again is how a lead becomes a lost lead. */
+  function failed(reason){
+    form.classList.remove('sending');
+    if(!errBox) return;
+    var why=document.getElementById('formwhy');
+    if(why){ why.textContent=reason||''; why.hidden=!reason; }
+    errBox.hidden=false;
+    errBox.scrollIntoView({block:'nearest',behavior:reduce.matches?'auto':'smooth'});
+  }
+
+  /* Formspree is sent JSON rather than multipart form data: the plain object
+     is what produces a clean, readable notification, and the flat multipart
+     body was the shape Gmail was quietly filing away. */
+  function send(p){
+    if(!live){ mailFallback(p); return; }
+    form.classList.add('sending');
+    if(errBox) errBox.hidden=true;
+    fetch(FORMSPREE,{
+      method:'POST',
+      headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+      body: JSON.stringify(p)
+    }).then(function(r){
+      if(r.status===200||r.status===202){ forget(); reportLead(); form.reset(); done(); return; }
+      /* A rejection usually has a reason, and the visitor is the only person
+         who can act on it. Showing "did not go through" while the server said
+         "use a work address" leaves them stuck with no idea what to change. */
+      return r.json().then(function(j){
+        var reason='';
+        if(j && j.errors && j.errors.length && j.errors[0].message) reason=j.errors[0].message;
+        else if(j && j.error) reason=j.error;
+        failed(reason);
+      }).catch(function(){ failed(); });
+    }).catch(function(){ failed(); });
+  }
+
+  function mailFallback(p){
+    var body='Name: '+p.name+'\n'+'Company: '+p.company+'\n'+'Email: '+p.email+'\n'+
+             'Site location: '+p.site+'\n\n'+p.message;
+    window.location.href='mailto:'+MAILTO+'?subject='+encodeURIComponent(p._subject)+
+      '&body='+encodeURIComponent(body);
+    done();
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=field('f-name'), mail=field('f-mail');
+    if(!name||!mail||mail.indexOf('@')<1){
+      document.getElementById(name?'f-mail':'f-name').focus();
+      return;
+    }
+    pending={
+      email: mail,
+      _replyto: mail,
+      _subject: 'Site enquiry from '+name,
+      name: name,
+      company: field('f-co'),
+      site: field('f-site'),
+      message: field('f-msg')
+    };
+    remember(pending);
+    send(pending);
+  });
+
+  if(retry) retry.addEventListener('click',function(){ if(pending) send(pending); });
+})();
+
+/* REDUCED MOTION, LIVE, BOTH DIRECTIONS */
+function pinToFinalStates(){
+  [].slice.call(document.querySelectorAll(watched)).forEach(function(el){el.classList.add('in','done');});
+  [].slice.call(document.querySelectorAll('[data-count]')).forEach(function(el){
+    el.textContent=fmt(parseFloat(el.dataset.count),el);
+  });
+  if(window.__xrPin) window.__xrPin(true);
+  if(window.__cutPin) window.__cutPin(true);
+  disableScrub();
+}
+function unpinFinalStates(){
+  if(window.__xrPin) window.__xrPin(false);
+  if(window.__cutPin) window.__cutPin(false);
+}
+if(reduce.addEventListener)
+  reduce.addEventListener('change',function(e){ if(e.matches) pinToFinalStates(); else applyHeroMode(); });
+else
+  reduce.addListener(function(){ if(reduce.matches) pinToFinalStates(); else applyHeroMode(); });
+
+/* go. The language is the page, not a stored preference: /  is English and
+   /he/ is Hebrew, each indexable on its own. */
+applyLang('en');
+applyHeroMode();
+if(reduce.matches) pinToFinalStates();
+})();
+</script>
+
+</body>
+</html>

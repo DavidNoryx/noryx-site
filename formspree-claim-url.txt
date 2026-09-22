@@ -1,0 +1,1 @@
+https://formspree.io/claim?name=Noryx+Website+Contact&project=noryx.io&field.name=text,required,maxlength:100,prettyName:Name&field.company=text,maxlength:120,prettyName:Company&field.email=email,required,prettyName:Email&field.site=text,maxlength:160,prettyName:Site+location&field.message=text,maxlength:2000,prettyName:Project+details&action.email=zak@noryx.io

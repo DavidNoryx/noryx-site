@@ -1,0 +1,32 @@
+# The drone captures: 1.8 GB of raw RTK photography. The frames the site
+# actually uses are already processed into noryx/assets, so the originals stay
+# out of version control. Keep them backed up separately.
+public images/
+
+# Dependencies and build caches
+node_modules/
+noryx-poc/node_modules/
+noryx-poc/dist/
+
+# Vercel links this folder to a project id; it is machine state, not source
+.vercel/
+
+# Build artefacts that any checkout can regenerate with `node build.mjs`
+noryx-deploy.zip
+site.zip
+
+# The proprietary field workflow. It was deliberately taken off the website to
+# protect it, so it does not belong in a repository either, private or not.
+noryx-process.jpeg
+תהליך NORYX נגיש.jpeg
+תהליך NORYX לא נגיש.jpeg
+
+# Working screenshots and the third party skill bundle
+review/
+10k-websites-skill/
+10k-websites-skill.zip
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
