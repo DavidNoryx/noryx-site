@@ -30,3 +30,9 @@ review/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Vercel agent skills, installed by `npx skills add vercel-labs/agent-skills`.
+# Third-party files that skills-lock.json can reinstall, so the lock file is
+# tracked and the 2.2 MB of skill content is not.
+.agents/
+.claude/skills/
