@@ -351,9 +351,18 @@ for (const doc of DOCS) {
   }
 }
 
+/* LASTMOD
+   One date for every page, bumped by hand when the content actually changes.
+   It was left at 14 September while the front pages gained the accessibility
+   menu, the consent line and a new address in the structured data, so a
+   crawler had no reason to come back and look. Do not wire this to the build
+   date: a lastmod that moves on every build is noise, and Google learns to
+   ignore a sitemap that cries wolf. */
+const LASTMOD = '2026-09-24';
+
 /* the two crawl files follow the same two addresses */
 const url = (loc, pri) =>
-  '  <url>\n    <loc>' + loc + '</loc>\n    <lastmod>2026-09-14</lastmod>\n'
+  '  <url>\n    <loc>' + loc + '</loc>\n    <lastmod>' + LASTMOD + '</lastmod>\n'
   + '    <changefreq>monthly</changefreq>\n    <priority>' + pri + '</priority>\n'
   + '    <xhtml:link rel="alternate" hreflang="he" href="' + SITE + '/he/"/>\n'
   + '    <xhtml:link rel="alternate" hreflang="en" href="' + SITE + '/"/>\n'
@@ -363,7 +372,7 @@ const url = (loc, pri) =>
    two front pages share, so they cannot go through the same helper. */
 const legalUrl = slug =>
   ['/' + slug + '/', '/he/' + slug + '/'].map(p =>
-    '  <url>\n    <loc>' + SITE + p + '</loc>\n    <lastmod>2026-09-24</lastmod>\n'
+    '  <url>\n    <loc>' + SITE + p + '</loc>\n    <lastmod>' + LASTMOD + '</lastmod>\n'
     + '    <changefreq>yearly</changefreq>\n    <priority>0.3</priority>\n'
     + '    <xhtml:link rel="alternate" hreflang="en" href="' + SITE + '/' + slug + '/"/>\n'
     + '    <xhtml:link rel="alternate" hreflang="he" href="' + SITE + '/he/' + slug + '/"/>\n'
