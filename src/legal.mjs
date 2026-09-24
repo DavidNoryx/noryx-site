@@ -218,6 +218,10 @@ const terms = {
       he: 'התוצרים של נוריקס שמותר להסתמך עליהם הם אלה שנמסרים לכם במסגרת חוזה פרויקט חתום, מסומנים ככאלה, ונושאים את חתימת בעל המקצוע המוסמך האחראי עליהם. מה שלא הגיע ככה — אינו תוצר.'
     } },
     { p: {
+      en: 'The same applies before a contract exists. Nothing on this site, and nothing said in an enquiry, a call, a meeting or a draft proposal, is a representation you may rely on in deciding to excavate, to build, to price a tender or to commit to a programme. Only the signed contract and the deliverables issued under it carry that weight.',
+      he: 'הדבר נכון גם לפני שנחתם חוזה. שום דבר באתר הזה, ושום דבר שנאמר בפנייה, בשיחה, בפגישה או בטיוטת הצעה, אינו מצג שמותר להסתמך עליו בהחלטה לחפור, לבנות, לתמחר מכרז או להתחייב ללוח זמנים. רק החוזה החתום והתוצרים שנמסרים מכוחו נושאים את המשקל הזה.'
+    } },
+    { p: {
       en: 'Locating underground utilities is subject to site conditions, soil, depth, material and the limits of the physics involved. Accuracy is described against the quality levels of ASCE 38-22 and is always stated per deliverable. No survey method, ours included, identifies every buried element with certainty, and statutory excavation procedures apply regardless of what any survey shows.',
       he: 'איתור תשתיות תת-קרקעיות מושפע מתנאי השטח, מסוג הקרקע, מהעומק, מהחומר ומגבולות הפיזיקה עצמה. הדיוק מתואר מול רמות האיכות של תקן ASCE 38-22 ותמיד מצוין לכל תוצר בנפרד. שום שיטת מדידה, שלנו כולל, לא מזהה בוודאות כל אלמנט קבור, והנהלים הסטטוטוריים לחפירה חלים בלי קשר למה שמדידה כלשהי מראה.'
     } },
@@ -234,25 +238,49 @@ const terms = {
       he: 'אנחנו משתדלים לשמור על האתר מדויק וזמין, אבל לא מתחייבים שהוא יפעל ברציפות, בלי תקלות או בלי גורם מזיק כלשהו. אנחנו רשאים לשנות או להסיר כל חלק ממנו בכל עת.'
     } },
 
-    { h: { en: '6. Limitation of liability', he: '6. הגבלת אחריות' } },
+    { h: { en: '6. Limitation of liability', he: '6. הגבלת אחריות' }, flag: true },
     { p: {
-      en: 'To the fullest extent permitted by law, Noryx is not liable for any indirect, consequential or incidental loss arising from use of this site or reliance on its content, including lost profit, delay, or damage caused during excavation or ground work. Nothing here limits liability that cannot lawfully be limited.',
-      he: 'במידה המרבית שהדין מתיר, נוריקס לא תישא באחריות לנזק עקיף, תוצאתי או נלווה שנגרם משימוש באתר הזה או מהסתמכות על תוכנו, לרבות אובדן רווח, עיכוב, או נזק שנגרם במהלך חפירה או עבודות קרקע. אין בכתוב כדי להגביל אחריות שהדין אינו מתיר להגביל.'
+      en: 'To the fullest extent permitted by law, Noryx is not liable for any indirect, consequential or incidental loss arising from use of this site or reliance on its content, including lost profit, loss of opportunity, delay, or damage caused during excavation or ground work.',
+      he: 'במידה המרבית שהדין מתיר, נוריקס לא תישא באחריות לנזק עקיף, תוצאתי או נלווה שנגרם משימוש באתר הזה או מהסתמכות על תוכנו, לרבות אובדן רווח, אובדן הזדמנות, עיכוב, או נזק שנגרם במהלך חפירה או עבודות קרקע.'
+    } },
+    { p: {
+      en: 'For any direct loss arising from this website, the total liability of Noryx is limited to ILS 1,000. This clause governs the website. Liability under a signed project contract is governed by that contract, which sets its own limits.',
+      he: 'לכל נזק ישיר שמקורו באתר הזה, אחריותה הכוללת של נוריקס מוגבלת לסך של 1,000 ש"ח. הסעיף הזה חל על האתר. אחריות מכוח חוזה פרויקט חתום נקבעת באותו חוזה, שבו נקבעות מגבלות משלו.'
+    } },
+    { p: {
+      en: 'Any claim arising from this website must be brought within twelve months of the event giving rise to it.',
+      he: 'כל תביעה שמקורה באתר הזה תוגש בתוך שנים עשר חודשים מהאירוע שהקים אותה.'
+    } },
+    { p: {
+      en: 'Nothing in these terms limits liability that the law does not permit to be limited, including liability for bodily injury caused by negligence and for fraud.',
+      he: 'אין בתנאים האלה כדי להגביל אחריות שהדין אינו מתיר להגביל, לרבות אחריות לנזק גוף שנגרם ברשלנות ואחריות לתרמית.'
     } },
 
-    { h: { en: '7. Links to other sites', he: '7. קישורים לאתרים אחרים' } },
+    { h: { en: '7. Indemnity', he: '7. שיפוי' } },
+    { p: {
+      en: 'If you use this site or its content in breach of these terms, and that brings a third party claim, a regulatory demand or a legal cost upon Noryx, you will indemnify Noryx for it. This applies in particular to copying our models, scans or imagery, and to presenting anything from this site to a third party as a survey or as engineering advice.',
+      he: 'אם תשתמשו באתר או בתוכנו בניגוד לתנאים האלה, וכתוצאה מכך תופנה כלפי נוריקס תביעת צד שלישי, דרישה רגולטורית או הוצאה משפטית, תשפו את נוריקס בגינה. הדבר חל במיוחד על העתקת המודלים, הסריקות או התמונות שלנו, ועל הצגת תוכן כלשהו מהאתר בפני צד שלישי כמדידה או כייעוץ הנדסי.'
+    } },
+
+    { h: { en: '8. Links to other sites', he: '8. קישורים לאתרים אחרים' } },
     { p: {
       en: 'Where we link somewhere else, we do not control what is there and are not responsible for it.',
       he: 'במקומות שבהם אנחנו מקשרים החוצה, אין לנו שליטה על מה שנמצא שם ואנחנו לא אחראים לזה.'
     } },
 
-    { h: { en: '8. Governing law', he: '8. הדין החל' } },
+    { h: { en: '9. Governing law', he: '9. הדין החל' } },
     { p: {
       en: 'These terms are governed by the laws of the State of Israel. The competent courts of Tel Aviv-Jaffa have exclusive jurisdiction.',
       he: 'על התנאים האלה חלים דיני מדינת ישראל. סמכות השיפוט הייחודית נתונה לבתי המשפט המוסמכים בתל אביב-יפו.'
     } },
 
-    { h: { en: '9. Changes to these terms', he: '9. שינוי התנאים' } },
+    { h: { en: '10. If one clause fails', he: '10. אם סעיף אחד ייפול' } },
+    { p: {
+      en: 'If a court finds any clause here unenforceable, that clause is narrowed to what the law does allow, or removed if it cannot be narrowed, and the rest of these terms continue in force. Not enforcing a right on one occasion does not waive it.',
+      he: 'אם בית משפט יקבע שסעיף כלשהו כאן אינו אכיף, אותו סעיף יצומצם לגבולות שהדין מתיר, או יימחק אם אי אפשר לצמצמו, ויתר התנאים יעמדו בתוקפם. אי-אכיפה של זכות בהזדמנות אחת אינה ויתור עליה.'
+    } },
+
+    { h: { en: '11. Changes to these terms', he: '11. שינוי התנאים' } },
     { p: {
       en: 'We may update these terms. The date at the top of the page shows when they last changed.',
       he: 'אנחנו רשאים לעדכן את התנאים. התאריך בראש העמוד מציין מתי שונו לאחרונה.'
@@ -282,6 +310,10 @@ const accessibility = {
     { p: {
       en: 'This site is built to Israeli Standard IS 5568 at level AA, which is based on the international WCAG guidelines, as required by the Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 5773-2013. Where WCAG 2.1 level AA adds a requirement beyond that baseline, we follow it as well.',
       he: 'האתר בנוי לפי תקן ישראלי ת"י 5568 ברמה AA, שמבוסס על הנחיות WCAG הבינלאומיות, כנדרש בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013. במקומות שבהם WCAG 2.1 ברמה AA מוסיף דרישה מעבר לבסיס הזה, אנחנו הולכים גם לפיה.'
+    } },
+    { p: {
+      en: 'To be precise about what stands behind that: the site was built to those requirements and tested against them by us. It has not yet been surveyed by a certified accessibility surveyor. We would rather tell you that than imply an audit that has not happened.',
+      he: 'וכדי להיות מדויקים לגבי מה שעומד מאחורי זה: האתר נבנה לפי הדרישות האלה ונבדק מולן על ידינו. הוא טרם נסקר על ידי מורשה נגישות מוסמך. אנחנו מעדיפים לומר לכם את זה מאשר לרמוז על בדיקה שלא נעשתה.'
     } },
 
     { h: { en: '3. What is in place', he: '3. מה קיים באתר' } },

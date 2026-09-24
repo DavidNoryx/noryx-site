@@ -207,7 +207,7 @@ html[data-a11y-links] .a11y-stmt{background:none !important;outline:none !import
       var j = d.createElement(s); j.async = 1; j.src = u;
       var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(j, f);
     })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy", debug: true });
+    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy" });
   };
   var choice = null;
   try { choice = localStorage.getItem(KEY); } catch (e) {}
@@ -237,6 +237,7 @@ html[data-a11y-links] .a11y-stmt{background:none !important;outline:none !import
   <p>We treat accessibility as part of building the site, not as something added afterwards. Where we fall short we want to hear about it, and we fix what we can.</p>
   <h2>2. The standard we work to</h2>
   <p>This site is built to Israeli Standard IS 5568 at level AA, which is based on the international WCAG guidelines, as required by the Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 5773-2013. Where WCAG 2.1 level AA adds a requirement beyond that baseline, we follow it as well.</p>
+  <p>To be precise about what stands behind that: the site was built to those requirements and tested against them by us. It has not yet been surveyed by a certified accessibility surveyor. We would rather tell you that than imply an audit that has not happened.</p>
   <h2>3. What is in place</h2>
   <ul>
     <li>Every page can be operated with a keyboard alone, and a "skip to content" link is the first thing focus reaches.</li>

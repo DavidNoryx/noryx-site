@@ -63,7 +63,10 @@ const TRACKERS = [
   '      var j = d.createElement(s); j.async = 1; j.src = u;',
   '      var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(j, f);',
   '    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");',
-  '    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy", debug: true });',
+  /* debug was on while the pixel was being wired up; it logs every call to the
+     visitor's console, which does not belong on a live site. Turn it back on
+     here if conversions ever stop arriving and need tracing. */
+  '    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy" });',
   '  };',
   '  var choice = null;',
   '  try { choice = localStorage.getItem(KEY); } catch (e) {}',
