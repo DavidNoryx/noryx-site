@@ -4,17 +4,30 @@
    Block types: h (heading), p (paragraph), ul (list), note (callout).
    Every block carries both languages so the two builds cannot drift apart.
 
-   WHAT IS DELIBERATELY NOT HERE
-   The registered company name and company number, and a street address. They
-   were not available when this was written and inventing them would be worse
-   than leaving them out: a privacy policy that names the wrong legal entity
-   protects nobody. Search for REGISTRATION_GAP below.  */
+   THE LEGAL ENTITY
+   Noryx trades as a partnership, not a limited company. That is stated
+   plainly rather than glossed as "Ltd", because the identity of the party a
+   visitor is contracting with is the one fact a policy like this exists to
+   establish. The registration number is written as a registration number
+   rather than a company number for the same reason.  */
 
 const CONTACT = {
   mail: 'office@noryx.io',
   tel: '054-393-6936',
   telHref: '+972543936936',
   person: { en: 'Zak Lumbroso', he: 'זק לומברוזו' }
+};
+
+export const ENTITY = {
+  name:   { en: 'Noryx Technologies', he: 'נוריקס טכנולוגיות' },
+  form:   { en: 'A partnership registered in Israel', he: 'שותפות הרשומה בישראל' },
+  reg:    '558622288',
+  regLbl: { en: 'Registration number', he: 'מספר רישום' },
+  street: { en: 'Dam HaMakabim 28', he: 'דם המכבים 28' },
+  city:   { en: 'Modiin', he: 'מודיעין' },
+  country:{ en: 'Israel', he: 'ישראל' },
+  addrLbl:{ en: 'Registered address', he: 'כתובת רשומה' },
+  formLbl:{ en: 'Legal form', he: 'צורת התאגדות' }
 };
 
 export const UPDATED = { en: '24 September 2026', he: '24 בספטמבר 2026' };
@@ -33,9 +46,10 @@ const privacy = {
   blocks: [
     { h: { en: '1. Who this policy covers', he: '1. על מי המדיניות חלה' } },
     { p: {
-      en: 'Noryx Technologies ("Noryx", "we") operates the website noryx.io. This policy covers the website only. Data you give us inside a signed engineering project is governed by that project\'s contract, not by this page.',
-      he: 'נוריקס טכנולוגיות ("נוריקס", "אנחנו") מפעילה את האתר noryx.io. המדיניות הזו חלה על האתר בלבד. מידע שתמסרו לנו במסגרת פרויקט הנדסי חתום כפוף לחוזה של אותו פרויקט, לא לעמוד הזה.'
+      en: 'Noryx Technologies ("Noryx", "we") operates the website noryx.io. This policy covers the website only. Data you give us inside a signed engineering project is governed by that project\'s contract, not by this page. These are the details of the party holding your information:',
+      he: 'נוריקס טכנולוגיות ("נוריקס", "אנחנו") מפעילה את האתר noryx.io. המדיניות הזו חלה על האתר בלבד. מידע שתמסרו לנו במסגרת פרויקט הנדסי חתום כפוף לחוזה של אותו פרויקט, לא לעמוד הזה. אלה פרטי הגורם שמחזיק במידע שלכם:'
     } },
+    { entity: true },
 
     { h: { en: '2. What we collect', he: '2. איזה מידע נאסף' } },
     { p: {
@@ -157,11 +171,12 @@ const terms = {
     he: 'התנאים האלה חלים על השימוש שלכם ב-noryx.io. הסעיף על הסתמכות הנדסית הוא החשוב מכולם — קראו אותו לפני שאתם פועלים על סמך משהו שראיתם כאן.'
   },
   blocks: [
-    { h: { en: '1. Accepting these terms', he: '1. הסכמה לתנאים' } },
+    { h: { en: '1. Accepting these terms, and who you are dealing with', he: '1. הסכמה לתנאים, ומול מי אתם עומדים' } },
     { p: {
-      en: 'Using this website means you accept these terms. If you do not accept them, please do not use the site.',
-      he: 'שימוש באתר הזה מהווה הסכמה לתנאים. מי שלא מסכים להם מתבקש לא להשתמש באתר.'
+      en: 'Using this website means you accept these terms. If you do not accept them, please do not use the site. The party behind this site, and behind any proposal you receive from it, is:',
+      he: 'שימוש באתר הזה מהווה הסכמה לתנאים. מי שלא מסכים להם מתבקש לא להשתמש באתר. הגורם שעומד מאחורי האתר, ומאחורי כל הצעה שתקבלו דרכו, הוא:'
     } },
+    { entity: true },
 
     { h: { en: '2. Intellectual property', he: '2. קניין רוחני' } },
     { p: {

@@ -7,7 +7,7 @@
    Run: node build.mjs */
 import fs from 'node:fs';
 import path from 'node:path';
-import { DOCS, UPDATED, CONTACT_DETAILS } from './src/legal.mjs';
+import { DOCS, UPDATED, CONTACT_DETAILS, ENTITY } from './src/legal.mjs';
 
 const ROOT = 'C:/Users/david/Desktop/Noryx site 1';
 const OUT  = path.join(ROOT, 'noryx');
@@ -264,6 +264,20 @@ function renderBlocks(doc, lg) {
     if (b.h)  return '  <h2' + (b.flag ? ' class="flagged"' : '') + '>' + esc(b.h[lg]) + '</h2>';
     if (b.p)  return '  <p' + (b.flag ? ' class="flagged"' : '') + '>' + esc(b.p[lg]) + '</p>';
     if (b.ul) return '  <ul>\n' + b.ul[lg].map(i => '    <li>' + esc(i) + '</li>').join('\n') + '\n  </ul>';
+    if (b.entity) return [
+      '  <dl class="lcontact">',
+      '    <dt>' + (lg === 'he' ? 'שם' : 'Name') + '</dt><dd>' + esc(ENTITY.name[lg]) + '</dd>',
+      '    <dt>' + ENTITY.formLbl[lg] + '</dt><dd>' + esc(ENTITY.form[lg]) + '</dd>',
+      /* The number is a Latin-digit run inside a right-to-left page. Isolating
+         it on an inline span keeps the digits in their own order while the
+         line itself stays aligned with the rest of the card; putting the
+         direction on the dd instead pushes the whole row to the far side. */
+      '    <dt>' + ENTITY.regLbl[lg] + '</dt><dd><span class="ltr">' + ENTITY.reg + '</span></dd>',
+      '    <dt>' + ENTITY.addrLbl[lg] + '</dt><dd>' + esc(ENTITY.street[lg]) + ', ' + esc(ENTITY.city[lg]) + ', ' + esc(ENTITY.country[lg]) + '</dd>',
+      '    <dt>' + (lg === 'he' ? 'אימייל' : 'Email') + '</dt><dd><a href="mailto:' + CONTACT_DETAILS.mail + '" class="ltr">' + CONTACT_DETAILS.mail + '</a></dd>',
+      '    <dt>' + (lg === 'he' ? 'טלפון' : 'Phone') + '</dt><dd><a href="tel:' + CONTACT_DETAILS.telHref + '" class="ltr">' + CONTACT_DETAILS.tel + '</a></dd>',
+      '  </dl>'
+    ].join('\n');
     if (b.contact) return [
       '  <dl class="lcontact">',
       '    <dt>' + L.cName[lg] + '</dt><dd>' + esc(CONTACT_DETAILS.person[lg]) + '</dd>',
