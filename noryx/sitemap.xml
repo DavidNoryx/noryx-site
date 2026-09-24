@@ -19,4 +19,58 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/"/>
   </url>
+  <url>
+    <loc>https://noryx.io/privacy/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/privacy/"/>
+  </url>
+  <url>
+    <loc>https://noryx.io/he/privacy/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/privacy/"/>
+  </url>
+  <url>
+    <loc>https://noryx.io/terms/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/terms/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/terms/"/>
+  </url>
+  <url>
+    <loc>https://noryx.io/he/terms/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/terms/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/terms/"/>
+  </url>
+  <url>
+    <loc>https://noryx.io/accessibility/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/accessibility/"/>
+  </url>
+  <url>
+    <loc>https://noryx.io/he/accessibility/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noryx.io/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://noryx.io/he/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noryx.io/accessibility/"/>
+  </url>
 </urlset>

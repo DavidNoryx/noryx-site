@@ -17,7 +17,9 @@
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
-html, body, #root { height: 100%; }
+html { scroll-behavior: auto; }
+body { min-height: 100%; }
+#root { min-height: 100%; }
 
 body {
   margin: 0;

@@ -1028,6 +1028,114 @@ html[lang="he"] .foot-links a{font-family:var(--body);letter-spacing:0;text-tran
   .phone::before{transform:translateX(-50%)}
 }
 body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused !important}
+/* ============================================================
+   ACCESSIBILITY MENU AND DISPLAY MODES
+   The menu supplements assistive technology, it does not replace it.
+   Everything here is opt in and is stored per device.
+   ============================================================ */
+
+/* ---- the modes ---- */
+
+/* High contrast works by re-pointing the design tokens rather than forcing
+   a colour onto every element. Forcing it would wreck the dark platform
+   screens, whose palette is hard coded rather than tokenised. */
+html[data-a11y-contrast]{
+  --canvas:#FFFFFF;   --canvas-2:#FFFFFF;  --panel:#FFFFFF;  --panel-2:#FFFFFF;
+  --line:#111111;     --line-strong:#000000;
+  --accent:#00407F;   --accent-hover:#002B57;  --accent-tint:#E4EDF7;
+  --cyan:#00505C;     --cyan-bright:#003C45;   --deep:#000000;
+  --ink:#000000;      --ink-2:#1B1B1B;
+  --tshadow:none;
+}
+html[data-a11y-contrast] a:not(.btn){text-decoration:underline}
+html[data-a11y-contrast] .btn{border:2px solid #000}
+
+/* Greyscale is applied to each top level block rather than to the root,
+   because a filter on an ancestor makes it the containing block for any
+   fixed child, which would drop the navigation bar out of the viewport.
+   The menu itself is excluded so its own controls stay legible. */
+html[data-a11y-gray] body > *:not(.a11y){filter:grayscale(1)}
+
+html[data-a11y-links] body > *:not(.a11y) a{
+  background:#FFF3C4 !important;color:#171717 !important;
+  text-decoration:underline !important;text-underline-offset:2px;
+  outline:2px solid #92400E;outline-offset:1px;border-radius:2px}
+
+html[data-a11y-focus] :is(a,button,input,textarea,select,summary,[tabindex]):focus{
+  outline:3px solid #92400E !important;outline-offset:3px !important}
+
+/* ---- the launcher ---- */
+.a11y-fab{position:fixed;bottom:18px;inset-inline-start:18px;z-index:70;
+  width:52px;height:52px;border-radius:50%;border:1px solid rgba(18,97,140,.28);
+  background:var(--accent);color:#fff;display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 6px 22px rgba(12,33,49,.26);transition:transform .18s var(--ease),background .18s var(--ease)}
+.a11y-fab:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.a11y-fab svg{width:27px;height:27px;display:block}
+
+/* The cookie bar is a full width strip at the bottom on its own layer. While
+   it is up the launcher steps above it instead of hiding underneath. */
+body:has(#cookiebar:not([hidden])) .a11y-fab{bottom:104px}
+
+/* ---- the panel ---- */
+.a11y-panel{position:fixed;bottom:80px;inset-inline-start:18px;z-index:71;
+  width:min(292px,calc(100vw - 36px));padding:16px;border-radius:14px;
+  background:#FFFFFF;border:1px solid var(--line-strong);
+  box-shadow:0 18px 44px rgba(12,33,49,.22);color:var(--ink);
+  font-family:var(--body);font-size:14.5px;text-align:start}
+body:has(#cookiebar:not([hidden])) .a11y-panel{bottom:166px}
+.a11y-panel[hidden]{display:none}
+.a11y-panel h2{font-family:var(--display);font-size:16px;margin:0 0 12px;color:var(--ink)}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.a11y-steps{display:flex;align-items:center;gap:6px}
+.a11y-steps button{width:34px;height:34px;border-radius:8px;cursor:pointer;
+  border:1px solid var(--line-strong);background:#fff;color:var(--ink);
+  font-family:var(--display);font-weight:700;font-size:15px;line-height:1}
+.a11y-steps button:hover:not(:disabled){background:var(--accent-tint)}
+.a11y-steps button:disabled{opacity:.42;cursor:default}
+.a11y-steps output{min-width:46px;text-align:center;font-family:var(--mono);
+  font-size:12.5px;color:var(--ink-2);direction:ltr;unicode-bidi:isolate}
+.a11y-toggle{display:flex;width:100%;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 11px;margin-bottom:7px;border-radius:9px;cursor:pointer;text-align:start;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+  font-family:var(--body);font-size:14px}
+.a11y-toggle:hover{background:var(--accent-tint);border-color:var(--line-strong)}
+.a11y-toggle i{flex:none;width:34px;height:19px;border-radius:19px;background:#C9D5E0;
+  position:relative;transition:background .18s var(--ease)}
+.a11y-toggle i::after{content:"";position:absolute;top:2.5px;inset-inline-start:2.5px;
+  width:14px;height:14px;border-radius:50%;background:#fff;
+  transition:transform .18s var(--ease)}
+.a11y-toggle[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-tint)}
+.a11y-toggle[aria-pressed="true"] i{background:var(--accent)}
+.a11y-toggle[aria-pressed="true"] i::after{transform:translateX(15px)}
+html[dir="rtl"] .a11y-toggle[aria-pressed="true"] i::after{transform:translateX(-15px)}
+.a11y-reset{display:block;width:100%;margin:11px 0 0;padding:9px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--line-strong);background:#fff;color:var(--ink);
+  font-family:var(--body);font-size:13.5px}
+.a11y-reset:hover{background:var(--accent-tint)}
+.a11y-stmt{display:block;margin-top:11px;font-size:13px;color:var(--accent);text-align:center}
+
+/* The menu must stay readable in every mode it can switch on. */
+html[data-a11y-gray] .a11y-panel,html[data-a11y-gray] .a11y-fab{filter:none}
+html[data-a11y-links] .a11y-stmt{background:none !important;outline:none !important}
+
+@media (max-width:620px){
+  .a11y-fab{width:46px;height:46px;bottom:14px;inset-inline-start:14px}
+  .a11y-fab svg{width:24px;height:24px}
+  .a11y-panel{bottom:70px;inset-inline-start:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .a11y-fab,.a11y-toggle i,.a11y-toggle i::after{transition:none}
+}
+
+/* ---- footer legal row ---- */
+.foot-legal{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;padding-top:22px;
+  border-top:1px solid var(--line);font-size:13.5px}
+.foot-legal a{color:var(--ink-2)}
+.foot-legal a:hover{color:var(--accent)}
+
+/* ---- form consent ---- */
+.form-consent{margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.form-consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 </style>
 
 <!-- Measurement, loaded only after consent -->
@@ -1059,6 +1167,21 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 </head>
 <body>
 
+
+<script>
+/* Applied before the first paint so a visitor who has chosen high contrast
+   or larger text does not watch the default render flash past first. */
+(function(){
+  try{
+    var v = JSON.parse(localStorage.getItem('noryx_a11y') || '{}'), d = document.documentElement;
+    if (v.contrast) d.setAttribute('data-a11y-contrast','');
+    if (v.gray)     d.setAttribute('data-a11y-gray','');
+    if (v.links)    d.setAttribute('data-a11y-links','');
+    if (v.focus)    d.setAttribute('data-a11y-focus','');
+    if (v.zoom && v.zoom !== 1) d.style.zoom = v.zoom;
+  }catch(e){}
+})();
+</script>
 
 <a class="skip" href="#main" data-i18n="skip">דילוג לתוכן</a>
 <div class="env" aria-hidden="true"></div>
@@ -1660,9 +1783,10 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         </div>
         <div><label for="f-msg" data-i18n="f.msg">מה אתם מתכננים?</label><textarea id="f-msg" name="message"></textarea></div>
         <div class="submitrow">
-          <button class="btn btn-primary" type="submit" data-i18n="cta.primary">צרו קשר</button>
+          <button class="btn btn-primary" type="submit" aria-describedby="formconsent" data-i18n="cta.primary">צרו קשר</button>
           <a class="btn btn-wa" href="https://wa.me/972543936936" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span data-i18n="cta.wa">וואטסאפ</span></a>
         </div>
+        <p class="form-consent" id="formconsent"><span data-i18n="f.consent1">בשליחת הטופס אתם מאשרים את </span><a href="privacy/" data-i18n="f.consentp">מדיניות הפרטיות</a><span data-i18n="f.consent2"> ואת </span><a href="terms/" data-i18n="f.consentt">תנאי השימוש</a><span data-i18n="f.consent3"> שלנו.</span></p>
         <p class="form-note" id="formnote" data-i18n="f.note">הפרטים שלכם מגיעים ישירות לתיבת ההנדסה של נוריקס. שום דבר לא משותף עם אף אחד אחר.</p>
       </form>
       <div class="formerr" id="formerr" role="alert" hidden>
@@ -1703,6 +1827,11 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
       <a class="footnum" href="tel:+972543936936" dir="ltr">054-393-6936</a>
     </div>
   </div>
+  <div class="foot-legal">
+    <a href="privacy/" data-i18n="foot.privacy">מדיניות פרטיות</a>
+    <a href="terms/" data-i18n="foot.terms">תנאי שימוש</a>
+    <a href="accessibility/" data-i18n="foot.a11y">הצהרת נגישות</a>
+  </div>
   <div class="foot-bot">
     <span data-i18n="foot.1">נוריקס טכנולוגיות. איחוד נתונים מרחביים, מקצה לקצה.</span>
     <span>noryx.io</span>
@@ -1712,6 +1841,44 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 
 <!-- Cookie consent. The wording is translated by the build like every other
      string, so the Hebrew page asks in Hebrew and lays out right to left. -->
+<!-- ACCESSIBILITY MENU
+     Placed last in the document so it is the final stop in the tab order and
+     never sits between the visitor and the content. It is a direct child of
+     body on purpose: the greyscale filter is applied to body's other
+     children, and this has to stay outside it. -->
+<div class="a11y">
+  <button class="a11y-fab" id="a11yfab" type="button" aria-expanded="false" aria-controls="a11ypanel">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+      <circle cx="12" cy="4.1" r="1.9" fill="currentColor" stroke="none"/>
+      <path d="M4.6 8.1h14.8"/>
+      <path d="M12 8.6v5.1"/>
+      <path d="m8.6 21 3.4-7.3 3.4 7.3"/>
+    </svg>
+    <span class="vhide" data-i18n="a11y.open">תפריט נגישות</span>
+  </button>
+
+  <div class="a11y-panel" id="a11ypanel" role="dialog" aria-labelledby="a11yttl" hidden>
+    <h2 id="a11yttl" data-i18n="a11y.title">נגישות</h2>
+
+    <div class="a11y-row">
+      <span data-i18n="a11y.text">גודל טקסט</span>
+      <span class="a11y-steps">
+        <button type="button" id="a11yless">&minus;<span class="vhide" data-i18n="a11y.less">הקטנת הטקסט</span></button>
+        <output id="a11ysize" for="a11yless a11ymore">100%</output>
+        <button type="button" id="a11ymore">+<span class="vhide" data-i18n="a11y.more">הגדלת הטקסט</span></button>
+      </span>
+    </div>
+
+    <button class="a11y-toggle" type="button" data-mode="contrast" aria-pressed="false"><span data-i18n="a11y.contrast">ניגודיות גבוהה</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="gray" aria-pressed="false"><span data-i18n="a11y.gray">גווני אפור</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="links" aria-pressed="false"><span data-i18n="a11y.links">הדגשת קישורים</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="focus" aria-pressed="false"><span data-i18n="a11y.focus">סימון פוקוס מקלדת</span><i aria-hidden="true"></i></button>
+
+    <button class="a11y-reset" type="button" id="a11yreset" data-i18n="a11y.reset">איפוס הכול</button>
+    <a class="a11y-stmt" href="accessibility/" data-i18n="a11y.stmt">להצהרת הנגישות המלאה</a>
+  </div>
+</div>
+
 <div class="cc" id="cookiebar" role="dialog" aria-label="Cookies" hidden>
   <div class="cc-in">
     <div class="cc-txt">
@@ -1858,7 +2025,26 @@ var DICT = { en:{}, he:{
   'f.note':'הפרטים שלכם מגיעים ישירות לתיבת ההנדסה של נוריקס. שום דבר לא משותף עם אף אחד אחר.',
   'f.okh':'נשלח. מהנדס יחזור אליכם.',
   'f.oks':'בדרך כלל תוך יום עבודה אחד. אם זה דחוף, כתבו ל-office@noryx.io.',
-  'foot.1':'נוריקס טכנולוגיות. איחוד נתונים מרחביים, מקצה לקצה.'
+  'foot.1':'נוריקס טכנולוגיות. איחוד נתונים מרחביים, מקצה לקצה.',
+  'foot.privacy':'מדיניות פרטיות',
+  'foot.terms':'תנאי שימוש',
+  'foot.a11y':'הצהרת נגישות',
+  'f.consent1':'בשליחת הטופס אתם מאשרים את ',
+  'f.consentp':'מדיניות הפרטיות',
+  'f.consent2':' ואת ',
+  'f.consentt':'תנאי השימוש',
+  'f.consent3':' שלנו.',
+  'a11y.open':'תפריט נגישות',
+  'a11y.title':'נגישות',
+  'a11y.text':'גודל טקסט',
+  'a11y.less':'הקטנת הטקסט',
+  'a11y.more':'הגדלת הטקסט',
+  'a11y.contrast':'ניגודיות גבוהה',
+  'a11y.gray':'גווני אפור',
+  'a11y.links':'הדגשת קישורים',
+  'a11y.focus':'סימון פוקוס מקלדת',
+  'a11y.reset':'איפוס הכול',
+  'a11y.stmt':'להצהרת הנגישות המלאה'
 }};
 
 var EN = {};
@@ -2453,6 +2639,76 @@ else
 applyLang('he');
 applyHeroMode();
 if(reduce.matches) pinToFinalStates();
+})();
+
+/* ===== ACCESSIBILITY MENU =====================================
+   Five independent settings, stored together on the device. Text size uses
+   zoom rather than a root font-size because most of this layout is sized in
+   px and in container query units, neither of which responds to rem. */
+(function(){
+  var fab   = document.getElementById('a11yfab'),
+      panel = document.getElementById('a11ypanel'),
+      out   = document.getElementById('a11ysize'),
+      less  = document.getElementById('a11yless'),
+      more  = document.getElementById('a11ymore'),
+      reset = document.getElementById('a11yreset'),
+      root  = document.documentElement,
+      KEY   = 'noryx_a11y',
+      STEPS = [0.9, 1, 1.15, 1.3, 1.5],
+      toggles = [].slice.call(document.querySelectorAll('.a11y-toggle'));
+  if (!fab || !panel) return;
+
+  var state = { zoom:1, contrast:false, gray:false, links:false, focus:false };
+  try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch(e){}
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  function paint(){
+    ['contrast','gray','links','focus'].forEach(function(m){
+      if (state[m]) root.setAttribute('data-a11y-' + m, ''); else root.removeAttribute('data-a11y-' + m);
+    });
+    root.style.zoom = state.zoom === 1 ? '' : state.zoom;
+    if (out) out.textContent = Math.round(state.zoom * 100) + '%';
+    var i = STEPS.indexOf(state.zoom);
+    if (less) less.disabled = i <= 0;
+    if (more) more.disabled = i >= STEPS.length - 1;
+    toggles.forEach(function(b){ b.setAttribute('aria-pressed', state[b.dataset.mode] ? 'true' : 'false'); });
+  }
+
+  function step(dir){
+    var i = STEPS.indexOf(state.zoom); if (i < 0) i = 1;
+    i = Math.min(STEPS.length - 1, Math.max(0, i + dir));
+    state.zoom = STEPS[i]; paint(); save();
+  }
+
+  function open(yes){
+    panel.hidden = !yes;
+    fab.setAttribute('aria-expanded', yes ? 'true' : 'false');
+    /* At the smallest text size the decrease button is disabled, and focusing
+       a disabled control silently does nothing, which would leave a keyboard
+       user stranded outside the panel they just opened. */
+    if (yes) { var f = panel.querySelector('button:not(:disabled)'); if (f) f.focus(); }
+  }
+
+  fab.addEventListener('click', function(){ open(panel.hidden); });
+  if (less)  less.addEventListener('click', function(){ step(-1); });
+  if (more)  more.addEventListener('click', function(){ step(1); });
+  toggles.forEach(function(b){
+    b.addEventListener('click', function(){ state[b.dataset.mode] = !state[b.dataset.mode]; paint(); save(); });
+  });
+  if (reset) reset.addEventListener('click', function(){
+    state = { zoom:1, contrast:false, gray:false, links:false, focus:false };
+    paint(); save(); fab.focus();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !panel.hidden) { open(false); fab.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if (!panel.hidden && !panel.contains(e.target) && !fab.contains(e.target)) open(false);
+  });
+
+  paint();
 })();
 </script>
 

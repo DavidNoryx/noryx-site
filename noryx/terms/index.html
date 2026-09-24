@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms of Use | Noryx Technologies</title>
+<meta name="description" content="These terms govern your use of noryx.io. The section on engineering reliance is the one that matters most — please read it before acting on anything you see here.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://noryx.io/terms/">
+<link rel="alternate" hreflang="en" href="https://noryx.io/terms/">
+<link rel="alternate" hreflang="he" href="https://noryx.io/he/terms/">
+<link rel="alternate" hreflang="x-default" href="https://noryx.io/terms/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Heebo:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --canvas:#EDF2F7;   --canvas-2:#E2EAF3;  --panel:#F8FBFD;  --panel-2:#FFFFFF;
+  --line:#CFDCE8;     --line-strong:#A6BED2;
+  --accent:#12618C;   --accent-hover:#0D4A6C;  --accent-tint:#DDEBF4;
+  --cyan:#1FA2B7;     --cyan-bright:#35C8DC;   --deep:#0E2A3D;
+  --ink:#0C2131;      --ink-2:#4B6478;
+  /* utility colour code */
+  --u-water:#1F73C8;  --u-elec:#D92D20;  --u-gas:#E8A317;  --u-tel:#E2640F;
+  --tshadow:0 1px 2px rgba(255,255,255,.92),0 2px 10px rgba(237,242,247,.9),0 8px 32px rgba(237,242,247,.75);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --shell:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);
+  font-size:16.5px;line-height:1.72;-webkit-font-smoothing:antialiased}
+.vhide{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.skip{position:absolute;inset-inline-start:-9999px;top:0;z-index:100;padding:12px 18px;
+  background:var(--accent);color:#fff;border-radius:0 0 8px 0}
+.skip:focus{inset-inline-start:0}
+a{color:var(--accent)}
+.lnav{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding:18px var(--shell);border-bottom:1px solid var(--line);background:var(--panel)}
+.lnav .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  font-family:var(--display);font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.lnav .brand svg{width:27px;height:27px}
+.lnav .lang{display:inline-flex;gap:4px;align-items:center;font-family:var(--mono);font-size:12.5px}
+.lnav .lang b,.lnav .lang a{padding:4px 8px;border-radius:6px;text-decoration:none}
+.lnav .lang b{background:var(--accent);color:#fff}
+.lnav .lang a{color:var(--ink-2);border:1px solid var(--line)}
+main.legal{max-width:760px;margin:0 auto;padding:56px var(--shell) 72px}
+main.legal h1{font-family:var(--display);font-size:clamp(28px,5vw,42px);line-height:1.15;
+  margin:0 0 10px;color:var(--ink)}
+.updated{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);margin:0 0 26px}
+.lede{font-size:18px;line-height:1.66;color:var(--ink-2);margin:0 0 34px;
+  padding-bottom:26px;border-bottom:1px solid var(--line)}
+main.legal h2{font-family:var(--display);font-size:20px;line-height:1.3;
+  margin:38px 0 12px;color:var(--ink)}
+main.legal p{margin:0 0 15px}
+main.legal ul{margin:0 0 17px;padding-inline-start:22px}
+main.legal li{margin-bottom:8px}
+/* The clauses a reader must not skim. */
+.flagged{border-inline-start:3px solid var(--u-elec);padding-inline-start:16px;
+  margin-inline-start:0}
+.lcontact{margin:22px 0 0;padding:18px 20px;border:1px solid var(--line-strong);
+  border-radius:12px;background:var(--panel-2)}
+.lcontact dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-2);margin-top:11px}
+.lcontact dt:first-child{margin-top:0}
+.lcontact dd{margin:3px 0 0;font-size:16px}
+.lcontact dd a{text-decoration:none}
+.ltr{direction:ltr;unicode-bidi:isolate}
+footer{border-top:1px solid var(--line);background:var(--canvas-2);
+  padding:34px var(--shell) 40px;font-size:13.5px;color:var(--ink-2)}
+.foot-legal{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:16px}
+.foot-legal a{color:var(--ink-2)}
+.foot-legal a[aria-current]{color:var(--accent);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+/* ============================================================
+   ACCESSIBILITY MENU AND DISPLAY MODES
+   The menu supplements assistive technology, it does not replace it.
+   Everything here is opt in and is stored per device.
+   ============================================================ */
+
+/* ---- the modes ---- */
+
+/* High contrast works by re-pointing the design tokens rather than forcing
+   a colour onto every element. Forcing it would wreck the dark platform
+   screens, whose palette is hard coded rather than tokenised. */
+html[data-a11y-contrast]{
+  --canvas:#FFFFFF;   --canvas-2:#FFFFFF;  --panel:#FFFFFF;  --panel-2:#FFFFFF;
+  --line:#111111;     --line-strong:#000000;
+  --accent:#00407F;   --accent-hover:#002B57;  --accent-tint:#E4EDF7;
+  --cyan:#00505C;     --cyan-bright:#003C45;   --deep:#000000;
+  --ink:#000000;      --ink-2:#1B1B1B;
+  --tshadow:none;
+}
+html[data-a11y-contrast] a:not(.btn){text-decoration:underline}
+html[data-a11y-contrast] .btn{border:2px solid #000}
+
+/* Greyscale is applied to each top level block rather than to the root,
+   because a filter on an ancestor makes it the containing block for any
+   fixed child, which would drop the navigation bar out of the viewport.
+   The menu itself is excluded so its own controls stay legible. */
+html[data-a11y-gray] body > *:not(.a11y){filter:grayscale(1)}
+
+html[data-a11y-links] body > *:not(.a11y) a{
+  background:#FFF3C4 !important;color:#171717 !important;
+  text-decoration:underline !important;text-underline-offset:2px;
+  outline:2px solid #92400E;outline-offset:1px;border-radius:2px}
+
+html[data-a11y-focus] :is(a,button,input,textarea,select,summary,[tabindex]):focus{
+  outline:3px solid #92400E !important;outline-offset:3px !important}
+
+/* ---- the launcher ---- */
+.a11y-fab{position:fixed;bottom:18px;inset-inline-start:18px;z-index:70;
+  width:52px;height:52px;border-radius:50%;border:1px solid rgba(18,97,140,.28);
+  background:var(--accent);color:#fff;display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 6px 22px rgba(12,33,49,.26);transition:transform .18s var(--ease),background .18s var(--ease)}
+.a11y-fab:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.a11y-fab svg{width:27px;height:27px;display:block}
+
+/* The cookie bar is a full width strip at the bottom on its own layer. While
+   it is up the launcher steps above it instead of hiding underneath. */
+body:has(#cookiebar:not([hidden])) .a11y-fab{bottom:104px}
+
+/* ---- the panel ---- */
+.a11y-panel{position:fixed;bottom:80px;inset-inline-start:18px;z-index:71;
+  width:min(292px,calc(100vw - 36px));padding:16px;border-radius:14px;
+  background:#FFFFFF;border:1px solid var(--line-strong);
+  box-shadow:0 18px 44px rgba(12,33,49,.22);color:var(--ink);
+  font-family:var(--body);font-size:14.5px;text-align:start}
+body:has(#cookiebar:not([hidden])) .a11y-panel{bottom:166px}
+.a11y-panel[hidden]{display:none}
+.a11y-panel h2{font-family:var(--display);font-size:16px;margin:0 0 12px;color:var(--ink)}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.a11y-steps{display:flex;align-items:center;gap:6px}
+.a11y-steps button{width:34px;height:34px;border-radius:8px;cursor:pointer;
+  border:1px solid var(--line-strong);background:#fff;color:var(--ink);
+  font-family:var(--display);font-weight:700;font-size:15px;line-height:1}
+.a11y-steps button:hover:not(:disabled){background:var(--accent-tint)}
+.a11y-steps button:disabled{opacity:.42;cursor:default}
+.a11y-steps output{min-width:46px;text-align:center;font-family:var(--mono);
+  font-size:12.5px;color:var(--ink-2);direction:ltr;unicode-bidi:isolate}
+.a11y-toggle{display:flex;width:100%;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 11px;margin-bottom:7px;border-radius:9px;cursor:pointer;text-align:start;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+  font-family:var(--body);font-size:14px}
+.a11y-toggle:hover{background:var(--accent-tint);border-color:var(--line-strong)}
+.a11y-toggle i{flex:none;width:34px;height:19px;border-radius:19px;background:#C9D5E0;
+  position:relative;transition:background .18s var(--ease)}
+.a11y-toggle i::after{content:"";position:absolute;top:2.5px;inset-inline-start:2.5px;
+  width:14px;height:14px;border-radius:50%;background:#fff;
+  transition:transform .18s var(--ease)}
+.a11y-toggle[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-tint)}
+.a11y-toggle[aria-pressed="true"] i{background:var(--accent)}
+.a11y-toggle[aria-pressed="true"] i::after{transform:translateX(15px)}
+html[dir="rtl"] .a11y-toggle[aria-pressed="true"] i::after{transform:translateX(-15px)}
+.a11y-reset{display:block;width:100%;margin:11px 0 0;padding:9px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--line-strong);background:#fff;color:var(--ink);
+  font-family:var(--body);font-size:13.5px}
+.a11y-reset:hover{background:var(--accent-tint)}
+.a11y-stmt{display:block;margin-top:11px;font-size:13px;color:var(--accent);text-align:center}
+
+/* The menu must stay readable in every mode it can switch on. */
+html[data-a11y-gray] .a11y-panel,html[data-a11y-gray] .a11y-fab{filter:none}
+html[data-a11y-links] .a11y-stmt{background:none !important;outline:none !important}
+
+@media (max-width:620px){
+  .a11y-fab{width:46px;height:46px;bottom:14px;inset-inline-start:14px}
+  .a11y-fab svg{width:24px;height:24px}
+  .a11y-panel{bottom:70px;inset-inline-start:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .a11y-fab,.a11y-toggle i,.a11y-toggle i::after{transition:none}
+}
+
+/* ---- footer legal row ---- */
+.foot-legal{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;padding-top:22px;
+  border-top:1px solid var(--line);font-size:13.5px}
+.foot-legal a{color:var(--ink-2)}
+.foot-legal a:hover{color:var(--accent)}
+
+/* ---- form consent ---- */
+.form-consent{margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.form-consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+</style>
+
+<!-- Measurement, loaded only after consent -->
+<script>
+(function(){
+  var KEY = 'noryx_cookie_consent', done = false;
+  window.__noryxLoadTrackers = function(){
+    if (done) return; done = true;
+    var g = document.createElement("script"); g.async = 1;
+    g.src = "https://www.googletagmanager.com/gtag/js?id=G-PBG4D6XEKX";
+    document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-PBG4D6XEKX");
+    (function(w,d,s,u){
+      if (w.oaiq) return;
+      var q = function(){ q.q.push(arguments); }; q.q = []; w.oaiq = q;
+      var j = d.createElement(s); j.async = 1; j.src = u;
+      var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    window.oaiq("init", { pixelId: "YQqCtYoui9TaA8JqTLo5Yy", debug: true });
+  };
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+  if (choice === 'all') window.__noryxLoadTrackers();
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="lnav">
+  <a class="brand" href="../">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 9.5 16 3.5 28 9.5 16 15.5Z" fill="none" stroke="#35C8DC" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M4 15.5 16 21.5 28 15.5" fill="none" stroke="#1FA2B7" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M4 21.5 16 27.5 28 21.5" fill="none" stroke="#12618C" stroke-width="2.4" stroke-linejoin="round"/>
+    </svg>
+    <span>NORYX</span>
+  </a>
+  <span class="lang" role="group" aria-label="Language"><b aria-current="page">EN</b><a href="../he/terms/" hreflang="he">עב</a></span>
+</nav>
+
+<main id="main" class="legal" tabindex="-1">
+  <h1>Terms of Use</h1>
+  <p class="updated">Last updated: 24 September 2026</p>
+  <p class="lede">These terms govern your use of noryx.io. The section on engineering reliance is the one that matters most — please read it before acting on anything you see here.</p>
+  <h2>1. Accepting these terms</h2>
+  <p>Using this website means you accept these terms. If you do not accept them, please do not use the site.</p>
+  <h2>2. Intellectual property</h2>
+  <p>Everything on this site belongs to Noryx or is used by Noryx under licence. That includes, without limiting the general rule:</p>
+  <ul>
+    <li>Three-dimensional models, point clouds, scans and any derived geometry.</li>
+    <li>The source code of this site and of the viewing platform it demonstrates.</li>
+    <li>All text, headings and descriptive copy, in both languages.</li>
+    <li>The Noryx name, logo, colour system and visual identity.</li>
+    <li>Photography, video, diagrams and illustrations.</li>
+  </ul>
+  <p>You may not copy, reproduce, publish, distribute, modify, reverse engineer, scrape or otherwise extract any of it, nor use it to train a machine learning model, without our prior written permission. Quoting a short passage with a link back to the source is fine.</p>
+  <h2 class="flagged">3. What the site is not: engineering reliance</h2>
+  <p>The models, scans, depths, coordinates, colour-coded utility runs and every other visual on this site are illustrative. They are published to show what our work looks like. They are general information and nothing more.</p>
+  <p>They are not a survey. They are not an engineering opinion. They are not a stamped or signed as-built record, and they are not a basis on which to plan or carry out excavation, drilling or any other ground work. No duty of care arises from anything published on this site.</p>
+  <p>Noryx deliverables you may rely on are the ones issued to you under a signed project contract, identified as such, and bearing the signature of the qualified professional responsible for them. If it did not arrive that way, it is not a deliverable.</p>
+  <p>Locating underground utilities is subject to site conditions, soil, depth, material and the limits of the physics involved. Accuracy is described against the quality levels of ASCE 38-22 and is always stated per deliverable. No survey method, ours included, identifies every buried element with certainty, and statutory excavation procedures apply regardless of what any survey shows.</p>
+  <h2>4. Commercial terms</h2>
+  <p>Nothing on this site is an offer. Scope, price, schedule, deliverable formats, accuracy levels, cancellation and every other commercial term are set exclusively in the individual proposal or contract signed between Noryx and the client. Where this site and a signed contract disagree, the contract governs.</p>
+  <h2>5. The site is provided as is</h2>
+  <p>We work to keep the site accurate and available, but we do not warrant that it will be uninterrupted, error free, or free of anything harmful. We may change or withdraw any part of it at any time.</p>
+  <h2>6. Limitation of liability</h2>
+  <p>To the fullest extent permitted by law, Noryx is not liable for any indirect, consequential or incidental loss arising from use of this site or reliance on its content, including lost profit, delay, or damage caused during excavation or ground work. Nothing here limits liability that cannot lawfully be limited.</p>
+  <h2>7. Links to other sites</h2>
+  <p>Where we link somewhere else, we do not control what is there and are not responsible for it.</p>
+  <h2>8. Governing law</h2>
+  <p>These terms are governed by the laws of the State of Israel. The competent courts of Tel Aviv-Jaffa have exclusive jurisdiction.</p>
+  <h2>9. Changes to these terms</h2>
+  <p>We may update these terms. The date at the top of the page shows when they last changed.</p>
+</main>
+
+<footer>
+  <div class="foot-legal">
+    <a href="../privacy/">Privacy Policy</a>
+    <a href="../terms/" aria-current="page">Terms of Use</a>
+    <a href="../accessibility/">Accessibility Statement</a>
+  </div>
+  <span>Noryx Technologies &middot; noryx.io</span>
+</footer>
+
+<!-- ACCESSIBILITY MENU
+     Placed last in the document so it is the final stop in the tab order and
+     never sits between the visitor and the content. It is a direct child of
+     body on purpose: the greyscale filter is applied to body's other
+     children, and this has to stay outside it. -->
+<div class="a11y">
+  <button class="a11y-fab" id="a11yfab" type="button" aria-expanded="false" aria-controls="a11ypanel">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+      <circle cx="12" cy="4.1" r="1.9" fill="currentColor" stroke="none"/>
+      <path d="M4.6 8.1h14.8"/>
+      <path d="M12 8.6v5.1"/>
+      <path d="m8.6 21 3.4-7.3 3.4 7.3"/>
+    </svg>
+    <span class="vhide" data-i18n="a11y.open">Accessibility menu</span>
+  </button>
+
+  <div class="a11y-panel" id="a11ypanel" role="dialog" aria-labelledby="a11yttl" hidden>
+    <h2 id="a11yttl" data-i18n="a11y.title">Accessibility</h2>
+
+    <div class="a11y-row">
+      <span data-i18n="a11y.text">Text size</span>
+      <span class="a11y-steps">
+        <button type="button" id="a11yless">&minus;<span class="vhide" data-i18n="a11y.less">Decrease text size</span></button>
+        <output id="a11ysize" for="a11yless a11ymore">100%</output>
+        <button type="button" id="a11ymore">+<span class="vhide" data-i18n="a11y.more">Increase text size</span></button>
+      </span>
+    </div>
+
+    <button class="a11y-toggle" type="button" data-mode="contrast" aria-pressed="false"><span data-i18n="a11y.contrast">High contrast</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="gray" aria-pressed="false"><span data-i18n="a11y.gray">Greyscale</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="links" aria-pressed="false"><span data-i18n="a11y.links">Highlight links</span><i aria-hidden="true"></i></button>
+    <button class="a11y-toggle" type="button" data-mode="focus" aria-pressed="false"><span data-i18n="a11y.focus">Keyboard focus outline</span><i aria-hidden="true"></i></button>
+
+    <button class="a11y-reset" type="button" id="a11yreset" data-i18n="a11y.reset">Reset all</button>
+    <a class="a11y-stmt" href="../accessibility/" data-i18n="a11y.stmt">Read our accessibility statement</a>
+  </div>
+</div>
+
+
+<script>
+/* ===== ACCESSIBILITY MENU =====================================
+   Five independent settings, stored together on the device. Text size uses
+   zoom rather than a root font-size because most of this layout is sized in
+   px and in container query units, neither of which responds to rem. */
+(function(){
+  var fab   = document.getElementById('a11yfab'),
+      panel = document.getElementById('a11ypanel'),
+      out   = document.getElementById('a11ysize'),
+      less  = document.getElementById('a11yless'),
+      more  = document.getElementById('a11ymore'),
+      reset = document.getElementById('a11yreset'),
+      root  = document.documentElement,
+      KEY   = 'noryx_a11y',
+      STEPS = [0.9, 1, 1.15, 1.3, 1.5],
+      toggles = [].slice.call(document.querySelectorAll('.a11y-toggle'));
+  if (!fab || !panel) return;
+
+  var state = { zoom:1, contrast:false, gray:false, links:false, focus:false };
+  try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch(e){}
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  function paint(){
+    ['contrast','gray','links','focus'].forEach(function(m){
+      if (state[m]) root.setAttribute('data-a11y-' + m, ''); else root.removeAttribute('data-a11y-' + m);
+    });
+    root.style.zoom = state.zoom === 1 ? '' : state.zoom;
+    if (out) out.textContent = Math.round(state.zoom * 100) + '%';
+    var i = STEPS.indexOf(state.zoom);
+    if (less) less.disabled = i <= 0;
+    if (more) more.disabled = i >= STEPS.length - 1;
+    toggles.forEach(function(b){ b.setAttribute('aria-pressed', state[b.dataset.mode] ? 'true' : 'false'); });
+  }
+
+  function step(dir){
+    var i = STEPS.indexOf(state.zoom); if (i < 0) i = 1;
+    i = Math.min(STEPS.length - 1, Math.max(0, i + dir));
+    state.zoom = STEPS[i]; paint(); save();
+  }
+
+  function open(yes){
+    panel.hidden = !yes;
+    fab.setAttribute('aria-expanded', yes ? 'true' : 'false');
+    /* At the smallest text size the decrease button is disabled, and focusing
+       a disabled control silently does nothing, which would leave a keyboard
+       user stranded outside the panel they just opened. */
+    if (yes) { var f = panel.querySelector('button:not(:disabled)'); if (f) f.focus(); }
+  }
+
+  fab.addEventListener('click', function(){ open(panel.hidden); });
+  if (less)  less.addEventListener('click', function(){ step(-1); });
+  if (more)  more.addEventListener('click', function(){ step(1); });
+  toggles.forEach(function(b){
+    b.addEventListener('click', function(){ state[b.dataset.mode] = !state[b.dataset.mode]; paint(); save(); });
+  });
+  if (reset) reset.addEventListener('click', function(){
+    state = { zoom:1, contrast:false, gray:false, links:false, focus:false };
+    paint(); save(); fab.focus();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !panel.hidden) { open(false); fab.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if (!panel.hidden && !panel.contains(e.target) && !fab.contains(e.target)) open(false);
+  });
+
+  paint();
+})();
+
+</script>
+</body>
+</html>

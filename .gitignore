@@ -36,3 +36,15 @@ desktop.ini
 # tracked and the 2.2 MB of skill content is not.
 .agents/
 .claude/skills/
+
+# The POC's generated capture assets: a 10.9 MB GLB, decimated point cloud
+# binaries and radargram exports. They are produced from the raw scans by the
+# capture pipeline, so they are regenerable and do not belong in git history,
+# where they would stay for good even after a later delete.
+noryx-poc/public/site-a/
+noryx-poc/public/evidence/
+noryx-poc/public/draco/
+
+# The humanizer skill archive is installed on the Claude account, not part of
+# this website.
+humanizer-he.zip
