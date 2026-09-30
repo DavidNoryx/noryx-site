@@ -397,6 +397,31 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'),
 fs.writeFileSync(path.join(OUT, '_redirects'),
   '/en      /    301\n/en/*    /    301\n', 'utf8');
 
+/* SECURITY HEADERS
+   Cloudflare Pages serves this file natively; on Vercel it is inert, so
+   keeping it costs nothing and the site can sit on either host.
+
+   HSTS is deliberately max-age only. includeSubDomains would commit every
+   future subdomain to HTTPS for a year, and preload is close to irreversible.
+   Neither is a promise to make on the way out of one host and into another.
+
+   No Content-Security-Policy yet. The page loads Google Fonts, Google
+   Analytics and the OpenAI pixel, and a policy written blind would either be
+   so loose it does nothing or would silently break measurement. It wants its
+   own pass with the network panel open. */
+fs.writeFileSync(path.join(OUT, '_headers'),
+  [ '/*',
+    '  X-Content-Type-Options: nosniff',
+    '  X-Frame-Options: SAMEORIGIN',
+    '  Referrer-Policy: strict-origin-when-cross-origin',
+    '  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()',
+    '  Strict-Transport-Security: max-age=31536000',
+    '',
+    '/assets/*',
+    '  Cache-Control: public, max-age=31536000, immutable',
+    ''
+  ].join('\n'), 'utf8');
+
 fs.writeFileSync(path.join(OUT, 'vercel.json'), JSON.stringify({
   trailingSlash: true,
   /* All three spellings are listed on purpose. trailingSlash normalises the
