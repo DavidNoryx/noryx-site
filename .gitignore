@@ -48,3 +48,6 @@ noryx-poc/public/draco/
 # The humanizer skill archive is installed on the Claude account, not part of
 # this website.
 humanizer-he.zip
+
+# Hand-upload bundle for Cloudflare Pages; regenerate from noryx/ whenever needed
+noryx-cloudflare.zip
