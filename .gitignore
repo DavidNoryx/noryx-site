@@ -51,3 +51,10 @@ humanizer-he.zip
 
 # Hand-upload bundle for Cloudflare Pages; regenerate from noryx/ whenever needed
 noryx-cloudflare.zip
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
