@@ -1,0 +1,160 @@
+<!doctype html>
+<!--
+  A bench for the street furniture, served only by the dev server.
+
+  Judging a 1.2 m cabinet by orbiting a 250 m city block and hoping to land on
+  one is slow and tells you almost nothing. This puts every type on a plain
+  surface at a known scale, with a figure for comparison, so "does that look
+  like a real street cabinet" can be answered in a glance.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NORYX — furniture bench</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; background: #11161b; font: 12px/1.5 ui-monospace, monospace; color: #9fb4c4; }
+      #hud { position: fixed; left: 12px; top: 12px; z-index: 2; }
+      #hud b { color: #e6f0f7; font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <div id="hud">
+      <b>Street furniture at 1:1</b><br />
+      grid 1 m · figure 1.75 m · drag to orbit, scroll to zoom
+    </div>
+    <script type="module">
+      import * as THREE from 'three'
+      import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+      import { SURFACE_KIND } from '/src/surface.js'
+      import { buildFeatureBody } from '/src/furniture.js'
+      import { UTILITY } from '/src/utilities.js'
+
+      const scene = new THREE.Scene()
+      scene.background = new THREE.Color(0x11161b)
+
+      const camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.05, 200)
+      camera.position.set(5.5, 3.0, 6.5)
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true })
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
+      renderer.setSize(innerWidth, innerHeight)
+      renderer.outputColorSpace = THREE.SRGBColorSpace
+      document.body.appendChild(renderer.domElement)
+
+      const controls = new OrbitControls(camera, renderer.domElement)
+      controls.target.set(0, 0.7, 0)
+      controls.enableDamping = true
+
+      // The same lighting the scene gives this furniture, so what looks right
+      // here looks right there.
+      scene.add(new THREE.AmbientLight(0xffffff, 0.62))
+      const key = new THREE.DirectionalLight(0xffffff, 0.85)
+      key.position.set(14, 20, 6)
+      scene.add(key)
+      const fill = new THREE.DirectionalLight(0xbfd4e4, 0.3)
+      fill.position.set(-10, 6, -12)
+      scene.add(fill)
+
+      // Ground, so flush covers have something to be flush with.
+      const ground = new THREE.Mesh(
+        new THREE.PlaneGeometry(40, 40),
+        new THREE.MeshLambertMaterial({ color: 0x2e3338 }),
+      )
+      ground.rotation.x = -Math.PI / 2
+      ground.position.y = -0.001
+      scene.add(ground)
+      const grid = new THREE.GridHelper(40, 40, 0x3c444c, 0x262c32)
+      scene.add(grid)
+
+      // A 1.75 m figure. Scale is the whole point of this page.
+      const person = new THREE.Group()
+      person.add(new THREE.Mesh(
+        new THREE.CapsuleGeometry(0.17, 0.78, 6, 12),
+        new THREE.MeshLambertMaterial({ color: 0x3f4a54 }),
+      ))
+      person.children[0].position.y = 1.0
+      const head = new THREE.Mesh(
+        new THREE.SphereGeometry(0.115, 16, 12),
+        new THREE.MeshLambertMaterial({ color: 0x4a5560 }),
+      )
+      head.position.y = 1.63
+      person.add(head)
+      person.position.set(-2.4, 0, 0)
+      scene.add(person)
+
+      // Every type, spaced along the x axis, tinted the way its utility would.
+      const TINTS = {
+        manhole: UTILITY.sewer.color,
+        chamber: UTILITY.comms.color,
+        valve: UTILITY.water.color,
+        pillar: UTILITY.power.color,
+        hydrant: UTILITY.water.color,
+        meter: UTILITY.water.color,
+      }
+
+      const labels = []
+      Object.entries(SURFACE_KIND).forEach(([name, kind], i) => {
+        const tint = new THREE.Color(TINTS[name] ?? '#7f9bb1')
+        const { group } = buildFeatureBody(kind, tint)
+        group.position.x = i * 1.9
+        scene.add(group)
+
+        const r = Math.max(0.55, (kind.form === 'round' ? kind.cover : Math.max(...kind.cover)) / 2 + 0.14)
+        const ring = new THREE.Mesh(
+          new THREE.RingGeometry(r, r + 0.16, 28),
+          new THREE.MeshBasicMaterial({ color: tint, transparent: true, opacity: 0.8, side: THREE.DoubleSide }),
+        )
+        ring.rotation.x = -Math.PI / 2
+        ring.position.set(i * 1.9, 0.008, 0)
+        scene.add(ring)
+
+        labels.push({ name, kind, x: i * 1.9 })
+      })
+
+      // Name plates, drawn as canvas sprites so no font has to load.
+      for (const { name, kind, x } of labels) {
+        const c = document.createElement('canvas')
+        c.width = 512
+        c.height = 128
+        const g = c.getContext('2d')
+        g.fillStyle = '#e6f0f7'
+        g.font = '500 44px ui-monospace, monospace'
+        g.textAlign = 'center'
+        g.fillText(kind.label, 256, 52)
+        g.fillStyle = '#7f9bb1'
+        g.font = '34px ui-monospace, monospace'
+        const size = kind.form === 'round'
+          ? `${Math.round(kind.cover * 1000)} mm`
+          : `${Math.round(kind.cover[0] * 1000)} x ${Math.round(kind.cover[1] * 1000)} mm`
+        g.fillText(`${name} · ${size}${kind.above ? ` · ${kind.above.toFixed(2)} m tall` : ' · flush'}`, 256, 100)
+        const sprite = new THREE.Sprite(
+          new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true }),
+        )
+        sprite.scale.set(2.2, 0.55, 1)
+        sprite.position.set(x, 2.15, 0)
+        scene.add(sprite)
+      }
+
+      // Handy for driving the view from the console while judging a shape.
+      window.view = (x, y, z, tx = 0, ty = 0.7, tz = 0) => {
+        camera.position.set(x, y, z)
+        controls.target.set(tx, ty, tz)
+        controls.update()
+      }
+
+      addEventListener('resize', () => {
+        camera.aspect = innerWidth / innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(innerWidth, innerHeight)
+      })
+
+      ;(function tick() {
+        requestAnimationFrame(tick)
+        controls.update()
+        renderer.render(scene, camera)
+      })()
+    </script>
+  </body>
+</html>

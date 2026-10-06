@@ -1,9 +1,18 @@
 // The argument, in the order an investor needs it.
 //
-// Rule for this file: every number is either measured from a real capture in
-// this repo, or cited from published industry data. Nothing here is invented.
-// Company figures — price, volume, margin, pipeline — are deliberately absent;
-// they belong to NORYX and are collected in the closing beat.
+// Two rules hold this file together.
+//
+// 1. Every number is either measured from a real capture in this repo, or cited
+//    from published industry data. Nothing is invented.
+// 2. `status` on each claim says whether it is shipped, proven on a real site,
+//    or on the roadmap. An investor who cannot tell those apart discounts all
+//    three to zero.
+
+export const STATUS = {
+  live: { label: 'Working today', color: '#8be0a0' },
+  proven: { label: 'Proven on a real capture', color: '#35c8dc' },
+  planned: { label: 'On the roadmap', color: '#ffb164' },
+}
 
 export const BEATS = [
   {
@@ -11,7 +20,7 @@ export const BEATS = [
     index: '00',
     eyebrow: 'What we do',
     claim: 'Every site has a second site under it.',
-    body: 'NORYX captures a site with four instruments, registers them into a single model, and hands the engineer a BIM file that already contains what is buried — before anyone digs.',
+    body: 'NORYX takes whatever instruments a site needs, aligns their readings to one coordinate frame, and produces a single model an engineer can build from — including what is buried. Which instruments are used depends on the ground, not on our product sheet.',
     stats: [
       ['$83.2B', 'US cost of underground utility damage, per year'],
       ['668,999', 'modelled damage incidents in 2025'],
@@ -24,53 +33,101 @@ export const BEATS = [
     key: 'problem',
     index: '01',
     eyebrow: 'The problem',
-    claim: 'The drawings are wrong.',
-    body: 'As-built records are incomplete, out of date, or were never made at all. Crews discover where the pipe runs by hitting it. Unforeseen ground conditions are the leading cause of claims and disputes on US construction projects.',
+    claim: 'The engineer cannot decide.',
+    body: 'The information exists, but it is scattered across surveys taken at different times, in different formats, that do not agree with each other. No single source is trusted enough to act on, so the decision gets made on site, with a digger.',
     stats: [
-      ['$227M', 'every day'],
-      ['220,000+', 'reported strikes a year in North America'],
+      ['$227M', 'destroyed every day in the US alone'],
+      ['Leading cause', 'unforeseen ground conditions, in US construction claims and disputes'],
     ],
-    source: 'Common Ground Alliance DIRT 2025',
+    source: 'Common Ground Alliance DIRT 2025 · CMAA subsurface risk guidance',
   },
   {
-    key: 'why',
+    key: 'fusion',
     index: '02',
-    eyebrow: 'Why it is still open',
-    claim: 'Four instruments. Four different truths.',
-    body: 'Drone, laser, thermal and radar each see a fragment of the same site — each in its own frame of reference, at its own scale, on its own day. Nobody reconciles them. The survey lands as a PDF the engineer cannot build from.',
-    stats: [
-      ['4', 'instruments on a typical site'],
-      ['0', 'shared coordinate frames between them'],
+    eyebrow: 'Fusing the data',
+    claim: 'Each instrument answers a different question.',
+    body: 'They do not produce comparable outputs, and that is the whole difficulty. NORYX bridges them into one model while keeping every reading traceable back to the instrument that made it.',
+    instruments: [
+      ['GPR', 'Radar reflections — returns a travel-time section, not a position', '#f2a33c'],
+      ['LiDAR', 'Millions of ranged points — geometry with no meaning attached', '#35c8dc'],
+      ['Photogrammetry', 'Colour and texture — appearance, no dimension of its own', '#a79dff'],
+      ['Thermal', 'Surface temperature — anomalies, with no depth', '#ffb164'],
     ],
+    note: 'The set changes per site. Adding an instrument is a configuration, not a rebuild.',
+    status: 'live',
   },
   {
     key: 'register',
     index: '03',
     eyebrow: 'What NORYX does',
-    claim: 'We register them into one model.',
-    body: 'One capture pass. Four instruments resolved into a single coordinate frame to twenty-one millimetres, so a reading from one can be tested against the others instead of filed beside them.',
+    claim: 'Receive, align, merge, translate.',
+    body: 'Readings come in. They are aligned to a common position, merged into one model, and translated into something an engineer can open and act on. The engineer stops reconciling four documents and starts reading one.',
     stats: [
-      ['0.021 m', 'registration RMS across all four instruments'],
-      ['30.1M', 'points captured in one pass'],
+      ['0.021 m', 'alignment error between instruments, measured on Site A'],
+      ['One model', 'replaces the set of surveys that disagreed'],
     ],
+    status: 'proven',
   },
   {
-    key: 'reveal',
+    key: 'result',
     index: '04',
     eyebrow: 'The result',
-    claim: 'Then we take the floor away.',
-    body: 'Buried services appear inside the same model as the standing structure, at measured depth. The radar record that produced each one stays attached to it, so the finding can be argued with rather than believed.',
-    stats: [
-      ['3.2 m', 'depth of investigation'],
-      ['250 mm', 'smallest service resolved at 1.4 m'],
+    claim: 'Three things the engineer could not do before.',
+    body: 'The depth figure is a detail. What matters is what becomes possible once every reading sits in one frame.',
+    features: [
+      [
+        'See it, rather than interpret it',
+        'Buried services render in place, under the structure, instead of as a radar trace only a specialist can read.',
+        'live',
+      ],
+      [
+        'Decide where to dig, and where not to',
+        'Each candidate carries a confidence score and the instrument that earned it, so the call can be defended.',
+        'live',
+      ],
+      [
+        'Re-survey and update the live model',
+        'A new pass re-registers against the existing model rather than starting a new document.',
+        'planned',
+      ],
     ],
   },
   {
     key: 'deliver',
     index: '05',
     eyebrow: 'The deliverable',
-    claim: 'Ranked, and accountable.',
-    body: 'Every candidate carries a confidence score and names the instrument that earned it. The engineer exports it straight into Revit or Civil 3D — the file they already work in, now containing what is underneath.',
-    stats: [['IFC 4.3', 'native export, no reformatting']],
+    claim: 'It lands inside the tools they already use.',
+    body: 'The engineer receives a model that opens in Revit or Civil 3D with the subsurface already in it — services positioned, each one carrying its depth, its confidence and the record behind it. No reformatting, no separate PDF to cross-reference.',
+    integrations: [
+      ['File export · IFC 4.3', 'Opens in Revit, Civil 3D and anything else that reads IFC', 'live'],
+      ['Findings with provenance', 'Every object carries its score and its source instrument', 'live'],
+      ['Live two-way plug-in', 'Edit in the model, push back to the survey', 'planned'],
+    ],
+  },
+  {
+    key: 'business',
+    index: '06',
+    eyebrow: 'The business',
+    claim: 'Authorities buy it. Engineers use it.',
+    body: 'The engineer is the user, at design and pre-construction, when the dig is still on paper and changing it is cheap. The buyer is the body that carries the liability: municipalities, national infrastructure, transport and water authorities. They own the assets, they hold the records that are wrong, and they pay for the strike either way.',
+    stats: [
+      ['Per project', 'pricing, scoped to site'],
+      ['≥ 50%', 'target gross margin'],
+      ['15', 'capture projects delivered to paying clients'],
+    ],
+    honesty:
+      'Those fifteen are surface capture. Subsurface is the next product on the same delivery capability, and the first subsurface engagement is what this raise funds.',
+  },
+  {
+    key: 'vision',
+    index: '07',
+    eyebrow: 'Where this goes',
+    claim: 'The site gets a shared memory.',
+    body: 'Fusing sensors is the first step, not the destination. A construction site already has engineers, machines and increasingly autonomous equipment all acting on the same ground with no shared picture of it. NORYX becomes the layer they all read from and write back to.',
+    horizon: [
+      ['Today', 'Instruments fused into one model a person can read', 'live'],
+      ['Next', 'The model updates as the site changes, instead of ageing', 'planned'],
+      ['Then', 'Machines and autonomous equipment read the same model, and report back into it', 'planned'],
+    ],
   },
 ]

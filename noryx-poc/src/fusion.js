@@ -11,14 +11,18 @@ export function score(finding, enabled) {
   let total = 0
   for (let i = 0; i < SENSORS.length; i += 1) {
     if (!enabled[SENSORS[i].key]) continue
-    total += finding.strength[i] * finding.weights[i]
+    // A finding that carries no entry for a sensor was not measured by it, and
+    // contributes nothing. This is what lets an instrument be added to the
+    // catalogue without claiming it was deployed on every site that came
+    // before it — which is the honest default and also the safe one.
+    total += (finding.strength[i] ?? 0) * (finding.weights[i] ?? 0)
   }
   return total
 }
 
 /** Sensors that both are on and actually responded to this finding. */
 export function supporting(finding, enabled, floor = 0.6) {
-  return SENSORS.filter((s, i) => enabled[s.key] && finding.strength[i] > floor)
+  return SENSORS.filter((s, i) => enabled[s.key] && (finding.strength[i] ?? 0) > floor)
 }
 
 /** The sensor carrying the most weight in the current score. */
@@ -27,7 +31,7 @@ export function principal(finding, enabled) {
   let bestShare = 0
   SENSORS.forEach((s, i) => {
     if (!enabled[s.key]) return
-    const share = finding.strength[i] * finding.weights[i]
+    const share = (finding.strength[i] ?? 0) * (finding.weights[i] ?? 0)
     if (share > bestShare) {
       bestShare = share
       best = s
