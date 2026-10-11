@@ -23,17 +23,69 @@ export const RUNS = FINDINGS.filter((f) => f.kind === 'subsurface')
 export const MAINS = RUNS.filter((r) => !r.lateral)
 export const LATERALS = RUNS.filter((r) => r.lateral)
 
+/** Plan length of a run, which is what a chainage is measured along. */
+export function runLength(run) {
+  let total = 0
+  for (let i = 1; i < run.path.length; i += 1) {
+    total += Math.hypot(
+      run.path[i][0] - run.path[i - 1][0],
+      run.path[i][1] - run.path[i - 1][1],
+    )
+  }
+  return total
+}
+
+/**
+ * Depth at a fraction along a run.
+ *
+ * A gravity sewer with a declared fall and a constant drawn depth is a
+ * contradiction: the panel says it falls at 1.1 percent and the model draws it
+ * dead level. The declared fall is applied about the mid-point, so the stated
+ * depth stays the average of the run and the two ends move apart.
+ */
+export function depthAt(run, f) {
+  if (!run.fall) return run.depth
+  return run.depth + run.fall * (f - 0.5) * runLength(run)
+}
+
+/** Depth at each end, and the drop between them. */
+export function invertRange(run) {
+  const start = depthAt(run, 0)
+  const end = depthAt(run, 1)
+  return { start, end, drop: end - start, length: runLength(run) }
+}
+
+/** Where a point sits along a run, as a fraction, by nearest approach. */
+export function chainageOf(run, at) {
+  let best = { f: 0, d: Infinity }
+  const steps = 200
+  for (let i = 0; i <= steps; i += 1) {
+    const f = i / steps
+    const t = f * (run.path.length - 1)
+    const k = Math.min(run.path.length - 2, Math.floor(t))
+    const r = t - k
+    const x = run.path[k][0] + (run.path[k + 1][0] - run.path[k][0]) * r
+    const z = run.path[k][1] + (run.path[k + 1][1] - run.path[k][1]) * r
+    const d = Math.hypot(x - at[0], z - at[1])
+    if (d < best.d) best = { f, d }
+  }
+  return best.f
+}
+
 /** Sample a run's polyline densely enough to measure against. */
 function sample(run, steps = 160) {
   const pts = run.path
   const out = []
   for (let i = 0; i <= steps; i += 1) {
-    const t = (i / steps) * (pts.length - 1)
+    const frac = i / steps
+    const t = frac * (pts.length - 1)
     const k = Math.min(pts.length - 2, Math.floor(t))
     const f = t - k
     out.push([
       pts[k][0] + (pts[k + 1][0] - pts[k][0]) * f,
-      -run.depth,
+      // Depth follows the declared fall, so a clearance measured against a
+      // gravity run is measured against where it actually is at that chainage.
+      -depthAt(run, frac),
       pts[k][1] + (pts[k + 1][1] - pts[k][1]) * f,
     ])
   }
@@ -59,8 +111,12 @@ export const CLEARANCE_MIN = 0.3
  * are what makes people stop reading it.
  */
 function connected(a, b) {
-  if (a.utility !== b.utility) return false
-  return Boolean(a.lateral) !== Boolean(b.lateral)
+  // Two runs of the same utility that meet are joined, not in conflict —
+  // whether that is a service teeing off its main, or a branch sewer meeting
+  // the trunk it drains into at a junction chamber. Reporting either as a
+  // hundred-millimetre near miss is how a clash report trains people to ignore
+  // clash reports.
+  return a.utility === b.utility
 }
 
 export function findCrossings() {

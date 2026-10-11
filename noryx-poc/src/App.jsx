@@ -7,6 +7,9 @@ import Toolbar from './components/Toolbar'
 import PlanView from './components/PlanView'
 import WalkPad from './components/WalkPad'
 import ErtSection from './components/ErtSection'
+import TerrainPanel from './components/TerrainPanel'
+import LongProfile from './components/LongProfile'
+import RiskPanel from './components/RiskPanel'
 import { SENSORS } from './site'
 import { activeSite, activeFindings } from './sites'
 
@@ -155,6 +158,12 @@ export default function App() {
   const [xray, setXray] = useState(false)
   const [surfaceOn, setSurfaceOn] = useState(true)
   const [showErt, setShowErt] = useState(false)
+  const [showTerrain, setShowTerrain] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
+  const [showRisk, setShowRisk] = useState(false)
+  const [zonesOn, setZonesOn] = useState(false)
+  const [recordsOn, setRecordsOn] = useState(false)
+  const terrainApi = useRef(null)
   const [surfaceItem, setSurfaceItem] = useState(null)
 
   // The tool decides the mode: walking is a tool, not a separate place.
@@ -224,10 +233,13 @@ export default function App() {
           measuring={tool === 'measure'}
           xray={xray}
           surfaceOn={surfaceOn}
+          zonesOn={zonesOn}
+          recordsOn={recordsOn}
           onSurface={setSurfaceItem}
           onMeasure={setMeasureInfo}
           measureApi={measureApi}
           walkApi={walkApi}
+          terrainApi={terrainApi}
         />
 
         <WalkPad walkApi={walkApi} visible={mode === 'walk'} />
@@ -253,6 +265,12 @@ export default function App() {
           setSurfaceOn={setSurfaceOn}
           showErt={showErt}
           setShowErt={setShowErt}
+          showTerrain={showTerrain}
+          setShowTerrain={setShowTerrain}
+          showProfile={showProfile}
+          setShowProfile={setShowProfile}
+          showRisk={showRisk}
+          setShowRisk={setShowRisk}
         />
 
         {/* Entering the model from the story */}
@@ -271,6 +289,46 @@ export default function App() {
           <div className="absolute inset-x-3 bottom-3 z-30 md:inset-x-auto md:bottom-24 md:left-10 md:w-[520px]">
             <div className="border border-[#24415a] bg-[#0b1622]/95 p-3.5 backdrop-blur-md">
               <PlanView isolated={isolated} onIsolate={setIsolated} />
+            </div>
+          </div>
+        )}
+
+        {/* What the survey is worth: the trench it saves, and the gap between
+            the records and the measurement. */}
+        {mode !== 'story' && showRisk && (
+          <div className="absolute inset-x-3 bottom-3 z-30 max-h-[70vh] overflow-auto md:inset-x-auto md:bottom-6 md:left-8 md:w-[360px]">
+            <div className="border border-[#24415a] bg-[#0b1622]/95 p-3.5 backdrop-blur-md">
+              <RiskPanel
+                zonesOn={zonesOn}
+                setZonesOn={setZonesOn}
+                recordsOn={recordsOn}
+                setRecordsOn={setRecordsOn}
+                onIsolate={setIsolated}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* The long section. Sits under the plan, which is where a drawing set
+            puts it: the plan says where, the section says whether it works. */}
+        {mode !== 'story' && showProfile && (
+          <div className="absolute inset-x-3 bottom-3 z-30 max-h-[70vh] overflow-auto md:inset-x-auto md:bottom-6 md:left-1/2 md:w-[460px] md:-translate-x-1/2">
+            <div className="border border-[#24415a] bg-[#0b1622]/95 p-3.5 backdrop-blur-md">
+              <LongProfile
+                terrainApi={terrainApi}
+                isolated={isolated}
+                onIsolate={setIsolated}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Ground surface in and out. Sits above the ERT panel because the two
+            answer adjacent questions: what the ground is, and where it is. */}
+        {mode !== 'story' && showTerrain && (
+          <div className="absolute inset-x-3 bottom-3 z-30 max-h-[70vh] overflow-auto md:inset-x-auto md:bottom-20 md:left-8 md:w-[340px]">
+            <div className="border border-[#24415a] bg-[#0b1622]/95 p-3.5 backdrop-blur-md">
+              <TerrainPanel terrainApi={terrainApi} />
             </div>
           </div>
         )}

@@ -11,9 +11,11 @@ const EXPOSURE = SITE.exposure ?? 1.0
 const FINDINGS = activeFindings()
 import { createWalker, EYE_HEIGHT } from '../walk'
 import { createMeasureTool } from '../measure'
-import { UTILITY, manholesFor, findCrossings } from '../utilities'
+import { UTILITY, manholesFor, findCrossings, depthAt, chainageOf } from '../utilities'
 import { SURFACE } from '../surface'
 import { buildFeatureBody } from '../furniture'
+import { gridToMesh, deriveFromMesh, describe, registration, sampleAlong } from '../terrain'
+import { envelope, outsideDiameter } from '../risk'
 
 // The capture is Z-up. Everything loaded from it goes inside a wrapper that
 // tips it into Y-up and drops the measured floor onto y = 0; the inner offset
@@ -67,7 +69,7 @@ function buildThermal() {
   return group
 }
 
-function buildGpr(pickables) {
+function buildGpr(pickables, zones, records) {
   const group = new THREE.Group()
 
   // There used to be a dark 46 m plane here, standing in for a ground line so
@@ -92,7 +94,13 @@ function buildGpr(pickables) {
   group.add(slab)
 
   FINDINGS.filter((f) => f.kind === 'subsurface').forEach((finding) => {
-    const points = finding.path.map(([x, z]) => new THREE.Vector3(x, -finding.depth, z))
+    // A run with a declared fall is drawn falling. The alternative — a level
+    // pipe beside a panel reading "1.1 percent" — is the sort of contradiction
+    // an engineer finds in the first ten seconds.
+    const points = finding.path.map(([x, z], i) => {
+      const f = finding.path.length > 1 ? i / (finding.path.length - 1) : 0
+      return new THREE.Vector3(x, -depthAt(finding, f), z)
+    })
     const curve = new THREE.CatmullRomCurve3(points)
 
     const tube = new THREE.Mesh(
@@ -106,6 +114,64 @@ function buildGpr(pickables) {
     tube.userData = finding
     group.add(tube)
     pickables.push(tube)
+
+    // The uncertainty volume. A QL-D run is not a line, it is a region the
+    // pipe is somewhere inside, and the region is what decides how wide a
+    // trench has to be opened. Drawn as a sleeve around the run, sized by the
+    // tolerance its own quality level claims.
+    const env = envelope(finding)
+    const sleeve = new THREE.Mesh(
+      new THREE.TubeGeometry(curve, 72, env.plan + outsideDiameter(finding) / 2, 16, false),
+      new THREE.MeshBasicMaterial({
+        color: new THREE.Color(UTILITY[finding.utility]?.color ?? '#f2a33c'),
+        transparent: true,
+        opacity: 0.14,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      }),
+    )
+    sleeve.userData = finding
+    sleeve.name = 'zone'
+    zones.push(sleeve)
+    group.add(sleeve)
+
+    // Where the owner's records put it. The gap between this and the run is
+    // the single most saleable number a survey produces.
+    if (finding.record) {
+      const [dx, dz] = finding.record.offset
+      const rd = finding.record.depth ?? finding.depth
+      const ghostPts = finding.path.map(([x, z]) => new THREE.Vector3(x + dx, -rd, z + dz))
+      const ghost = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(
+          new THREE.CatmullRomCurve3(ghostPts).getPoints(60),
+        ),
+        new THREE.LineDashedMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.5,
+          dashSize: 0.8,
+          gapSize: 0.5,
+        }),
+      )
+      ghost.computeLineDistances()
+      ghost.name = 'record'
+      records.push(ghost)
+      group.add(ghost)
+
+      // A tie line at mid-run, so the discrepancy reads as a distance rather
+      // than as two unrelated lines.
+      const mid = Math.floor(finding.path.length / 2)
+      const tie = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(finding.path[mid][0], -depthAt(finding, 0.5), finding.path[mid][1]),
+          new THREE.Vector3(finding.path[mid][0] + dx, -rd, finding.path[mid][1] + dz),
+        ]),
+        new THREE.LineBasicMaterial({ color: 0xe24b4a, transparent: true, opacity: 0.75 }),
+      )
+      tie.name = 'record'
+      records.push(tie)
+      group.add(tie)
+    }
 
     // Drop lines from the surface, so depth is something you can see rather
     // than something you read off a panel.
@@ -311,6 +377,7 @@ function settleSurface(nodes, target) {
 export default function FusionScene({
   measureApi,
   walkApi,
+  terrainApi,
   beat,
   progress = 0,
   mode = 'story',
@@ -318,6 +385,8 @@ export default function FusionScene({
   measuring = false,
   xray = false,
   surfaceOn = true,
+  zonesOn = false,
+  recordsOn = false,
   onPick,
   onSurface,
   onProbe,
@@ -325,8 +394,8 @@ export default function FusionScene({
   onReady,
 }) {
   const hostRef = useRef(null)
-  const stateRef = useRef({ beat, progress, mode, isolated, measuring, xray, surfaceOn })
-  stateRef.current = { beat, progress, mode, isolated, measuring, xray, surfaceOn }
+  const stateRef = useRef({ beat, progress, mode, isolated, measuring, xray, surfaceOn, zonesOn, recordsOn })
+  stateRef.current = { beat, progress, mode, isolated, measuring, xray, surfaceOn, zonesOn, recordsOn }
   const pickRef = useRef(onPick)
   pickRef.current = onPick
   const surfaceRef = useRef(onSurface)
@@ -389,6 +458,94 @@ export default function FusionScene({
     if (measureApi) measureApi.current = measure
     if (walkApi) walkApi.current = walker
 
+    // Ground surfaces. Handed out as an API rather than a prop because a
+    // terrain arrives from a file picker, not from React state, and rebuilding
+    // this effect to show one would reload seventeen megabytes of capture.
+    // What the terrain API is currently showing, so a profile can be taken
+    // through it rather than through the capture underneath it.
+    const loaded = { grid: null, offset: [0, 0], label: null }
+
+    if (terrainApi) {
+      terrainApi.current = {
+        show(grid, options = {}) {
+          this.clear()
+          const reg = registration(grid)
+          const mesh = gridToMesh(grid, { ...options, offset: reg.offset })
+          groups.terrain.add(mesh)
+          loaded.grid = grid
+          loaded.offset = reg.offset
+          loaded.label = grid.kind === 'DTM' ? 'Ground model' : 'Surface model'
+          return { ...describe(grid), ...reg }
+        },
+        clear() {
+          for (const child of [...groups.terrain.children]) {
+            child.geometry?.dispose()
+            child.material?.dispose()
+            groups.terrain.remove(child)
+          }
+          loaded.grid = null
+          loaded.offset = [0, 0]
+          loaded.label = null
+        },
+        setVisible(v) {
+          groups.terrain.visible = v
+        },
+        /** Sample the capture itself, which is the only ground most sites have. */
+        derive(cell = 1) {
+          if (!groups.rgb.children.length) return null
+          groups.rgb.updateMatrixWorld(true)
+          const clip = SITE.clip
+          return deriveFromMesh(groups.rgb, {
+            centre: clip?.at ?? SITE.focus?.at ?? [0, 0],
+            halfWidth: Math.min(clip?.halfWidth ?? 40, 40),
+            cell,
+          })
+        },
+        hasCapture() {
+          return groups.rgb.children.length > 0
+        },
+
+        /**
+         * Ground level along a polyline, for the long section.
+         *
+         * Prefers a loaded surface, because that is the one the viewer can see
+         * and the one they chose. Falls back to the capture, so a profile is
+         * available before anybody has imported anything.
+         */
+        groundAlong(path, samples = 120) {
+          if (loaded.grid) {
+            return {
+              source: loaded.label,
+              points: sampleAlong(loaded.grid, path, samples, loaded.offset),
+            }
+          }
+          if (!groups.rgb.children.length) return null
+          groups.rgb.updateMatrixWorld(true)
+          const ray = new THREE.Raycaster()
+          const down = new THREE.Vector3(0, -1, 0)
+          const points = []
+          for (let i = 0; i < samples; i += 1) {
+            const f = samples === 1 ? 0 : i / (samples - 1)
+            const t = f * (path.length - 1)
+            const k = Math.min(path.length - 2, Math.floor(t))
+            const r = t - k
+            const x = path[k][0] + (path[k + 1][0] - path[k][0]) * r
+            const z = path[k][1] + (path[k + 1][1] - path[k][1]) * r
+            // Lowest of a small ring, for the same reason the surface features
+            // use one: a single ray lands on a parked car.
+            let lowest = null
+            for (const [dx, dz] of [[0, 0], [0.8, 0], [-0.8, 0], [0, 0.8], [0, -0.8]]) {
+              ray.set(new THREE.Vector3(x + dx, 200, z + dz), down)
+              const hit = ray.intersectObject(groups.rgb, true)[0]
+              if (hit && (lowest === null || hit.point.y < lowest)) lowest = hit.point.y
+            }
+            points.push({ f, x, z, y: lowest })
+          }
+          return { source: 'Sampled from the capture', points }
+        },
+      }
+    }
+
     // These lights reach the street furniture and nothing else: the capture is
     // unlit on purpose, because photogrammetry has its lighting baked into the
     // texture. They were set for a lit capture and left at ambient 1.4, which
@@ -412,14 +569,17 @@ export default function FusionScene({
     scene.add(grid)
 
     const pickables = []
+    const zoneMeshes = []
+    const recordLines = []
     const surfacePicks = []
     const surfaceNodes = []
     const groups = {
       lidar: new THREE.Group(),
       rgb: new THREE.Group(),
       thermal: buildThermal(),
-      gpr: buildGpr(pickables),
+      gpr: buildGpr(pickables, zoneMeshes, recordLines),
       surface: buildSurface(surfacePicks, surfaceNodes),
+      terrain: new THREE.Group(),
     }
     Object.values(groups).forEach((g) => scene.add(g))
 
@@ -641,6 +801,17 @@ export default function FusionScene({
       pickables.forEach((tube) => {
         const wanted = !isol || tube.userData.id === isol
         tube.visible = groups.gpr.visible && wanted
+      })
+
+      // The uncertainty sleeves and the record positions, each on its own
+      // switch. Both are off by default: they answer a second question, and
+      // showing them unasked turns a readable street into a fog.
+      const { zonesOn, recordsOn } = stateRef.current
+      zoneMeshes.forEach((m) => {
+        m.visible = Boolean(zonesOn) && groups.gpr.visible && (!isol || m.userData.id === isol)
+      })
+      recordLines.forEach((m) => {
+        m.visible = Boolean(recordsOn) && groups.gpr.visible
       })
 
       // Surface features follow the services they belong to: they appear with

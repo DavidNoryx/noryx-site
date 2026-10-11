@@ -55,6 +55,12 @@ export default function Toolbar({
   surfaceOn,
   setSurfaceOn,
   showErt,
+  showTerrain,
+  showProfile,
+  showRisk,
+  setShowRisk,
+  setShowProfile,
+  setShowTerrain,
   setShowErt,
 }) {
   if (mode === 'story') return null
@@ -140,6 +146,45 @@ export default function Toolbar({
             Surface
           </button>
         )}
+
+        <button
+          type="button"
+          onClick={() => setShowRisk(!showRisk)}
+          title="Excavation corridor, and records against measurement"
+          className={`border px-2.5 py-2 text-[10px] transition-colors md:px-3 md:text-[11px] ${
+            showRisk
+              ? 'border-[#e24b4a] bg-[#16293a] text-[#e24b4a]'
+              : 'border-[#24415a] text-[#7f9bb1] hover:border-[#e24b4a] hover:text-[#e6f0f7]'
+          }`}
+        >
+          Risk
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setShowProfile(!showProfile)}
+          title="Long section along a run — fall, invert levels and cover depth"
+          className={`border px-2.5 py-2 text-[10px] transition-colors md:px-3 md:text-[11px] ${
+            showProfile
+              ? 'border-[#35c8dc] bg-[#16293a] text-[#35c8dc]'
+              : 'border-[#24415a] text-[#7f9bb1] hover:border-[#35c8dc] hover:text-[#e6f0f7]'
+          }`}
+        >
+          Long section
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setShowTerrain(!showTerrain)}
+          title="Import, derive and export a ground surface"
+          className={`border px-2.5 py-2 text-[10px] transition-colors md:px-3 md:text-[11px] ${
+            showTerrain
+              ? 'border-[#35c8dc] bg-[#16293a] text-[#35c8dc]'
+              : 'border-[#24415a] text-[#7f9bb1] hover:border-[#35c8dc] hover:text-[#e6f0f7]'
+          }`}
+        >
+          Terrain
+        </button>
 
         <button
           type="button"

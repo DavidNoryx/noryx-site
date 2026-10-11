@@ -1,5 +1,5 @@
 import { activeSite, activeFindings } from './sites'
-import { UTILITY } from './utilities'
+import { UTILITY, depthAt, chainageOf } from './utilities'
 
 /**
  * Surface features: the part of a buried network you can actually see.
@@ -121,7 +121,10 @@ function resolve(items) {
       color: UTILITY[run.utility]?.color ?? '#7f9bb1',
       // How far the riser has to reach. An above-ground body starts at the
       // cover and goes up; the riser starts at the cover and goes down.
-      depth: run.depth,
+      // The riser reaches the run where it actually is at this chainage, not
+      // where the run is on average. On a falling sewer those differ by a third
+      // of a metre over the section, which is the length of a chamber step.
+      depth: depthAt(run, chainageOf(run, item.at)),
       label: `${UTILITY[run.utility]?.label ?? 'Service'} ${kind.label.toLowerCase()}`,
     }]
   })

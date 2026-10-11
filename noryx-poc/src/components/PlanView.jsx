@@ -13,24 +13,28 @@ import { SURFACE } from '../surface'
  * offsets read off the drawing are the real ones.
  */
 function streetLines() {
-  const { frame, corridor } = SITE
-  if (!frame || !corridor) return []
-  const half = 46
-  const line = (across) => [
-    [
-      frame.mid[0] + frame.along[0] * -half + frame.across[0] * across,
-      frame.mid[1] + frame.along[1] * -half + frame.across[1] * across,
-    ],
-    [
-      frame.mid[0] + frame.along[0] * half + frame.across[0] * across,
-      frame.mid[1] + frame.along[1] * half + frame.across[1] * across,
-    ],
-  ]
-  return [
-    { kind: 'kerb', label: 'Kerb', pts: line(corridor.kerb[0]) },
-    { kind: 'kerb', label: 'Kerb', pts: line(corridor.kerb[1]) },
-    { kind: 'facade', label: 'Building line', pts: line(corridor.facade) },
-  ]
+  const streets = SITE.streets
+    ?? (SITE.frame && SITE.corridor
+      ? [{ frame: SITE.frame, corridor: SITE.corridor, extent: [-46, 46] }]
+      : [])
+
+  const out = []
+  for (const { frame, corridor, extent } of streets) {
+    const [a, b] = extent ?? [-46, 46]
+    const line = (across) =>
+      [a, b].map((t) => [
+        frame.mid[0] + frame.along[0] * t + frame.across[0] * across,
+        frame.mid[1] + frame.along[1] * t + frame.across[1] * across,
+      ])
+    out.push({ kind: 'kerb', pts: line(corridor.kerb[0]) })
+    out.push({ kind: 'kerb', pts: line(corridor.kerb[1]) })
+    // A corridor whose building line coincides with a kerb has no separate
+    // footway to draw, so the line is not repeated on top of itself.
+    if (!corridor.kerb.includes(corridor.facade)) {
+      out.push({ kind: 'facade', pts: line(corridor.facade) })
+    }
+  }
+  return out
 }
 
 /**
